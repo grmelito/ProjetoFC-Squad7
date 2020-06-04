@@ -9,7 +9,8 @@ Integrantes: [Ana Laura Feltrim](https://github.com/AnaLauraFeltrim) |
 
 
 ## Descrição do projeto
-Visando buscar soluções para os problemas gerados pela pandemia global em 2020, principalmente nas formas de trabalho mais tradicionais em que o home office ainda é uma realidade distante. Estamos procurando entender o comportamento tanto de quem consome produtos e serviços locais quanto os que vendem e prestam serviços, para criar uma ferramenta tecnológica que possa melhorar a vida das pessoas, não somente na pandemia mas também no pós pandemia. Através do processo de pesquisa descobrimos que os pequenos negócios ou serviços locais tiveram uma enorme queda e uma das principais dores era realmente a falta de investimento em tecnologia  ou mídias que possam ajudar pessoas que estão perto a encontrar e comprar os produtos ou serviços dessas pessoas. Estamos pensando em um WebApp que una os prestadores de serviços/produtos com os compradores locais filtrados por proximidade.
+Com o objetivo de buscar soluções para os problemas gerados pela pandemia global em 2020, especialmente nas formas de trabalho tradicionais em que o home office ainda é uma realidade distante, procuramos com este projeto entender o comportamento digital de quem consome e de quem vende e oferta produtos/serviços locais, para a partir daí, criar uma ferramenta tecnológica que possa melhorar a vida das pessoas durante e no pós pandemia. Através do processo de pesquisa implementado descobrimos que os pequenos negócios e serviços locais tiveram enorme queda de faturamento e uma das principais “dores” do setor estava relacionada diretamente a falta de investimento em tecnologia ou mídias que possam aproximar pessoas que estão perto dos negócios locais a encontrar e comprar os produtos ou serviços dessas pequenas empresas. 
+Nossa proposta é o desenvolvimento de um WebApp que una os prestadores de serviços/produtos com os compradores locais filtrados por proximidade.
 
 # Setup
 
