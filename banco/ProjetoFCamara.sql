@@ -2,7 +2,7 @@ create database ProjetoFcamara
 
 use ProjetoFcamara
 
-CREATE TABLE Categorias(
+create table Categorias(
 IdCategoria int primary key,
 CategoriaNome varchar(100)
 );
@@ -23,7 +23,7 @@ foreign key (IdEstado) references Estados(IdEstado)
 
 create table Endereco (
 IdEndereco int primary key,
-CEP float unique,
+Cep varchar(8) unique,
 Bairro varchar(200),
 Rua varchar(200),
 Numero int,
@@ -38,21 +38,21 @@ NomeTipoUsuario varchar(100)
 
 create table Usuario(
 IdUsuario int primary key,
-Nome varchar (100),
-Senha varchar(12),
-Email varchar(50),
+Nome varchar (100) not null,
+Senha varchar(24) not null,
+Email varchar(50) unique not null,
 IdTipoUsuario int,
-IdEndereco int,
+IdEndereco int not null,
 foreign key (IdTipoUsuario) references TipoUsuario(IdTipoUsuario),
 foreign key (IdEndereco) references Endereco(IdEndereco)
 );
 
 create table Administrador(
 IdAdm int primary key,
-Nome varchar (100),
-Email varchar (50),
-Senha varchar(12),
-CPF varchar(11) unique,
+Nome varchar (100) not null,
+Email varchar (50) unique not null,
+Senha varchar(24) not null,
+CPF varchar(11) unique not null,
 IdTipoUsuario int,
 foreign key (IdTipoUsuario) references TipoUsuario(IdTipoUsuario)
 );
@@ -66,7 +66,8 @@ foreign key (IdUsuario) references Usuario(IdUsuario)
 
 create table Anuncio(
 IdAnuncio int primary key,
-Descricao varchar(500),
+Titulo varchar (50),
+Descricao text,
 Instagram varchar(200),
 Facebook varchar(200),
 Site varchar(200),
@@ -76,15 +77,15 @@ foreign key (IdCategoria) references Categorias(IdCategoria),
 foreign key (IdFornecedor) references Fornecedor(IdFornecedor)
 );
 
-create table Comentário(
+create table Comentario(
 IdComentario int primary key,
-Comentario varchar(500),
+Comentario text,
 IdAnuncio int,
 IdUsuario int,
 foreign key (IdAnuncio) references Anuncio(IdAnuncio),
 foreign key (IdUsuario) references Fornecedor(IdUsuario)
 );
 
-
+drop database ProjetoFcamara
 
 
