@@ -22,7 +22,7 @@ foreign key (IdEstado) references Estados(IdEstado)
 
 create table Endereco (
 IdEndereco int primary key AUTO_INCREMENT,
-Cep varchar(8) unique,
+Cep varchar(10) unique,
 Bairro varchar(200),
 Rua varchar(200),
 Numero int,
@@ -85,6 +85,6 @@ foreign key (IdAnuncio) references Anuncio(IdAnuncio),
 foreign key (IdUsuario) references Fornecedor(IdUsuario)
 );
 
-drop database ProjetoFcamara
+-- drop database ProjetoFcamara
 
 
