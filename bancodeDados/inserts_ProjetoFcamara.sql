@@ -39,11 +39,11 @@ INSERT INTO TipoUsuario (IdTipoUsuario, NomeTipoUsuario) values (3, 'Administrad
 -- SELECT * FROM TipoUsuario;
 
 -- Inserts da tabela Usuario
-INSERT INTO Usuario (Nome, Senha, Email, IdTipoUsuario, IdEndereco) values ('Ana Laura', 'Ana123', 'AnaLaura@gmail.com', 1, 1);
-INSERT INTO Usuario (Nome, Senha, Email, IdTipoUsuario, IdEndereco) values ('Carla Dias', 'Carla123', 'CarlaDias@gmail.com', 2, 2);
-INSERT INTO Usuario (Nome, Senha, Email, IdTipoUsuario, IdEndereco) values ('Erica Sobral', 'Erica123', 'EricaSobral@gmail.com', 2, 3);
-INSERT INTO Usuario (Nome, Senha, Email, IdTipoUsuario, IdEndereco) values ('Gabriel Ruiz', 'Gabriel123', 'GabrielRuiz@gmail.com', 1, 4);
-INSERT INTO Usuario (Nome, Senha, Email, IdTipoUsuario, IdEndereco) values ('Marcos Caridade', 'Marcos123', 'MarcosCaridade@gmail.com', 1, 5);
+INSERT INTO Usuario (Nome, Senha, Email, DataNascimento, Genero, ImagemUsuario, IdTipoUsuario, IdEndereco) values ('Ana Laura', 'Ana123', 'AnaLaura@gmail.com', '2000-10-07', 'F', 'fake-image', 1, 1);
+INSERT INTO Usuario (Nome, Senha, Email, DataNascimento, Genero, ImagemUsuario, IdTipoUsuario, IdEndereco) values ('Carla Dias', 'Carla123', 'CarlaDias@gmail.com', '1998-05-21', 'F', 'fake-image', 2, 2);
+INSERT INTO Usuario (Nome, Senha, Email, DataNascimento, Genero, ImagemUsuario, IdTipoUsuario, IdEndereco) values ('Erica Sobral', 'Erica123', 'EricaSobral@gmail.com', '1999-11-13', 'F', 'fake-image', 2, 3);
+INSERT INTO Usuario (Nome, Senha, Email, DataNascimento, Genero, ImagemUsuario, IdTipoUsuario, IdEndereco) values ('Gabriel Ruiz', 'Gabriel123', 'GabrielRuiz@gmail.com', '1998-09-05', 'M', 'fake-image', 1, 4);
+INSERT INTO Usuario (Nome, Senha, Email, DataNascimento, Genero, ImagemUsuario, IdTipoUsuario, IdEndereco) values ('Marcos Caridade', 'Marcos123', 'MarcosCaridade@gmail.com', '1994-02-18', 'M', 'fake-image', 2, 5);
 -- SELECT * FROM Usuario;
 
 -- Inserts da tabela Administrador
@@ -53,12 +53,13 @@ INSERT INTO Administrador (Nome, Email, Senha, CPF, IdTipoUsuario) values ('Admi
 -- Inserts da tabela Fornecedor
 INSERT INTO Fornecedor (CPFouCNPJ, IdUsuario) values ('70913274485', 2);
 INSERT INTO Fornecedor (CPFouCNPJ, IdUsuario) values ('83346573811', 3);
+INSERT INTO Fornecedor (CPFouCNPJ, IdUsuario) values ('17463552991', 5);
 -- SELECT * FROM Fornecedor;
 
 -- Inserts da tabela Anuncio
-INSERT INTO Anuncio (Titulo, Descricao, Instagram, Facebook, Site, IdCategoria, IdFornecedor) values ('Brigadeiro Bom', 'Faço brigadeiros de chocolate artesanal.', 'brigad3ir0', '', 'http://brigadeiroBOM.com.br', 1, 1);
-INSERT INTO Anuncio (Titulo, Descricao, Instagram, Facebook, Site, IdCategoria, IdFornecedor) values ('Cristais', 'Vendo cristais energizados.', 'CristalEnergy', 'cristalenergyOficial', 'http://cristalEnergy.com.br', 2, 2);
-INSERT INTO Anuncio (Titulo, Descricao, Instagram, Facebook, Site, IdCategoria, IdFornecedor) values ('Pintura Residencial', 'Faço serviços de pintura profissional.', 'PaintPro', 'paintProOficial', 'http://paintpro.com.br', 3, 3);
+INSERT INTO Anuncio (Titulo, Descricao, ImagemAnuncio, Telefone, Instagram, Facebook, Site, IdCategoria, IdFornecedor) values ('Brigadeiro Bom', 'Faço brigadeiros de chocolate artesanal.', 'fake-image', '11997875543', 'brigad3ir0', '', 'http://brigadeiroBOM.com.br', 1, 1);
+INSERT INTO Anuncio (Titulo, Descricao, ImagemAnuncio, Telefone, Instagram, Facebook, Site, IdCategoria, IdFornecedor) values ('Cristais', 'Vendo cristais energizados.', 'CristalEnergy', 'fake-image', '11998779981','cristalenergyOficial', 'http://cristalEnergy.com.br', 2, 2);
+INSERT INTO Anuncio (Titulo, Descricao, ImagemAnuncio, Telefone, Instagram, Facebook, Site, IdCategoria, IdFornecedor) values ('Pintura Residencial', 'Faço serviços de pintura profissional.', 'fake-image', '13998122431', 'PaintPro', 'paintProOficial', 'http://paintpro.com.br', 3, 3);
 -- SELECT * FROM Anuncio;
 
 -- Inserts da tabela Comentario
