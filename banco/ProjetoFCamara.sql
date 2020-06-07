@@ -1,28 +1,27 @@
-create database ProjetoFcamara
+create database ProjetoFcamara;
 
-use ProjetoFcamara
+use ProjetoFcamara;
 
 create table Categorias(
-IdCategoria int primary key,
+IdCategoria int primary key AUTO_INCREMENT,
 CategoriaNome varchar(100)
 );
 
 create table Estados (
-IdEstado int primary key,
-EstadoNome varchar(50)
+IdEstado int primary key AUTO_INCREMENT,
+EstadoNome varchar(50),
+Uf char(2)
 );
 
 create table Cidades (
-IdCidade int primary key,
+IdCidade int primary key AUTO_INCREMENT,
 CidadeNome varchar(100),
 IdEstado int,
 foreign key (IdEstado) references Estados(IdEstado)
 );
 
-
-
 create table Endereco (
-IdEndereco int primary key,
+IdEndereco int primary key AUTO_INCREMENT,
 Cep varchar(8) unique,
 Bairro varchar(200),
 Rua varchar(200),
@@ -37,7 +36,7 @@ NomeTipoUsuario varchar(100)
 );
 
 create table Usuario(
-IdUsuario int primary key,
+IdUsuario int primary key AUTO_INCREMENT,
 Nome varchar (100) not null,
 Senha varchar(24) not null,
 Email varchar(50) unique not null,
@@ -48,7 +47,7 @@ foreign key (IdEndereco) references Endereco(IdEndereco)
 );
 
 create table Administrador(
-IdAdm int primary key,
+IdAdm int primary key AUTO_INCREMENT,
 Nome varchar (100) not null,
 Email varchar (50) unique not null,
 Senha varchar(24) not null,
@@ -58,14 +57,14 @@ foreign key (IdTipoUsuario) references TipoUsuario(IdTipoUsuario)
 );
 
 create table Fornecedor(
-IdFornecedor int primary key,
+IdFornecedor int primary key AUTO_INCREMENT,
 CPFouCNPJ varchar(14),
 IdUsuario int,
 foreign key (IdUsuario) references Usuario(IdUsuario)
 );
 
 create table Anuncio(
-IdAnuncio int primary key,
+IdAnuncio int primary key AUTO_INCREMENT,
 Titulo varchar (50),
 Descricao text,
 Instagram varchar(200),
@@ -78,7 +77,7 @@ foreign key (IdFornecedor) references Fornecedor(IdFornecedor)
 );
 
 create table Comentario(
-IdComentario int primary key,
+IdComentario int primary key AUTO_INCREMENT,
 Comentario text,
 IdAnuncio int,
 IdUsuario int,
