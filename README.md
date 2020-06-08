@@ -30,7 +30,13 @@ Navegue até o diretório server e baixe as dependências:
 cd server
 npm install
 ```
-## 4) Iniciar o projeto
+## 4) Iniciar o script de criação do banco e o script de inserts
+Utilize o mysql workbench para iniciar os dois arquivos:
+```
+bd_ProjetoFCamara.sql
+inserts_ProjetoFcamara.sql
+```
+## 5) Iniciar o projeto
 Para inciar o projeto, entre no diretório respectivo e digite o comando:
 ```
 npm start
