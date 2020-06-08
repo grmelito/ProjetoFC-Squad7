@@ -57,9 +57,9 @@ INSERT INTO Fornecedor (CPFouCNPJ, IdUsuario) values ('17463552991', 5);
 -- SELECT * FROM Fornecedor;
 
 -- Inserts da tabela Anuncio
-INSERT INTO Anuncio (Titulo, Descricao, ImagemAnuncio, Telefone, Instagram, Facebook, Site, IdCategoria, IdFornecedor) values ('Brigadeiro Bom', 'Faço brigadeiros de chocolate artesanal.', 'fake-image', '11997875543', 'brigad3ir0', '', 'http://brigadeiroBOM.com.br', 1, 1);
-INSERT INTO Anuncio (Titulo, Descricao, ImagemAnuncio, Telefone, Instagram, Facebook, Site, IdCategoria, IdFornecedor) values ('Cristais', 'Vendo cristais energizados.', 'CristalEnergy', 'fake-image', '11998779981','cristalenergyOficial', 'http://cristalEnergy.com.br', 2, 2);
-INSERT INTO Anuncio (Titulo, Descricao, ImagemAnuncio, Telefone, Instagram, Facebook, Site, IdCategoria, IdFornecedor) values ('Pintura Residencial', 'Faço serviços de pintura profissional.', 'fake-image', '13998122431', 'PaintPro', 'paintProOficial', 'http://paintpro.com.br', 3, 3);
+INSERT INTO Anuncio (Titulo, Descricao, ImagemAnuncio, Telefone, Instagram, Facebook, Site, IdCategoria, IdFornecedor) values ('Brigadeiro Bom', 'Faço brigadeiros de chocolate artesanal.', 'fake-image', '11997875543', 'brigad3ir0', 'brigad3ir0Oficial', 'http://brigadeiroBOM.com.br', 1, 1);
+INSERT INTO Anuncio (Titulo, Descricao, ImagemAnuncio, Telefone, Instagram, Facebook, Site, IdCategoria, IdFornecedor) values ('Cristais', 'Vendo cristais energizados.', 'fake-image', '11998779981', 'cristalenergy', 'cristalenergyOficial', 'http://cristalEnergy.com.br', 2, 2);
+INSERT INTO Anuncio (Titulo, Descricao, ImagemAnuncio, Telefone, Instagram, Facebook, Site, IdCategoria, IdFornecedor) values ('Pintura Residencial', 'Faço serviços de pintura profissional.', 'fake-image', '139981224315', 'PaintPro', 'paintProOficial', 'http://paintpro.com.br', 3, 3);
 -- SELECT * FROM Anuncio;
 
 -- Inserts da tabela Comentario
