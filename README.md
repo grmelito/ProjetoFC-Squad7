@@ -30,7 +30,13 @@ Navegue até o diretório server e baixe as dependências:
 cd server
 npm install
 ```
-## 4) Iniciar o projeto
+## 4) Iniciar o script de criação do banco e o script de inserts
+Utilize o mysql workbench para iniciar os dois arquivos:
+```
+bd_ProjetoFCamara.sql
+inserts_ProjetoFcamara.sql
+```
+## 5) Iniciar o projeto
 Para inciar o projeto, entre no diretório respectivo e digite o comando:
 ```
 npm start
@@ -47,4 +53,6 @@ npm start
 
 Conteúdo UX do projeto: https://drive.google.com/drive/folders/1X2AwiIXV3PA9H9J5HWqxruPxYHX5f39B?usp=sharing
 
-Trello do Squad#7: https://trello.com/b/U4lAJfY1/fcamara-squad7
+Trello UX Squad#7: https://trello.com/b/U4lAJfY1/fcamara-squad7
+
+Trello DEV Squad#7: https://trello.com/b/WFrXeGld/desenvolvimento-squad7-projetofcamara
