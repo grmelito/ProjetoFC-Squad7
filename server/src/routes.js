@@ -11,6 +11,7 @@ routes.get('/usuarios', UsuarioController.index)
 
 routes.get('/anuncio', AnuncioController.index)
 routes.get('/anuncios', AnuncioController.indexPage)
+routes.get('/anuncios/categoria/:id', AnuncioController.indexCategoria)
 
 
 module.exports = routes;
