@@ -14,6 +14,7 @@ module.exports = {
             .limit(5)
             .offset((page - 1) * 5)
             .select([
+                'Anuncio.IdAnuncio',
                 'Anuncio.Titulo',
                 'Anuncio.ImagemAnuncio',
                 'Anuncio.IdCategoria',
