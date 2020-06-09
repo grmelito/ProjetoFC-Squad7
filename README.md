@@ -53,4 +53,6 @@ npm start
 
 Conteúdo UX do projeto: https://drive.google.com/drive/folders/1X2AwiIXV3PA9H9J5HWqxruPxYHX5f39B?usp=sharing
 
-Trello do Squad#7: https://trello.com/b/U4lAJfY1/fcamara-squad7
+Trello UX Squad#7: https://trello.com/b/U4lAJfY1/fcamara-squad7
+
+Trello DEV Squad#7: https://trello.com/b/WFrXeGld/desenvolvimento-squad7-projetofcamara
