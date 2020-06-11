@@ -9,6 +9,7 @@ routes.get('/categorias', CategoriaController.index)
 routes.get('/categorias/1', CategoriaController.showCategoria)
 
 routes.get('/usuarios', UsuarioController.index)
+routes.get('/profile/:id', UsuarioController.showProfile)
 
 routes.get('/anuncio', AnuncioController.index)
 routes.get('/anuncios', AnuncioController.indexPage)
