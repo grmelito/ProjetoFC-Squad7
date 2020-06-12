@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+}
+
+a{
+    color: inherit;
+}
+     
+
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+/* * Footer - Inicio  */
+
+ footer{
+    width: 100%;
+    background: #0F1570 ;
+    position: absolute;
+	bottom: 0;
+    position: fixed;
+
+}
+.iconesRede img{
+    height: 50px;
+}
+
+.text-footer{
+    font-size: 12px;
+}
+
