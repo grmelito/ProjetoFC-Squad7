@@ -12,7 +12,31 @@ html,body{
     padding: 0;
 }
 
+/* Home banner */
 
+#banner-home{
+ width: 100%;
+  background: url('/img/Banner.png');
+  background-color: powderblue;
+}
+
+
+
+.botoes-home{
+    background-color:pink;
+    height: 100px;
+    width: 100%;
+}
+
+.botoes-home img { 
+    max-width: 20px; 
+}
+
+.botoes-icone{
+ background-color: white;
+ width: 30px;
+ height: 30px;
+}
 
 
 /* * Footer - Inicio  */

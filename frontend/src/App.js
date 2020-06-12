@@ -1,14 +1,16 @@
 import React from 'react';
-import Header from './components/header/Header'
+import Home from './pages/Home/Home';
+import Footer from './pages/Footer/Footer';
 
 
 
 function App() {
   return (
     <div>
-    <Header/>
-    <h1>Teste FC</h1>
+       <Home/>
+        
 
+      <Footer/>
     </div>
   );
 }

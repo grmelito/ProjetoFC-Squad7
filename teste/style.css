@@ -2,6 +2,8 @@
     box-sizing: border-box;
 }
 
+a { color: inherit; } 
+
 html,body{
     margin: 0;
     padding: 0;
@@ -32,3 +34,23 @@ div#Banner{
     height: 70vh;
     
 }
+
+/* Footer - Inicio */
+
+
+
+
+ footer{
+     width: 100%;
+    background: #0F1570 ;
+    position: fixed;
+
+}
+.iconesRede img{
+    height: 50px;
+}
+
+.copy{
+    font-size: 12px;
+}
+
