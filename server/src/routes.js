@@ -26,6 +26,6 @@ routes.post('/testeupload', upload.single('file'), (req, res) => {
     return res.json({message: "Imagem cadastrada!"});
 })
 
-routes.post('/register', AuthController.UserAuth);
+routes.post('/register', UsuarioController.createUser);
 
 module.exports = routes;
