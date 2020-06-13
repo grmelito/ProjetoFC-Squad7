@@ -44,7 +44,7 @@ DataNascimento date,
 Genero varchar(15),
 ImagemUsuario varchar(200),
 IdTipoUsuario int,
-IdEndereco int not null,
+IdEndereco int,
 foreign key (IdTipoUsuario) references TipoUsuario(IdTipoUsuario),
 foreign key (IdEndereco) references Endereco(IdEndereco)
 );
