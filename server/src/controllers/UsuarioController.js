@@ -1,6 +1,6 @@
 const knex = require('../database');
-const { andWhere } = require('../database');
-const { use } = require('../routes');
+const jwt2 = require('../config/verifyToken');
+const jwt = require('jsonwebtoken');
 
 module.exports = {
     async index(req, res) {
@@ -38,11 +38,12 @@ module.exports = {
                 Email,
                 Senha
             });
+
             return res.json({message: 'Informações cadastradas!'})
 
         }
-
     },
+
     async loginUser(req, res){
 
         const emailReq =  req.body.Email
@@ -50,15 +51,18 @@ module.exports = {
 
         const userData = await knex('Usuario')
         .where( {Email: emailReq} )
-        .select('Usuario.Senha')
+        .select(['Usuario.Senha', 'Usuario.IdUsuario'])
         .then(function(result){
             if(!result || !result[0]) {
 
                 return res.status(400).send({error: "Email não encontrado!"})
             }
+
             const pass = result[0].Senha;
             if(passwordReq === pass){
-                return res.json({message: "Usuário logado!"})
+                const token = jwt.sign({_id: emailReq}, 'Hu3Lit6NrOpl9Um')
+                res.header('auth-token', token).send(token)
+                //return res.send({message: "Usuário logado!"})
             } else {
                 return res.status(400).send({error: "Email ou senha inválidos!"})
             }
