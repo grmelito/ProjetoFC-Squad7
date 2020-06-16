@@ -1,5 +1,4 @@
 const knex = require('../database');
-const jwt2 = require('../config/verifyToken');
 const jwt = require('jsonwebtoken');
 
 module.exports = {
@@ -48,6 +47,9 @@ module.exports = {
 
         const emailReq =  req.body.Email
         const passwordReq = req.body.Senha
+        const user_id  = await knex('Usuario')
+        .select('Usuario.IdUsuario', 'Usuario.IdTipoUsuario')
+        .where({Email: emailReq}) 
 
         const userData = await knex('Usuario')
         .where( {Email: emailReq} )
@@ -60,7 +62,7 @@ module.exports = {
 
             const pass = result[0].Senha;
             if(passwordReq === pass){
-                const token = jwt.sign({_id: emailReq}, 'Hu3Lit6NrOpl9Um')
+                const token = jwt.sign({_id: user_id}, 'Hu3Lit6NrOpl9Um')
                 res.header('auth-token', token).send(token)
                 //return res.send({message: "Usuário logado!"})
             } else {
