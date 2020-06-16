@@ -9,7 +9,7 @@ module.exports = {
     },
 
     async showProfile(req, res) {
-        const { id } = req.params
+        const { loginId } = req.params
 
         const results = await knex('Usuario')
             .select([
@@ -18,7 +18,7 @@ module.exports = {
                 'Usuario.DataNascimento',
                 'Usuario.Genero',
                 'Usuario.ImagemUsuario',
-            ]).where('Usuario.IdUsuario', id);
+            ]).where('Usuario.IdUsuario', loginId);
 
         return results = res.json(results)
     },
