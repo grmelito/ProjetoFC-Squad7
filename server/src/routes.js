@@ -15,7 +15,7 @@ routes.get('/categorias', CategoriaController.index)
 routes.get('/categorias/1', CategoriaController.showCategoria)
 
 routes.get('/usuarios', verifyToken ,UsuarioController.index)
-routes.get('/profile/:id', UsuarioController.showProfile)
+routes.get('/profile', verifyToken, UsuarioController.showProfile)
 routes.post('/login', UsuarioController.loginUser)
 routes.post('/register', UsuarioController.createUser);
 
