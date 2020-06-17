@@ -5,7 +5,7 @@ const multerConfig = require('./config/multer');
 const CategoriaController = require('./controllers/CategoriaController')
 const AnuncioController = require('./controllers/AnuncioController')
 const UsuarioController = require('./controllers/UsuarioController');
-const AuthController = require('./controllers/AuthController');
+const FornecedorController = require('./controllers/FornecedorController')
 const verifyToken = require('./config/verifyToken');
 
 const routes = express.Router();
@@ -19,6 +19,9 @@ routes.get('/profile', verifyToken, UsuarioController.showProfile)
 routes.post('/login', UsuarioController.loginUser)
 routes.post('/register', UsuarioController.createUser);
 routes.put('/update/profile', verifyToken, UsuarioController.updateUser);
+
+routes.get('/fornecedores', FornecedorController.index)
+routes.post('/upgrade/usuario', verifyToken, FornecedorController.upgradeFornecedor)
 
 routes.get('/anuncio', verifyToken, AnuncioController.index)
 routes.get('/anuncios', AnuncioController.indexPage)
