@@ -75,18 +75,23 @@ module.exports = {
                 return res.status(400).send({error: "Email ou senha inválidos!"})
             }
         })
-        
-    // if(!userData.length> 0) return res.status(400).send({error: "Email não encontrado!"})
 
-    // const validPassword = await knex('Usuario')
-    // .select( 'Usuario.Senha' )
-    // .where( 'Usuario.Email', user.Email, 'Usuario.Senha', user.Senha )
+    },
+    async updateUser (req, res){
+        const {id} = req.params
+        const Genero = req.body.Genero
+        const Nome = req.body.Nome
+        const Senha = req.body.Senha
 
-    // if(!validPassword) return res.status(400).send({error: "Senha inválida"})
-     
-    //  return res.json({message: "Usuário logado"})
+        const dataUser = await knex('Usuario')
+        .where('Usuario.IdUsuario ', id) 
+        .update({
+            Genero: Genero,
+            Nome: Nome,
+            Senha: Senha
+        })
+        return res.json({message: "Informações alteradas!"})
 
-    } 
-    
-        
+    }
+
 }
