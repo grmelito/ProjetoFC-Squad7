@@ -18,7 +18,7 @@ routes.get('/usuarios', verifyToken, UsuarioController.index)
 routes.get('/profile', verifyToken, UsuarioController.showProfile)
 routes.post('/login', UsuarioController.loginUser)
 routes.post('/register', UsuarioController.createUser);
-routes.put('/update/:id', UsuarioController.updateUser);
+routes.put('/update/profile', verifyToken, UsuarioController.updateUser);
 
 routes.get('/anuncio', verifyToken, AnuncioController.index)
 routes.get('/anuncios', AnuncioController.indexPage)
