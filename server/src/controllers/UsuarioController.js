@@ -11,19 +11,18 @@ module.exports = {
     async showProfile(req, res) {
         const token = req.header('auth-token');
         const decoded = jwt.decode(token, 'Hu3Lit6NrOpl9Um')
-        const Userinfo = decoded._id;
-        const id = Userinfo.IdUsuario;
+        const id = decoded._id[0].IdUsuario;
 
-    //    const results = await knex('Usuario')
-     //       .select([
-     //           'Usuario.Nome',
-     //           'Usuario.Email',
-     //           'Usuario.DataNascimento',
-      //          'Usuario.Genero',
-      //          'Usuario.ImagemUsuario',
-      //      ]).where('Usuario.IdUsuario', id);
+        const results = await knex('Usuario')
+            .select([
+                'Usuario.Nome',
+                'Usuario.Email',
+                'Usuario.DataNascimento',
+                'Usuario.Genero',
+                'Usuario.ImagemUsuario',
+            ]).where('Usuario.IdUsuario', id);
 
-        return results = res.json(id)
+        return results = res.json(results)
     },
 
     async createUser(req, res) {
