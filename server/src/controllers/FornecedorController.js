@@ -26,14 +26,14 @@ module.exports = {
             .where('Usuario.IdUsuario', id)
             .update({IdTipoUsuario: 2})
 
-            //const newToken  = await knex('Usuario')
-            //.select('Usuario.IdUsuario', 'Usuario.IdTipoUsuario', 'Fornecedor.IdFornecedor')
-            //.join('Fornecedor', 'Fornecedor.IdUsuario', '=', 'Usuario.IdUsuario')
-            //.where('Usuario.IdUsuario', id)
+            const newToken  = await knex('Usuario')
+            .select('Usuario.IdUsuario', 'Usuario.IdTipoUsuario', 'Fornecedor.IdFornecedor')
+            .join('Fornecedor', 'Fornecedor.IdUsuario', '=', 'Usuario.IdUsuario')
+            .where('Usuario.IdUsuario', id)
 
-            //const tokenFornecedor = jwt.sign({_id: newToken}, 'Hu3Lit6NrOpl9Um')
-            //res.header('auth-token', tokenFornecedor).send(tokenFornecedor)
-            return res.json({message: 'Upgrade Concluido!'});
+            const tokenFornecedor = jwt.sign({_id: newToken}, 'Hu3Lit6NrOpl9Um')
+            res.header('auth-token', tokenFornecedor).send(tokenFornecedor)
+            //return res.status(200).send({message: 'Upgrade Concluido!'});
         } catch (err) {
             return res.status(500)
         }
