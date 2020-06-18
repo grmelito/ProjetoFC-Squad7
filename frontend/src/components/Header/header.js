@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/img/logoAtualizada.png';
+import logo from '../../assets/img/LogoAtualizada.PNG';
 import '../../assets/css/reset.css';
 import '../../assets/css/header.css';
 
