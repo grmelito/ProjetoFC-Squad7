@@ -25,13 +25,13 @@ INSERT INTO Cidades (IdEstado, CidadeNome) values (4, 'Balneário Camboriú');
 -- SELECT * FROM Cidades where IdEstado = 1;
 
 -- Inserts da tabela Endereco
-INSERT INTO Endereco (Cep, Bairro, Rua, Numero, IdCidade) values ('04236-094', 'Cidade Nova Heliópolis', 'Rua 2 de Fevereiro', 379, 1);
-INSERT INTO Endereco (Cep, Bairro, Rua, Numero, IdCidade) values ('03047-000', 'Brás', 'Rua 21 de Abril', 99, 1);
-INSERT INTO Endereco (Cep, Bairro, Rua, Numero, IdCidade) values ('11010-091', 'Centro', 'Rua Frei Gaspar', 15, 2);
-INSERT INTO Endereco (Cep, Bairro, Rua, Numero, IdCidade) values ('11075-671', 'Campo Grande', 'Rua Carlos Gomes', 164, 2);
-INSERT INTO Endereco (Cep, Bairro, Rua, Numero, IdCidade) values ('24020-065', 'Centro', 'Rua Coronel Gomes Machado', 178, 3);
-INSERT INTO Endereco (Cep, Bairro, Rua, Numero, IdCidade) values ('38400-058', 'Lídice', 'Avenida Rio Branco', 80, 5);
-INSERT INTO Endereco (Cep, Bairro, Rua, Numero, IdCidade) values ('88330-033', 'Centro', 'Avenida Atlântica', 5022, 8);
+INSERT INTO Endereco (Cep, Bairro, Rua, Numero, Complemento, IdCidade) values ('04236-094', 'Cidade Nova Heliópolis', 'Rua 2 de Fevereiro', 379, 'APTO 82', 1);
+INSERT INTO Endereco (Cep, Bairro, Rua, Numero, Complemento, IdCidade) values ('03047-000', 'Brás', 'Rua 21 de Abril', 99, 'Cs 4', 1);
+INSERT INTO Endereco (Cep, Bairro, Rua, Numero, Complemento, IdCidade) values ('11010-091', 'Centro', 'Rua Frei Gaspar', 15, 'APTO 18', 2);
+INSERT INTO Endereco (Cep, Bairro, Rua, Numero, Complemento, IdCidade) values ('11075-671', 'Campo Grande', 'Rua Carlos Gomes', 164, 'Cs 2', 2);
+INSERT INTO Endereco (Cep, Bairro, Rua, Numero, Complemento, IdCidade) values ('24020-065', 'Centro', 'Rua Coronel Gomes Machado', 178, 'APTO 23', 3);
+INSERT INTO Endereco (Cep, Bairro, Rua, Numero, Complemento, IdCidade) values ('38400-058', 'Lídice', 'Avenida Rio Branco', 80, 'Cs 1', 5);
+INSERT INTO Endereco (Cep, Bairro, Rua, Numero, Complemento, IdCidade) values ('88330-033', 'Centro', 'Avenida Atlântica', 5022, 'APTO 8', 8);
 -- SELECT * FROM Endereco;
 
 -- Inserts da tabela TipoUsuario
