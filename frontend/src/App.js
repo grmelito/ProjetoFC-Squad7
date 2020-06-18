@@ -1,5 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
 import Header from './components/Header/Header'
 import Footer from './components/Footer/footer';
 import '../../assets/css/style.css';
@@ -12,16 +11,15 @@ import botaoServicos from './assets/img/manutencao.svg'
 import botaoVestuario from './assets/img/vestuaria.svg'
 import botaoEsporte from './assets/img/esporte.svg'
 import banner from './assets/img/BannerHome.svg'
-=======
+
 import Header from './components/Header/header'
 import Footer from './components/Footer/footer'
->>>>>>> 0e9b5fd77378f173fb35961ef092ac9b64b26a07
 
 function App() {
   return (
     <div>
       <Header/>
-<<<<<<< HEAD
+
         <section id="banner-home"> 
         <div class="container-fluid">
                 
@@ -89,9 +87,9 @@ function App() {
             
         
         <Footer/>
-=======
+
       <Footer/>
->>>>>>> 0e9b5fd77378f173fb35961ef092ac9b64b26a07
+
     </div>
   );
 }
