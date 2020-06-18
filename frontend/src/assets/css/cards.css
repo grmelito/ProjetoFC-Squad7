@@ -1,0 +1,130 @@
+.card{
+    font-weight: 400;
+    border: 0;box-shadow:  0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,0.125);
+    border-radius: .25rem;
+    width: 15rem;
+    
+}
+/* Imagem */
+.view{
+    cursor: default;
+}
+.view img{
+    position: relative;
+    display: block;
+}
+
+.card-img, .card-img-top {
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.card-img, .card-img-top, .card-img-bottom {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.rgba-white-slight, .rgba-white-slight:after {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* Card */
+
+.card-body {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-radius: 0 !important;
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+    box-sizing: border-box;
+}
+
+.card-title {
+    margin-bottom: .75rem;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.card .card-body .card-text {
+    font-size: .9rem;
+    font-weight: 400;
+    color: #747373;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px
+}
+
+.black-text {
+    color: #000 !important;
+}
+
+.justify-content-end {
+    -ms-flex-pack: end !important;
+    justify-content: flex-end !important;
+}
+
+.d-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+
+a {
+       text-decoration: none;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.fa, .fas {
+    font-weight: 900;
+}
+
+.fa{
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+
+.justify-content-around {
+    -ms-flex-pack: distribute !important;
+    justify-content: space-around !important;
+  }
+    
+
+ 

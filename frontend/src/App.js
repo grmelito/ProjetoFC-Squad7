@@ -1,19 +1,19 @@
 import React from 'react';
-import Header from './components/Header/Header'
+import Header from './components/Header/header';
 import Footer from './components/Footer/footer';
-import '../../assets/css/style.css';
-import botaoAlimentacao from './assets/img/alimentacao.svg'
-import botaoArtesanato from './assets/img/artesanato.svg'
-import botaoCasa from './assets/img/casa.svg'
-import botaoAulas from './assets/img/cursos.svg'
-import botaoEletronicos from './assets/img/eletronicos.svg'
-import botaoServicos from './assets/img/manutencao.svg'
-import botaoVestuario from './assets/img/vestuaria.svg'
-import botaoEsporte from './assets/img/esporte.svg'
-import banner from './assets/img/BannerHome.svg'
+import Cards from './components/Cards/cards';
+import './assets/css/style.css'
+//importação das imagens
+import botaoAlimentacao from './assets/img/alimentacao.svg';
+import botaoArtesanato from './assets/img/artesanato.svg';
+import botaoCasa from './assets/img/casa.svg';
+import botaoAulas from './assets/img/cursos.svg';
+import botaoEletronicos from './assets/img/eletronicos.svg';
+import botaoServicos from './assets/img/manutencao.svg';
+import botaoVestuario from './assets/img/vestuaria.svg';
+import botaoEsporte from './assets/img/esporte.svg';
+import banner from './assets/img/BannerHome.png';
 
-import Header from './components/Header/header'
-import Footer from './components/Footer/footer'
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
       <Header/>
 
         <section id="banner-home"> 
-        <div class="container-fluid">
+        <div class="">
                 
                 <div class="banner">
                     <img src={banner}/>
@@ -83,12 +83,8 @@ function App() {
 
             </div>
         </section>
-
-            
-        
+        <Cards/>
         <Footer/>
-
-      <Footer/>
 
     </div>
   );

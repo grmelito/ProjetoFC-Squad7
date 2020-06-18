@@ -18,7 +18,7 @@ function Footer(){
                         <li><a href="#">Sobre Nós</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4  text-footer text-left">
+                <div class="col-md-4  text-footer text-left text-white">
                     <p>© Bussines Friend Atividades de Internet Ltda. Avenida
                         Paulista, 1046, Bela Vista - 00400-001 -
                         São Paulo, SP</p>

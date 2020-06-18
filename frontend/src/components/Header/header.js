@@ -9,7 +9,7 @@ function Header() {
     return (
         <div>
             <header>
-                <div className="menu-header-home">
+                <div className="menu-header-home container-fluid">
                     <div className="logo-header">
                         <a href="#"><img src={logo} alt="bfriend" /></a>
                     </div>
