@@ -26,6 +26,7 @@ Cep varchar(10) unique,
 Bairro varchar(200),
 Rua varchar(200),
 Numero int,
+Complemento varchar(20),
 IdCidade int,
 foreign key (IdCidade) references Cidades(IdCidade)
 );

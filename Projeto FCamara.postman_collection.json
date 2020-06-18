@@ -128,7 +128,13 @@
 					"name": "Listar Usuarios",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6NCwiSWRUaXBvVXN1YXJpbyI6Mn1dLCJpYXQiOjE1OTIzNTA1OTl9.ncCT8EOVEWRSIsGhwlvPuZezgLHcylN2z0H288liKew",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:3333/usuarios",
 							"protocol": "http",
@@ -147,17 +153,173 @@
 					"name": "Listar Perfil de Usuario",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "auth-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MiwiSWRUaXBvVXN1YXJpbyI6Mn1dLCJpYXQiOjE1OTI0MTA4MTZ9.J8702HQhVKOAwMJVgEIsVnLfzDF0AsXa_KYCyVvLheM"
+							}
+						],
 						"url": {
-							"raw": "http://localhost:3333/profile/1",
+							"raw": "http://localhost:3333/profile",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3333",
 							"path": [
-								"profile",
-								"1"
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Email\": \"Ryze@gmail.com\",\r\n    \"Senha\": \"Ryze123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criando Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Nome\": \"Carlos Kaka\",\r\n    \"Email\": \"CarlosK2222@gmail.com\",\r\n    \"Senha\": \"carlos123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Perfil do Usuario",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MiwiSWRUaXBvVXN1YXJpbyI6Mn1dLCJpYXQiOjE1OTI0MTA4MTZ9.J8702HQhVKOAwMJVgEIsVnLfzDF0AsXa_KYCyVvLheM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Nome\": \"Carla Teixeira Dias\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/update/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"update",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Requests Fornecedor",
+			"item": [
+				{
+					"name": "Listar Fornecedores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/fornecedores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"fornecedores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upgrade Conta Fornecedor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6NiwiSWRUaXBvVXN1YXJpbyI6MX1dLCJpYXQiOjE1OTI0MzUyODR9.E0uxz8LGgph-yicFeU5SIxvJ44CP5HVBh7eKB2H4UTA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"CPFouCNPJ\": \"55268925413\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/upgrade/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"upgrade",
+								"usuario"
 							]
 						}
 					},
