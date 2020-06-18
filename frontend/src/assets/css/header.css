@@ -1,0 +1,59 @@
+
+
+
+
+
+
+/* Header Home - Inicio */
+header{
+    height:130px ;  
+    width: 100%;
+}
+
+.menu-header-home{
+    width: 1200px;
+    margin: 0 auto;
+	padding: 40px 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.btn-cadastro-header{
+    background:#EC0058;
+    border-color:#DFDFDF;
+    border-radius: 1.5rem;
+    color: #ffffff;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1rem;
+    border: 1px solid transparent;
+    margin-right: 30px;
+}
+
+.btn-entrar-header{
+    background: #fFFFFF;
+    border-color:#0f1570;
+    border-radius: 1.5rem;
+    color: #0f1570;
+    text-align: center;
+    font-style: bold;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+
+
+/* Header Home - Fim */
+
