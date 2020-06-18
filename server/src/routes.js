@@ -26,6 +26,7 @@ routes.post('/upgrade/usuario', verifyToken, FornecedorController.upgradeFornece
 routes.get('/anuncio', verifyToken, AnuncioController.index)
 routes.get('/anuncios', AnuncioController.indexPage)
 routes.get('/anuncios/categoria/:id', AnuncioController.indexCategoria)
+routes.post('/anuncio', verifyToken, AnuncioController.createAnuncio)
 
 routes.post('/testeupload', upload.single('file'), (req, res) => {
     console.log(req.file);
