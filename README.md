@@ -51,6 +51,8 @@ npm start
 
 ## Links
 
+Protótipo UX do projeto: https://xd.adobe.com/view/7d4a14e8-2a3b-47ba-7c5c-c2095d4a9da5-0b7b/?fullscreen&hints=off
+
 Conteúdo UX do projeto: https://drive.google.com/drive/folders/1X2AwiIXV3PA9H9J5HWqxruPxYHX5f39B?usp=sharing
 
 Trello UX Squad#7: https://trello.com/b/U4lAJfY1/fcamara-squad7

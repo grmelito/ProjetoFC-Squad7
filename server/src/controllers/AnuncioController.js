@@ -8,9 +8,10 @@ module.exports = {
     },
 
     async indexPage(req, res) {
-        const {page = 1} = req.query
+        try {
+            const {page = 1} = req.query
 
-        const results = await knex('Anuncio')
+            const results = await knex('Anuncio')
             .limit(5)
             .offset((page - 1) * 5)
             .select([
@@ -20,24 +21,33 @@ module.exports = {
                 'Anuncio.IdCategoria',
                 'Anuncio.IdFornecedor']);
 
-        return res.json(results);
+            return res.json(results);
+        } catch(err) {
+            return res.status(500)
+        }
+        
     },
 
     async indexCategoria(req, res) {
-        const { id } = req.params
-        const {page = 1} = req.query
+        try {
+            const { id } = req.params
+            const {page = 1} = req.query
 
-        const results = await knex('Anuncio')
-            .limit(5)
-            .offset((page - 1) * 5)
-            .select([
-                'Anuncio.IdAnuncio',
-                'Anuncio.Titulo',
-                'Anuncio.ImagemAnuncio',
-                'Anuncio.IdCategoria',
-                'Anuncio.IdFornecedor'
-            ]).where('Anuncio.IdCategoria', id);
+            const results = await knex('Anuncio')
+                .limit(5)
+                .offset((page - 1) * 5)
+                .select([
+                    'Anuncio.IdAnuncio',
+                    'Anuncio.Titulo',
+                    'Anuncio.ImagemAnuncio',
+                    'Anuncio.IdCategoria',
+                    'Anuncio.IdFornecedor'
+                ]).where('Anuncio.IdCategoria', id);
 
-        return results = res.json(results)
+            return results = res.json(results)
+        } catch(err){
+            return res.status(500)
+        }
+        
     }
 }

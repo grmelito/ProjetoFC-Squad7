@@ -26,6 +26,7 @@ Cep varchar(10) unique,
 Bairro varchar(200),
 Rua varchar(200),
 Numero int,
+Complemento varchar(20),
 IdCidade int,
 foreign key (IdCidade) references Cidades(IdCidade)
 );
@@ -44,7 +45,7 @@ DataNascimento date,
 Genero varchar(15),
 ImagemUsuario varchar(200),
 IdTipoUsuario int,
-IdEndereco int not null,
+IdEndereco int,
 foreign key (IdTipoUsuario) references TipoUsuario(IdTipoUsuario),
 foreign key (IdEndereco) references Endereco(IdEndereco)
 );
