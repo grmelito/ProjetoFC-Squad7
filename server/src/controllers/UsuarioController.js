@@ -105,13 +105,15 @@ module.exports = {
         const Genero = req.body.Genero
         const Nome = req.body.Nome
         const Senha = req.body.Senha
+        const DataNascimento = req.body.DataNascimento
 
         const dataUser = await knex('Usuario')
         .where('Usuario.IdUsuario ', id) 
         .update({
             Genero: Genero,
             Nome: Nome,
-            Senha: Senha
+            Senha: Senha,
+            DataNascimento: DataNascimento
         })
         return res.json({message: "Informações alteradas!"})
 
