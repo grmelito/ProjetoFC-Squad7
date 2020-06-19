@@ -4,11 +4,14 @@
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  background-color: #0f1570;;
+  background-color: #0f1570;
+  max-width: 100%;
+  height: 7.5rem;
 }
 
 .my-4 {
   margin-top: 1.5rem !important;
+  margin-bottom: 0rem !important;
 }
 
 .row {
@@ -18,6 +21,7 @@
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+  
 }
 
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col,
@@ -69,4 +73,6 @@
 
 .iconesRede img{
   height: 50px;
+  
 }
+
