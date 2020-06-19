@@ -65,6 +65,11 @@ module.exports = {
         .select('Usuario.IdUsuario', 'Usuario.IdTipoUsuario')
         .where({Email: emailReq}) 
 
+        const fornecedor_id  = await knex('Usuario')
+        .select('Usuario.IdUsuario', 'Usuario.IdTipoUsuario', 'Fornecedor.IdFornecedor')
+        .join('Fornecedor', 'Fornecedor.IdUsuario', '=', 'Usuario.IdUsuario')
+        .where({Email: emailReq})
+
         const userData = await knex('Usuario')
         .where( {Email: emailReq} )
         .select(['Usuario.Senha', 'Usuario.IdUsuario'])
@@ -76,8 +81,13 @@ module.exports = {
 
             const pass = result[0].Senha;
             if(passwordReq === pass){
-                const token = jwt.sign({_id: user_id}, 'Hu3Lit6NrOpl9Um')
-                res.header('auth-token', token).send(token)
+                if(user_id[0].IdTipoUsuario !== 2 ){
+                    const token = jwt.sign({_id: user_id}, 'Hu3Lit6NrOpl9Um')
+                    res.header('auth-token', token).send(token)
+                } else {
+                    const token = jwt.sign({_id: fornecedor_id}, 'Hu3Lit6NrOpl9Um')
+                    res.header('auth-token', token).send(token)
+                }
                 //return res.send({message: "Usuário logado!"})
             } else {
                 return res.status(400).send({error: "Email ou senha inválidos!"})
