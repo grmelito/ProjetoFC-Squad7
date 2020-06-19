@@ -23,7 +23,7 @@ routes.put('/update/profile', verifyToken, UsuarioController.updateUser);
 routes.get('/fornecedores', FornecedorController.index)
 routes.post('/upgrade/usuario', verifyToken, FornecedorController.upgradeFornecedor)
 
-routes.get('/anuncio', verifyToken, AnuncioController.index)
+routes.get('/anuncio/:id', AnuncioController.showAnuncio)
 routes.get('/anuncios', AnuncioController.indexPage)
 routes.get('/anuncios/categoria/:id', AnuncioController.indexCategoria)
 routes.post('/anuncio', verifyToken, AnuncioController.createAnuncio)

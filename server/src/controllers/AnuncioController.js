@@ -73,5 +73,22 @@ module.exports = {
             });
             return res.json({message: 'Anuncio cadastrado!'})
 
+    }, 
+    async showAnuncio(req, res){
+        const {id} = req.params
+
+        const results = await knex('Anuncio')
+        .select(['Anuncio.Titulo',
+        'Anuncio.Descricao',
+        'Anuncio.ImagemAnuncio',
+        'Anuncio.Telefone',
+        'Anuncio.Instagram',
+        'Anuncio.Facebook',
+        'Anuncio.Site',
+        'Categorias.CategoriaNome'])
+        .join('Categorias', 'Categorias.IdCategoria','=', 'Anuncio.IdCategoria')
+        .where('Anuncio.IdAnuncio', id)
+
+        return res.json(results)
     }
 }
