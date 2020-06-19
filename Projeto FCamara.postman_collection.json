@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "b178b1c8-6721-48a7-9023-655ad5fa75f0",
+		"_postman_id": "854a4693-3a50-4466-9d6d-7b81a16afb09",
 		"name": "Projeto FCamara",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -69,6 +69,17 @@
 									"value": "1"
 								}
 							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastro de Anuncio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
 						}
 					},
 					"response": []
