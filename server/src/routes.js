@@ -19,6 +19,7 @@ routes.get('/profile', verifyToken, UsuarioController.showProfile)
 routes.post('/login', UsuarioController.loginUser)
 routes.post('/register', UsuarioController.createUser);
 routes.put('/update/profile', verifyToken, UsuarioController.updateUser);
+routes.put('/update/profile/image', verifyToken, upload.single('file'), UsuarioController.updateImage)
 
 routes.get('/fornecedores', FornecedorController.index)
 routes.post('/upgrade/usuario', verifyToken, FornecedorController.upgradeFornecedor)
