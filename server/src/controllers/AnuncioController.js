@@ -58,13 +58,14 @@ module.exports = {
         const decoded = jwt.decode(token, 'Hu3Lit6NrOpl9Um')
         const id = decoded._id[0].IdFornecedor;
         
-        const data = { Titulo, Descricao, ImagemAnuncio, Telefone, Instagram, Facebook, Site, IdCategoria } = req.body
-        
+        const data = { Titulo, Descricao, Telefone, Instagram, Facebook, Site, IdCategoria } = req.body
+        const imagem = req.file.filename
+
         const results = await knex('Anuncio')
             .insert({
                 Titulo,
                 Descricao,
-                ImagemAnuncio,
+                ImagemAnuncio: imagem,
                 Telefone,
                 Instagram,
                 Facebook,
