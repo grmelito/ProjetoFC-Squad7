@@ -14,7 +14,12 @@ module.exports = {
             const decoded = jwt.decode(token, 'Hu3Lit6NrOpl9Um')
             const id = decoded._id[0].IdUsuario;
 
-            const results = await knex('Usuario')
+            const existEndereco = await knex('Usuario')
+            .select(['Usuario.IdEndereco'])
+            .where('Usuario.IdUsuario', id);
+
+            if (existEndereco[0].IdEndereco != null) {
+                const results = await knex('Usuario')
                 .select([
                     'Usuario.Nome','Usuario.Email',
                     'Usuario.DataNascimento','Usuario.Genero',
@@ -27,13 +32,22 @@ module.exports = {
                 .join('Estados', 'Estados.IdEstado', '=', 'Cidades.IdEstado')
                 .where('Usuario.IdUsuario', id);
 
-            return results = res.json(results)
+                return results = res.json(results)
+            } else {
+                const resultsLess = await knex('Usuario')
+                .select([
+                    'Usuario.Nome','Usuario.Email',
+                    'Usuario.DataNascimento','Usuario.Genero',
+                    'Usuario.ImagemUsuario'])
+                .where('Usuario.IdUsuario', id);
+
+                return resultsLess = res.json(resultsLess)
+            }
         } catch (err) {
             return res.status(500)
         }
     },
         
-
     async createUser(req, res) {
         //const emailExiste = await knex('Usuario')
            // .select(['Usuario.Email'])
