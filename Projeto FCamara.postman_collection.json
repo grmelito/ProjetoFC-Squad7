@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "854a4693-3a50-4466-9d6d-7b81a16afb09",
+		"_postman_id": "b178b1c8-6721-48a7-9023-655ad5fa75f0",
 		"name": "Projeto FCamara",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -8,6 +8,26 @@
 		{
 			"name": "Requests Anuncio",
 			"item": [
+				{
+					"name": "Listar Anuncio Especifico",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/anuncio/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"anuncio",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
 				{
 					"name": "Listar Anuncio por Categoria",
 					"request": {
@@ -24,25 +44,6 @@
 								"anuncios",
 								"categoria",
 								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Listar Anuncios",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3333/anuncio",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"anuncio"
 							]
 						}
 					},
@@ -74,12 +75,74 @@
 					"response": []
 				},
 				{
-					"name": "Cadastro de Anuncio",
+					"name": "Cadastrar Anuncio",
 					"request": {
-						"method": "GET",
-						"header": [],
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MiwiSWRUaXBvVXN1YXJpbyI6MiwiSWRGb3JuZWNlZG9yIjoxfV0sImlhdCI6MTU5MjU5NDM5N30.uqWKSEJjUg1uNEY5ay0q6Osbcnp44qn-pphy5t6uQys",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Titulo\": \"Açougue Pague menos\",\r\n    \"Descricao\": \"Casa de carnes e frangos com delivery de pronta entrega.\",\r\n    \"ImagemAnuncio\": \"fake-image\",\r\n    \"Telefone\": \"1399562841\",\r\n    \"Instagram\": \"pague.menos\",\r\n    \"Facebook\": \"\",\r\n    \"Site\": \"http://www.açouguePagueMenos.com.br\",\r\n    \"IdCategoria\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": ""
+							"raw": "http://localhost:3333/anuncio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"anuncio"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Anuncio",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MTAsIklkVGlwb1VzdWFyaW8iOjIsIklkRm9ybmVjZWRvciI6MTJ9LHsiSWRVc3VhcmlvIjoxMCwiSWRUaXBvVXN1YXJpbyI6MiwiSWRGb3JuZWNlZG9yIjoxM31dLCJpYXQiOjE1OTI4NTM5NDN9.8E0BU87Rc0IRtcuAluqlQoGV5raeg96-MxdpxVhK8cg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Titulo",
+									"value": "",
+									"type": "text"
+								}
+							],
+							"options": {
+								"formdata": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/update/anuncio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"update",
+								"anuncio"
+							]
 						}
 					},
 					"response": []
@@ -142,7 +205,7 @@
 						"header": [
 							{
 								"key": "auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6NCwiSWRUaXBvVXN1YXJpbyI6Mn1dLCJpYXQiOjE1OTIzNTA1OTl9.ncCT8EOVEWRSIsGhwlvPuZezgLHcylN2z0H288liKew",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MTEsIklkVGlwb1VzdWFyaW8iOjF9XSwiaWF0IjoxNTkyNTIwNTEzfQ.6Cr03LptbuuX69FmhKnPJx7IelfpZ5lRYF_u66FWVI8",
 								"type": "text"
 							}
 						],
@@ -168,7 +231,7 @@
 							{
 								"key": "auth-token",
 								"type": "text",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MiwiSWRUaXBvVXN1YXJpbyI6Mn1dLCJpYXQiOjE1OTI0MTA4MTZ9.J8702HQhVKOAwMJVgEIsVnLfzDF0AsXa_KYCyVvLheM"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MTEsIklkVGlwb1VzdWFyaW8iOjIsIklkRm9ybmVjZWRvciI6MTR9XSwiaWF0IjoxNTkyNTIwNTIyfQ.LDGwWVCL9dPoPX0HzKhWa6OpWwbFbXbZw-Cbwd9R8ZM"
 							}
 						],
 						"url": {
@@ -192,7 +255,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Email\": \"Ryze@gmail.com\",\r\n    \"Senha\": \"Ryze123\"\r\n}",
+							"raw": "{\r\n    \"Email\": \"GabrielRuiz@gmail.com\",\r\n    \"Senha\": \"Gabriel123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -220,7 +283,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Nome\": \"Carlos Kaka\",\r\n    \"Email\": \"CarlosK2222@gmail.com\",\r\n    \"Senha\": \"carlos123\"\r\n}",
+							"raw": "{\r\n    \"Nome\": \"Luciano\",\r\n    \"Email\": \"luciano@gmail.com\",\r\n    \"Senha\": \"luci123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -248,13 +311,13 @@
 						"header": [
 							{
 								"key": "auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MiwiSWRUaXBvVXN1YXJpbyI6Mn1dLCJpYXQiOjE1OTI0MTA4MTZ9.J8702HQhVKOAwMJVgEIsVnLfzDF0AsXa_KYCyVvLheM",
-								"type": "text"
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MTIsIklkVGlwb1VzdWFyaW8iOjF9XSwiaWF0IjoxNTkyNjgzOTY2fQ.vrT4tUKjzbPvOElj_10usKkka_7QXwwSFh-XwKqoH9Q"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Nome\": \"Carla Teixeira Dias\"\r\n}",
+							"raw": "{\r\n    \"Nome\": \"Luciano Forman\",\r\n    \"Genero\": \"M\",\r\n    \"DataNascimento\": \"1999-05-15\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -271,6 +334,46 @@
 							"path": [
 								"update",
 								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Imagem Usuario",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6OSwiSWRUaXBvVXN1YXJpbyI6MiwiSWRGb3JuZWNlZG9yIjoxMH0seyJJZFVzdWFyaW8iOjksIklkVGlwb1VzdWFyaW8iOjIsIklkRm9ybmVjZWRvciI6MTF9XSwiaWF0IjoxNTkyODQ3NDU2fQ.HfEhIyauNtmS5jT8JdG_g8jQmoz5EPXCZl7eDxGBUts"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/grmel/Downloads/PFP-Test.jpg"
+								}
+							],
+							"options": {
+								"formdata": {}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/update/profile/image",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"update",
+								"profile",
+								"image"
 							]
 						}
 					},
@@ -308,13 +411,13 @@
 						"header": [
 							{
 								"key": "auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6NiwiSWRUaXBvVXN1YXJpbyI6MX1dLCJpYXQiOjE1OTI0MzUyODR9.E0uxz8LGgph-yicFeU5SIxvJ44CP5HVBh7eKB2H4UTA",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MTEsIklkVGlwb1VzdWFyaW8iOjF9XSwiaWF0IjoxNTkyNTIwNTEzfQ.6Cr03LptbuuX69FmhKnPJx7IelfpZ5lRYF_u66FWVI8",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"CPFouCNPJ\": \"55268925413\"\r\n}",
+							"raw": "{\r\n    \"CPFouCNPJ\": \"22231454708\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
