@@ -57,10 +57,12 @@ img {
     min-height: 1px;
     padding: 1.25rem;
     box-sizing: border-box;
+    
 }
 
 .card-title {
     margin-bottom: .75rem;
+    
 }
 
 hr {
@@ -73,7 +75,7 @@ hr {
 .card .card-body .card-text {
     font-size: .9rem;
     font-weight: 400;
-    color: #747373;
+    color: #000;
 }
 p {
     margin-top: 0;
@@ -125,6 +127,8 @@ a {
     -ms-flex-pack: distribute !important;
     justify-content: space-around !important;
   }
+
+ 
     
 
  
