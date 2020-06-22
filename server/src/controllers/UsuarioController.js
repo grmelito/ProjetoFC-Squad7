@@ -143,6 +143,33 @@ module.exports = {
         .update({ ImagemUsuario: Imagem })
 
         return res.json({message: 'Imagem alterada com sucesso!'})
+    },
+
+    async createEndereco (req, res) {
+        try {
+            const token = req.header('auth-token');
+            const decoded = jwt.decode(token, 'Hu3Lit6NrOpl9Um')
+            const id = decoded._id[0].IdUsuario;
+
+            const data = { Cep, Bairro, Rua, Numero, Complemento, IdCidade } = req.body;
+            const results = await knex('Endereco')
+            .insert({
+                Cep,
+                Bairro,
+                Rua,
+                Numero,
+                Complemento,
+                IdCidade
+            });
+
+            const updateUsuario = await knex('Usuario')
+            .where('Usuario.IdUsuario', id)
+            .update({ IdEndereco: results})
+
+            return res.json(results)
+        } catch (err) {
+            return res.send({error: 'Erro ao cadastrar endereço'})
+        }  
     }
 
 }
