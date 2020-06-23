@@ -23,7 +23,7 @@ routes.get('/fornecedores', FornecedorController.index)
 routes.post('/login', UsuarioController.loginUser)
 routes.post('/register', UsuarioController.createUser)
 routes.post('/upgrade/usuario', verifyToken, FornecedorController.upgradeFornecedor)
-routes.post('/anuncio', verifyToken, upload.single('file'), AnuncioController.createAnuncio)
+routes.post('/anuncio', verifyToken, upload.array('files', 4), AnuncioController.createAnuncio)
 routes.post('/create/endereco', verifyToken, UsuarioController.createEndereco)
 
 routes.put('/update/profile', verifyToken, UsuarioController.updateUser)

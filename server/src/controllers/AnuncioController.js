@@ -59,13 +59,14 @@ module.exports = {
         const id = decoded._id[0].IdFornecedor;
         
         const data = { Titulo, Descricao, Telefone, Instagram, Facebook, Site, IdCategoria } = req.body
-        const imagem = req.file.filename
+        const arrayImages = req.files[0]
+        const ImageName = req.files.filename 
 
         const results = await knex('Anuncio')
             .insert({
                 Titulo,
                 Descricao,
-                ImagemAnuncio: imagem,
+                ImagemAnuncio: ImageName,
                 Telefone,
                 Instagram,
                 Facebook,
