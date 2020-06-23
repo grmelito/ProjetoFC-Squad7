@@ -166,7 +166,7 @@ module.exports = {
             .where('Usuario.IdUsuario', id)
             .update({ IdEndereco: results})
 
-            return res.json(results)
+            return res.json({message: 'Endereço cadastrado com sucesso!'})
         } catch (err) {
             return res.status(400).send({error: 'Erro ao cadastrar endereço'})
         }  

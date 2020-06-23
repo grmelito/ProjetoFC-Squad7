@@ -34,7 +34,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/anuncios/categoria/1",
+							"raw": "http://localhost:3333/anuncios/categoria/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -43,7 +43,7 @@
 							"path": [
 								"anuncios",
 								"categoria",
-								"1"
+								"3"
 							]
 						}
 					},
@@ -55,7 +55,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/anuncios?page=1",
+							"raw": "http://localhost:3333/anuncios?page=2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -67,7 +67,7 @@
 							"query": [
 								{
 									"key": "page",
-									"value": "1"
+									"value": "2"
 								}
 							]
 						}
@@ -81,17 +81,65 @@
 						"header": [
 							{
 								"key": "auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MiwiSWRUaXBvVXN1YXJpbyI6MiwiSWRGb3JuZWNlZG9yIjoxfV0sImlhdCI6MTU5MjU5NDM5N30.uqWKSEJjUg1uNEY5ay0q6Osbcnp44qn-pphy5t6uQys",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MTMsIklkVGlwb1VzdWFyaW8iOjIsIklkRm9ybmVjZWRvciI6MTV9XSwiaWF0IjoxNTkyOTM1NzgxfQ.USkUYFzM3URQRv9VN5T2CGnNI2qcfidXGDmcrBeGHrk",
 								"type": "text"
 							}
 						],
 						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"Titulo\": \"Açougue Pague menos\",\r\n    \"Descricao\": \"Casa de carnes e frangos com delivery de pronta entrega.\",\r\n    \"ImagemAnuncio\": \"fake-image\",\r\n    \"Telefone\": \"1399562841\",\r\n    \"Instagram\": \"pague.menos\",\r\n    \"Facebook\": \"\",\r\n    \"Site\": \"http://www.açouguePagueMenos.com.br\",\r\n    \"IdCategoria\": 1\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Titulo",
+									"value": "Roupas Mormaii 2",
+									"type": "text"
+								},
+								{
+									"key": "Descricao",
+									"value": "Vendo roupas para esportes radicais e acessórios para esportes aquáticos.",
+									"type": "text"
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": [
+										"/C:/Users/grmel/Downloads/PFP-Test.jpg",
+										"/C:/Users/grmel/Downloads/Clark-Street-Mercantile.jpg"
+									]
+								},
+								{
+									"key": "Telefone",
+									"value": "13999241021",
+									"type": "text"
+								},
+								{
+									"key": "Instagram",
+									"value": "roupas.mormaii 2 ",
+									"type": "text"
+								},
+								{
+									"key": "Facebook",
+									"value": "MormaiiOficial 2",
+									"type": "text"
+								},
+								{
+									"key": "Site",
+									"value": "https://roupas-mormaii2.com.br",
+									"type": "text"
+								},
+								{
+									"key": "IdCategoria",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
 								}
+							],
+							"options": {
+								"formdata": {}
 							}
 						},
 						"url": {
@@ -115,8 +163,8 @@
 						"header": [
 							{
 								"key": "auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MTAsIklkVGlwb1VzdWFyaW8iOjIsIklkRm9ybmVjZWRvciI6MTJ9LHsiSWRVc3VhcmlvIjoxMCwiSWRUaXBvVXN1YXJpbyI6MiwiSWRGb3JuZWNlZG9yIjoxM31dLCJpYXQiOjE1OTI4NTM5NDN9.8E0BU87Rc0IRtcuAluqlQoGV5raeg96-MxdpxVhK8cg",
-								"type": "text"
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MTAsIklkVGlwb1VzdWFyaW8iOjIsIklkRm9ybmVjZWRvciI6MTJ9LHsiSWRVc3VhcmlvIjoxMCwiSWRUaXBvVXN1YXJpbyI6MiwiSWRGb3JuZWNlZG9yIjoxM31dLCJpYXQiOjE1OTI4NTM5NDN9.8E0BU87Rc0IRtcuAluqlQoGV5raeg96-MxdpxVhK8cg"
 							}
 						],
 						"body": {
@@ -124,8 +172,18 @@
 							"formdata": [
 								{
 									"key": "Titulo",
-									"value": "",
+									"value": "Game Stop 4",
 									"type": "text"
+								},
+								{
+									"key": "Descricao",
+									"value": "Loja de Jogos 2 ",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/grmel/Downloads/Clark-Street-Mercantile.jpg"
 								}
 							],
 							"options": {
@@ -231,7 +289,7 @@
 							{
 								"key": "auth-token",
 								"type": "text",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MTEsIklkVGlwb1VzdWFyaW8iOjIsIklkRm9ybmVjZWRvciI6MTR9XSwiaWF0IjoxNTkyNTIwNTIyfQ.LDGwWVCL9dPoPX0HzKhWa6OpWwbFbXbZw-Cbwd9R8ZM"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6OCwiSWRUaXBvVXN1YXJpbyI6MiwiSWRGb3JuZWNlZG9yIjo3fSx7IklkVXN1YXJpbyI6OCwiSWRUaXBvVXN1YXJpbyI6MiwiSWRGb3JuZWNlZG9yIjo4fSx7IklkVXN1YXJpbyI6OCwiSWRUaXBvVXN1YXJpbyI6MiwiSWRGb3JuZWNlZG9yIjo5fV0sImlhdCI6MTU5Mjk1MTc1MH0.If8UOSuJjTn8TJgnjqU34nPbpoQqa7extZuCRSGYpEw"
 							}
 						],
 						"url": {
@@ -255,7 +313,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Email\": \"GabrielRuiz@gmail.com\",\r\n    \"Senha\": \"Gabriel123\"\r\n}",
+							"raw": "{\r\n    \"Email\": \"CarlosKaka@gmail.com\",\r\n    \"Senha\": \"carlos123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -283,7 +341,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Nome\": \"Luciano\",\r\n    \"Email\": \"luciano@gmail.com\",\r\n    \"Senha\": \"luci123\"\r\n}",
+							"raw": "{\r\n    \"Nome\": \"Yuri Santos\",\r\n    \"Email\": \"yuri@gmail.com\",\r\n    \"Senha\": \"yuri123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -305,6 +363,41 @@
 					"response": []
 				},
 				{
+					"name": "Cadastrando Endereço",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6OCwiSWRUaXBvVXN1YXJpbyI6MiwiSWRGb3JuZWNlZG9yIjo3fSx7IklkVXN1YXJpbyI6OCwiSWRUaXBvVXN1YXJpbyI6MiwiSWRGb3JuZWNlZG9yIjo4fSx7IklkVXN1YXJpbyI6OCwiSWRUaXBvVXN1YXJpbyI6MiwiSWRGb3JuZWNlZG9yIjo5fV0sImlhdCI6MTU5Mjk1MTc1MH0.If8UOSuJjTn8TJgnjqU34nPbpoQqa7extZuCRSGYpEw"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Cep\": \"125448623\",\r\n    \"Bairro\": \"Centro\",\r\n    \"Rua\": \"Avenida Gaspar Junior\",\r\n    \"Numero\": \"152\",\r\n    \"Complemento\": \"Casa 5\",\r\n    \"IdCidade\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/create/endereco",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"create",
+								"endereco"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Atualizar Perfil do Usuario",
 					"request": {
 						"method": "PUT",
@@ -312,12 +405,12 @@
 							{
 								"key": "auth-token",
 								"type": "text",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MTIsIklkVGlwb1VzdWFyaW8iOjF9XSwiaWF0IjoxNTkyNjgzOTY2fQ.vrT4tUKjzbPvOElj_10usKkka_7QXwwSFh-XwKqoH9Q"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MTMsIklkVGlwb1VzdWFyaW8iOjF9XSwiaWF0IjoxNTkyOTM1NTA0fQ.z4Y1fNv0jVc3uRUe5rf9k2ZP5BhWvsPUIcPLDKmT05w"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Nome\": \"Luciano Forman\",\r\n    \"Genero\": \"M\",\r\n    \"DataNascimento\": \"1999-05-15\"\r\n}",
+							"raw": "{\r\n    \"Nome\": \"Yuri Silva Crefon\",\r\n    \"Genero\": \"M\",\r\n    \"DataNascimento\": \"1992-02-19\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -347,7 +440,7 @@
 							{
 								"key": "auth-token",
 								"type": "text",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6OSwiSWRUaXBvVXN1YXJpbyI6MiwiSWRGb3JuZWNlZG9yIjoxMH0seyJJZFVzdWFyaW8iOjksIklkVGlwb1VzdWFyaW8iOjIsIklkRm9ybmVjZWRvciI6MTF9XSwiaWF0IjoxNTkyODQ3NDU2fQ.HfEhIyauNtmS5jT8JdG_g8jQmoz5EPXCZl7eDxGBUts"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MTMsIklkVGlwb1VzdWFyaW8iOjIsIklkRm9ybmVjZWRvciI6MTV9XSwiaWF0IjoxNTkyOTM1NzgxfQ.USkUYFzM3URQRv9VN5T2CGnNI2qcfidXGDmcrBeGHrk"
 							}
 						],
 						"body": {
@@ -411,13 +504,13 @@
 						"header": [
 							{
 								"key": "auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MTEsIklkVGlwb1VzdWFyaW8iOjF9XSwiaWF0IjoxNTkyNTIwNTEzfQ.6Cr03LptbuuX69FmhKnPJx7IelfpZ5lRYF_u66FWVI8",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MTMsIklkVGlwb1VzdWFyaW8iOjF9XSwiaWF0IjoxNTkyOTM1NTA0fQ.z4Y1fNv0jVc3uRUe5rf9k2ZP5BhWvsPUIcPLDKmT05w",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"CPFouCNPJ\": \"22231454708\"\r\n}",
+							"raw": "{\r\n    \"CPFouCNPJ\": \"37191182735\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
