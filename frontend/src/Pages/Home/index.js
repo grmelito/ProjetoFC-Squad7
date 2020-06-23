@@ -17,78 +17,78 @@ import banner from '../../assets/img/Banner.png';
 
 function Home() {
     return (
-      <div>
-        <Header/>
-  
-          <section id="banner-home"> 
-          <div className="">
-                  
-                  <div className="hero-image">
-                      <img className="banner" src={banner}></img>
-                  </div>
-                  
-                  <div className="botoes">
-                      
-                      <div className="">
-                          <div className="d-flex justify-content-center icones">
-                              <a href="#"><img className="rounded-circle min" src={botaoServicos} alt="servicos diversos"/></a>
-                          </div>
-                          <p>Servicos Diversos </p>
-                      </div>
-  
-                      <div className="">
-                          <div className="d-flex justify-content-center icones">
-                              <a href="#"><img className="rounded-circle min" src={botaoEletronicos} alt="eletronicos e acessorios"/></a>
-                          </div>
-                          <p>Eletrônicos e Acessorios </p>
-                      </div>
-  
-                      <div className="">
-                          <div className="d-flex justify-content-center icones">
-                              <a href="#"><img className="rounded-circle min" src={botaoArtesanato} alt="artesanato"/></a>
-                          </div>
-                          <p>Artesanato </p>
-                      </div>
-                      <div className="">
-                          <div className="d-flex justify-content-center icones">
-                              <a href="#"><img className="rounded-circle min" src={botaoAulas} alt="aulas e consultorias"/></a>
-                          </div>
-                          <p>Aulas e Consultoria </p>
-                      </div>
-                      <div className="">
-                          <div className="d-flex justify-content-center icones">
-                              <a href="#"><img className="rounded-circle min" src={botaoCasa} alt="reparos domesticos"/></a>
-                          </div>
-                          <p>Reparos Domesticos </p>
-                      </div>
-                      <div className="">
-                          <div className="d-flex justify-content-center icones">
-                            <a href="#"><img className="rounded-circle min" src={botaoEsporte} alt="esporte e lazer"/></a>
-                          </div>
-                          <p>Esporte e Lazer </p>
-                      </div>
-  
-                      <div className="">
-                          <div className="d-flex justify-content-center icones">
-                              <a href="#"><img className="rounded-circle min" src={botaoVestuario} alt="vestuario"/></a>
-                          </div>
-                          <p>Vestuario </p>
-                      </div>
-                      <div className="">
-                          <div className="d-flex justify-content-center icones">
-                              <a href="#"><img className="rounded-circle min" src={botaoAlimentacao} alt="alimentacao"/></a>
-                          </div>
-                          <p>Alimentacao </p>
-                      </div>
-              </div>
-  
-              </div>
-          </section>
-          <Cards/>
-          <Footer/>
-  
-      </div>
+        <div>
+            <Header />
+
+            <section id="banner-home">
+                <div className="">
+
+                    <div className="hero-image">
+                        <img className="banner" src={banner}></img>
+                    </div>
+
+                    <div className="botoes">
+
+                        <div className="">
+                            <div className="d-flex justify-content-center icones">
+                                <a href="#card-serviços_lar"><img className="rounded-circle min" src={botaoServicos} alt="servicos diversos" /></a>
+                            </div>
+                            <p>Servicos Diversos </p>
+                        </div>
+
+                        <div className="">
+                            <div className="d-flex justify-content-center icones">
+                                <a href="#"><img className="rounded-circle min" src={botaoEletronicos} alt="eletronicos e acessorios" /></a>
+                            </div>
+                            <p>Eletrônicos e Acessorios </p>
+                        </div>
+
+                        <div className="">
+                            <div className="d-flex justify-content-center icones">
+                                <a href="#"><img className="rounded-circle min" src={botaoArtesanato} alt="artesanato" /></a>
+                            </div>
+                            <p>Artesanato </p>
+                        </div>
+                        <div className="">
+                            <div className="d-flex justify-content-center icones">
+                                <a href="#"><img className="rounded-circle min" src={botaoAulas} alt="aulas e consultorias" /></a>
+                            </div>
+                            <p>Aulas e Consultoria </p>
+                        </div>
+                        <div className="">
+                            <div className="d-flex justify-content-center icones">
+                                <a href="#card-Reparos"><img className="rounded-circle min" src={botaoCasa} alt="reparos domesticos" /></a>
+                            </div>
+                            <p>Reparos Domesticos </p>
+                        </div>
+                        <div className="">
+                            <div className="d-flex justify-content-center icones">
+                                <a href="#"><img className="rounded-circle min" src={botaoEsporte} alt="esporte e lazer" /></a>
+                            </div>
+                            <p>Esporte e Lazer </p>
+                        </div>
+
+                        <div className="">
+                            <div className="d-flex justify-content-center icones">
+                                <a href="#"><img className="rounded-circle min" src={botaoVestuario} alt="vestuario" /></a>
+                            </div>
+                            <p>Vestuario </p>
+                        </div>
+                        <div className="">
+                            <div className="d-flex justify-content-center icones">
+                                <a href="#card-alimentacao"><img className="rounded-circle min" src={botaoAlimentacao} alt="alimentacao" /></a>
+                            </div>
+                            <p>Alimentacao </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <Cards />
+            <Footer />
+
+        </div>
     );
-  }
-  
-  export default Home;
+}
+
+export default Home;
