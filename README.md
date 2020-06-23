@@ -1,3 +1,7 @@
+<h3 align="center">
+  <img src="/frontend/src/assets/img/LogoAtualizada.PNG">
+</h3>
+
 # ProjetoFC-Squad7
 Projeto do Squad 7 para o Programa de Formação FCamara.
 
@@ -6,7 +10,6 @@ Integrantes: [Ana Laura Feltrim](https://github.com/AnaLauraFeltrim) |
 [Erica Sobral](https://github.com/EricaSobral) |
 [Gabriel Ruiz](https://github.com/grmelito) |
 [Marcos Caridade](https://github.com/marcoskgithub) 
-
 
 ## Descrição do projeto
 Com o objetivo de buscar soluções para os problemas gerados pela pandemia global em 2020, especialmente nas formas de trabalho tradicionais em que o home office ainda é uma realidade distante, procuramos com este projeto entender o comportamento digital de quem consome e de quem vende e oferta produtos/serviços locais, para a partir daí, criar uma ferramenta tecnológica que possa melhorar a vida das pessoas durante e no pós pandemia. Através do processo de pesquisa implementado descobrimos que os pequenos negócios e serviços locais tiveram enorme queda de faturamento e uma das principais “dores” do setor estava relacionada diretamente a falta de investimento em tecnologia ou mídias que possam aproximar pessoas que estão perto dos negócios locais a encontrar e comprar os produtos ou serviços dessas pequenas empresas. 
