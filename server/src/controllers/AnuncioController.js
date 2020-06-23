@@ -25,7 +25,7 @@ module.exports = {
 
             return res.json(results);
         } catch(err) {
-            return res.status(500)
+            return res.status(500).send({error: 'Erro ao filtrar anuncios!'})
         }
         
     },
@@ -94,7 +94,8 @@ module.exports = {
         .where('Anuncio.IdAnuncio', id)
 
         return res.json(results)
-    }, 
+    },
+     
     async updateAnuncio(req, res){
         const token = req.header('auth-token');
         const decoded = jwt.decode(token, 'Hu3Lit6NrOpl9Um')

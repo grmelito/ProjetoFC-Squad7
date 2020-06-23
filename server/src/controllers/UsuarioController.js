@@ -44,7 +44,7 @@ module.exports = {
                 return resultsLess = res.json(resultsLess)
             }
         } catch (err) {
-            return res.status(500)
+            return res.status(500).send({error: 'Erro ao mostrar perfil!'})
         }
     },
         
@@ -90,7 +90,7 @@ module.exports = {
         .then(function(result){
             if(!result || !result[0]) {
 
-                return res.status(400).send({error: "Email não encontrado!"})
+                return res.status(400).send({error: "Email ou senha inválidos!"})
             }
 
             const pass = result[0].Senha;
@@ -168,7 +168,7 @@ module.exports = {
 
             return res.json(results)
         } catch (err) {
-            return res.send({error: 'Erro ao cadastrar endereço'})
+            return res.status(400).send({error: 'Erro ao cadastrar endereço'})
         }  
     }
 
