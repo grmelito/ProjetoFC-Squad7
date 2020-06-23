@@ -96,7 +96,7 @@ hr{
     align-items: center;
     border-radius: 0.5rem;
     max-width: 45rem;
-    margin-top: 2.5rem;
+    margin-top: 7rem;
     margin-bottom: 10rem;
   }
 
@@ -140,6 +140,35 @@ hr{
   .redirect{
     color: #04329B !important;
     
+  }
+
+  /* Fim da estilização do cadastro */
+
+
+  /* Estilização SOBRE */
+  h1{
+    font-size: 2.5rem;
+    color: #04329B;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 1rem;
+  }
+
+  .img-ilustrativa{
+    margin-top: 1.5rem;
+    display: flex;
+    margin-bottom: 2.5rem;
+    justify-content: center;
+  }
+
+  .txt-sobre{
+    font-size: 1.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #3D3F84;
+    margin-bottom: 1.5rem;
+  }
+
+  .pseudo-footer{
+    margin-bottom: 2.5rem;
   }
 
 
