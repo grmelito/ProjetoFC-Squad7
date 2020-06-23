@@ -115,21 +115,47 @@ module.exports = {
         const decoded = jwt.decode(token, 'Hu3Lit6NrOpl9Um')
         const id = decoded._id[0].IdUsuario;
 
-        const Genero = req.body.Genero
-        const Nome = req.body.Nome
-        const Senha = req.body.Senha
-        const DataNascimento = req.body.DataNascimento
+        const data = {Genero, Nome, Senha, DataNascimento} = req.body
 
-        const dataUser = await knex('Usuario')
-        .where('Usuario.IdUsuario ', id) 
-        .update({
-            Genero: Genero,
-            Nome: Nome,
-            Senha: Senha,
-            DataNascimento: DataNascimento,
+        if(!data){
+
+            const dataUser = await knex('Usuario')
+            .where('Usuario.IdUsuario ', id) 
+            .update({
+                Genero: req.body.Genero,
+                Nome: req.body.Nome,
+                Senha: req.body.Senha,
+                DataNascimento: req.body.DataNascimento,
+        })     
+            const endereco = await knex('Usuario')
+            .where('Usuario.IdUsuario', id)
+            .join('Endereco', 'Endereco.IdEndereco', '=', 'Usuario.IdEndereco')
+            .update({
+                Cep: req.body.Cep,
+                Bairro: req.body.Bairro,
+                Rua: req.body.Rua,
+                Numero: req.body.Numero,
+                Complemento: req.body.Complemento,
+                IdCidade: req.body.IdCidade,
         })
         return res.json({message: "Informações alteradas!"})
-    },
+        } 
+        
+        else{   
+            const endereco = await knex('Usuario')
+            .where('Usuario.IdUsuario', id)
+            .join('Endereco', 'Endereco.IdEndereco', '=', 'Usuario.IdEndereco')
+            .update({
+                Cep: req.body.Cep,
+                Bairro: req.body.Bairro,
+                Rua: req.body.Rua,
+                Numero: req.body.Numero,
+                Complemento: req.body.Complemento,
+                IdCidade: req.body.IdCidade,
+        })
+        return res.json({message: "Informações alteradas!"})       
+
+    }},
 
     async updateImage (req, res) {
         const token = req.header('auth-token');
