@@ -130,11 +130,13 @@ hr{
   }
 
   .logo{
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.5rem; 
   }
 
   .subtitulo{
     color: #04329B;
+    font-family: sans-serif;
+    font-weight: 1.5rem;
   }
 
   .redirect{
@@ -171,7 +173,142 @@ hr{
     margin-bottom: 2.5rem;
   }
 
+  /* Inicio Pagina Perfil */
 
+.container-perfil{
+  width: 100%;
+  height: 900px;
+  background: #DFDFDF;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
+}
+
+.box-perfil {
+ height: 750px;
+ background: #fff;
+ border-radius: 22px;
+   }
+input[type="file"]{
+  display: none;
+}
+
+.label-up{
+  color: #ffffff;
+  height: 100px;
+  width: 100px;
+  background: #DFDFDF;
+  margin-top: 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-can{
+  width: 40px;
+  height: 40px;
+  margin-right: 5px
+}
+   .up-img-perfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+  
+   .forms-perfil{
+     margin-top: 50px;
+   }
+.input-box-perfil{
+  margin: 18px;
+}
+#inputSelect{
+  width: 235px;
+  margin-left: 15px; 
+}
+
+.form-inline-perfil{
+  margin: 18px;
+}
+
+#endereco-number{
+  width: 200px;
+  margin-right: 10px;
+}
+
+#endereco-estado{
+  width: 170px;
+  margin-left: 10px;
+}
+
+#endereco-cidade{
+width: 250px;
+}
+
+.end-perfil{
+margin-top: 50px;
+}
+.p-perfil{
+  display: flex;
+  justify-content: center;
+}
+
+.p-btn{
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+.btn-perfil{
+  text-align: center;
+  color: #ffffff;
+   background:#EC0058;
+    border-radius: 80px;
+    height: 37px;
+    width: 170px;
+    border-style: none;
+}
+  /* Fim página perfil */
+
+  .form-grande {
+    display: block;
+    width: 100%;
+    height: 9rem;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.75rem;
+      
+  }
+
+  .form-div{
+    
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin-right: -5px;
+      margin-left: -5px;
+      justify-content: center;
+     
+  }
+
+  .mini-footer{
+    display: flex;
+    justify-content: center;
+  }
+
+  .foto-usuario{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem; 
+  }
+
+  
   
 
   

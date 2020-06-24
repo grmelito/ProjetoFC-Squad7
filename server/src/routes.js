@@ -28,6 +28,7 @@ routes.post('/register', UsuarioController.createUser)
 routes.post('/upgrade/usuario', verifyToken, FornecedorController.upgradeFornecedor)
 routes.post('/anuncio', verifyToken, upload.array('files', 4), AnuncioController.createAnuncio)
 routes.post('/create/endereco', verifyToken, UsuarioController.createEndereco)
+routes.post('/anuncio/:idAnuncio/comentario', verifyToken, AnuncioController.comentarioAnuncio)
 
 routes.put('/update/profile', verifyToken, UsuarioController.updateUser)
 routes.put('/update/profile/image', verifyToken, upload.single('file'), UsuarioController.updateImage)
