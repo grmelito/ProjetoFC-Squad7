@@ -87,8 +87,10 @@ IdComentario int primary key AUTO_INCREMENT,
 Comentario text,
 IdAnuncio int,
 IdUsuario int,
+IdFornecedor int,
 foreign key (IdAnuncio) references Anuncio(IdAnuncio),
-foreign key (IdUsuario) references Fornecedor(IdUsuario)
+foreign key (IdUsuario) references Fornecedor(IdUsuario),
+foreign key (IdFornecedor) references Anuncio(IdFornecedor)
 );
 
 -- drop database ProjetoFcamara
