@@ -59,8 +59,12 @@ module.exports = {
         const id = decoded._id[0].IdFornecedor;
         
         const data = { Titulo, Descricao, Telefone, Instagram, Facebook, Site, IdCategoria } = req.body
-        const arrayImages = req.files[0]
-        const ImageName = req.files.filename 
+        var arrayImages = ""
+
+        req.files.forEach(file => {
+            arrayImages += file.filename + ";"
+        });
+        arrayImages = arrayImages.substring(0, arrayImages.length -1);
 
         const existsAnuncio = await knex('Fornecedor')
         .where('Fornecedor.IdFornecedor', id)
@@ -72,7 +76,7 @@ module.exports = {
             .insert({
                 Titulo,
                 Descricao,
-                ImagemAnuncio: ImageName,
+                ImagemAnuncio: arrayImages,
                 Telefone,
                 Instagram,
                 Facebook,
@@ -80,7 +84,8 @@ module.exports = {
                 IdCategoria,
                 IdFornecedor: id
             });
-            return res.json({message: 'Anuncio cadastrado!'})
+            return res.send({message: 'Anuncio Cadastrado!'})
+            //return console.log(arrayImages)
         } else {
             res.send({error: 'Você ja possui um anuncio!'})
         }   
@@ -102,6 +107,7 @@ module.exports = {
         .join('Categorias', 'Categorias.IdCategoria','=', 'Anuncio.IdCategoria')
         .where('Anuncio.IdAnuncio', id)
 
+        results[0].ImagemAnuncio = results[0].ImagemAnuncio.split(";");
         return res.json(results)
     },
      
