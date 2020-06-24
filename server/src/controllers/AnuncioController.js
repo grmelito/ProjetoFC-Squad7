@@ -62,7 +62,13 @@ module.exports = {
         const arrayImages = req.files[0]
         const ImageName = req.files.filename 
 
-        const results = await knex('Anuncio')
+        const existsAnuncio = await knex('Fornecedor')
+        .where('Fornecedor.IdFornecedor', id)
+        .join('Anuncio', 'Anuncio.IdFornecedor', '=', 'Fornecedor.IdFornecedor')
+        .select('Anuncio.IdAnuncio')
+        
+        if(!existsAnuncio.length>0) {
+            const results = await knex('Anuncio')
             .insert({
                 Titulo,
                 Descricao,
@@ -75,6 +81,9 @@ module.exports = {
                 IdFornecedor: id
             });
             return res.json({message: 'Anuncio cadastrado!'})
+        } else {
+            res.send({error: 'Você ja possui um anuncio!'})
+        }   
 
     }, 
     
