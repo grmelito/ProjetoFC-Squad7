@@ -6,6 +6,7 @@ const CategoriaController = require('./controllers/CategoriaController')
 const AnuncioController = require('./controllers/AnuncioController')
 const UsuarioController = require('./controllers/UsuarioController');
 const FornecedorController = require('./controllers/FornecedorController')
+const EnderecoController = require('./controllers/EnderecoController')
 const verifyToken = require('./config/verifyToken');
 
 const routes = express.Router();
@@ -19,6 +20,7 @@ routes.get('/anuncio/:id', AnuncioController.showAnuncio)
 routes.get('/anuncios', AnuncioController.indexPage)
 routes.get('/anuncios/categoria/:id', AnuncioController.indexCategoria)
 routes.get('/fornecedores', FornecedorController.index)
+routes.get('/estados', EnderecoController.indexEstados)
 
 routes.post('/login', UsuarioController.loginUser)
 routes.post('/register', UsuarioController.createUser)
