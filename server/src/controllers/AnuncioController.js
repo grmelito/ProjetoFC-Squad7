@@ -142,11 +142,26 @@ module.exports = {
         const Comentario = req.body.Comentario
 
         const dataComentario = await knex('Comentario')
-        .where('Comentario.IdUsuario', id)
         .insert({
             Comentario,
+            IdUsuario: id,
             IdAnuncio: idAnuncio
+            
         })
         return res.send({message: "Comentário realizado!"})
-    }
+    },
+    async showComentario(req, res){
+    
+        const {idAnuncio} = req.params
+
+        const comentario = await knex('Comentario')
+        .select([
+            'Comentario.Comentario',
+            'Comentario.IdComentario',
+            'Comentario.IdUsuario'
+        ])
+        .where('Comentario.IdAnuncio', idAnuncio)
+
+        return res.json(comentario)
+    } 
 }
