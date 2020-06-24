@@ -21,6 +21,7 @@ routes.get('/anuncios', AnuncioController.indexPage)
 routes.get('/anuncios/categoria/:id', AnuncioController.indexCategoria)
 routes.get('/fornecedores', FornecedorController.index)
 routes.get('/estados', EnderecoController.indexEstados)
+routes.get('/cidades', EnderecoController.indexCidades)
 
 routes.post('/login', UsuarioController.loginUser)
 routes.post('/register', UsuarioController.createUser)

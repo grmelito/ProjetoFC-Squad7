@@ -6,5 +6,11 @@ module.exports = {
         const results = await knex('Estados').select('Estados.IdEstado','Estados.EstadoNome')
 
         return res.json(results)
+    },
+
+    async indexCidades (req, res) {
+        const results = await knex('Cidades').select('Cidades.IdCidade', 'Cidades.CidadeNome')
+
+        return res.json(results)
     }
 }
