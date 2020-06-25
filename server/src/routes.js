@@ -33,7 +33,7 @@ routes.post('/anuncio/:idAnuncio/comentario', verifyToken, AnuncioController.com
 
 routes.put('/update/profile', verifyToken, UsuarioController.updateUser)
 routes.put('/update/profile/image', verifyToken, upload.single('file'), UsuarioController.updateImage)
-routes.put('/update/anuncio', verifyToken, upload.single('file'), AnuncioController.updateAnuncio)
+routes.put('/update/anuncio', verifyToken, upload.array('files', 4), AnuncioController.updateAnuncio)
 
 routes.post('/testeupload', upload.single('file'), (req, res) => {
     console.log(req.file);

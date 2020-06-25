@@ -117,21 +117,42 @@ module.exports = {
         const id = decoded._id[0].IdFornecedor;
         
         const data = { Titulo, Descricao, Telefone, Instagram, Facebook, Site, IdCategoria } = req.body
-        const imagem = req.file.filename
+        var arrayImages = ""
 
-        const dataUser = await knex('Anuncio')
-        .where('Anuncio.IdFornecedor', id) 
-        .update({
-            Titulo: Titulo,
-            Descricao: Descricao,
-            Telefone: Telefone,
-            ImagemAnuncio: imagem,
-            Instagram: Instagram,
-            Facebook: Facebook,
-            Site: Site,
-            IdCategoria: IdCategoria
-        })
-        return res.json({message: "Informações alteradas!"})
+        req.files.forEach(file => {
+            arrayImages += file.filename + ";"
+        });
+        arrayImages = arrayImages.substring(0, arrayImages.length -1);
+
+        if(arrayImages != ""){
+            const dataUser = await knex('Anuncio')
+            .where('Anuncio.IdFornecedor', id) 
+            .update({
+                Titulo: Titulo,
+                Descricao: Descricao,
+                Telefone: Telefone,
+                ImagemAnuncio: arrayImages,
+                Instagram: Instagram,
+                Facebook: Facebook,
+                Site: Site,
+                IdCategoria: IdCategoria
+            })
+            return res.json({message: "Informações alteradas!"})
+        } else {
+            const dataUser = await knex('Anuncio')
+            .where('Anuncio.IdFornecedor', id) 
+            .update({
+                Titulo: Titulo,
+                Descricao: Descricao,
+                Telefone: Telefone,
+                Instagram: Instagram,
+                Facebook: Facebook,
+                Site: Site,
+                IdCategoria: IdCategoria
+            })
+            return res.json({message: "Informações alteradas!"})
+        }
+        
     }, 
 
     async comentarioAnuncio(req, res){
