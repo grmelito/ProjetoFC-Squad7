@@ -224,6 +224,31 @@ hr{
     margin-bottom: 2.5rem; 
   }
 
+  h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.75rem;
+    color: #04329B;
+    padding-left: 1.5rem;
+  }
+
+  .perguntas{  
+    margin-top: 1.5rem;
+    
+    
+  }
+
+  .txt-duvidas{
+    font-size: 1.2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #3D3F84;
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+  }
+
+  .duvidas{
+    font-size: 2rem !important;
+  }
+
   
   
 
