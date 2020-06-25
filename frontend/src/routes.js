@@ -8,6 +8,7 @@ import Cadastro from './Pages/Cadastro';
 import HomeLogada from './Pages/Home_Logada';
 import Sobre from './Pages/Sobre';
 import Cadastro_Loja from './Pages/Cadastro_Loja'
+import RecuperarSenha from './Pages/Recuperar_Senha'
 
 export default function Routes() {
     return (
@@ -19,6 +20,7 @@ export default function Routes() {
                 <Route path="/homeLogada" component={HomeLogada}/>
                 <Route path="/sobre" component={Sobre}/>
                 <Route path="/cadastroLoja" component={Cadastro_Loja}/>
+                <Route path="/recuperarSenha" component={RecuperarSenha}/>
             
             </Switch>
         </BrowserRouter>

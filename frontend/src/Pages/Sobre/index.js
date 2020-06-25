@@ -20,7 +20,7 @@ function Sobre() {
                         <p className="txt-sobre"> Através de um longo processo de pesquisa, descobrimos que vizinhos próximso tem
                         interesses em comum. Sim, isso acontece muito no cotidiano e nem percebemos. As vezes, você atravesa a cidade
                         para levar seu bichinho em um pet shop, sendo que ali do lado da sua casa, tem uma pessoa especial que adora animais,
-                        tem um ótimo serviçio e aquele preço que você procura. Então, por que não experimentar? Assim, nopssa rede só cresce
+                        tem um ótimo serviçio e aquele preço que você procura. Então, por que não experimentar? Assim, nossa rede só cresce
                         dando oportunidades iguais a pessoas que são empreendedoras e guierreiras e que de alguma forma precisam de sua ajuda
                          para manter seus sonhos vivos.</p>
 
