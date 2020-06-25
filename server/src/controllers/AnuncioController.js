@@ -14,15 +14,15 @@ module.exports = {
             const {page = 1} = req.query
 
             const results = await knex('Anuncio')
-            .limit(5)
-            .offset((page - 1) * 5)
+            .limit(12)
+            .offset((page - 1) * 12)
             .select([
                 'Anuncio.IdAnuncio',
                 'Anuncio.Titulo',
                 'Anuncio.ImagemAnuncio',
                 'Anuncio.IdCategoria',
                 'Anuncio.IdFornecedor']);
-
+            
             return res.json(results);
         } catch(err) {
             return res.status(500).send({error: 'Erro ao filtrar anuncios!'})
@@ -36,8 +36,8 @@ module.exports = {
             const {page = 1} = req.query
 
             const results = await knex('Anuncio')
-                .limit(5)
-                .offset((page - 1) * 5)
+                .limit(12)
+                .offset((page - 1) * 12)
                 .select([
                     'Anuncio.IdAnuncio',
                     'Anuncio.Titulo',
@@ -46,6 +46,7 @@ module.exports = {
                     'Anuncio.IdFornecedor'
                 ]).where('Anuncio.IdCategoria', id);
 
+            results[0].ImagemAnuncio = results[0].ImagemAnuncio.split(";");
             return results = res.json(results)
         } catch(err){
             return res.status(500)
