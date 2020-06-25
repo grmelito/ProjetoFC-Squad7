@@ -1,5 +1,6 @@
 const knex = require('../database');
 const jwt = require('jsonwebtoken');
+const EnderecoController = require('./EnderecoController');
 
 
 module.exports = {
@@ -52,6 +53,27 @@ module.exports = {
             return res.status(500)
         }
         
+    },
+
+    async proxAnuncio(req, res) {
+        const { Cidade } = req.query
+        const {page = 1} = req.query
+
+        const results = await knex('Anuncio')
+        .limit(12).offset((page - 1) * 12)
+        .select([
+            'Anuncio.IdAnuncio',
+            'Anuncio.Titulo',
+            'Anuncio.ImagemAnuncio',
+            'Anuncio.IdCategoria',
+            'Anuncio.IdFornecedor'])
+        .join('Fornecedor', 'Fornecedor.IdFornecedor', '=', 'Anuncio.IdFornecedor')
+        .join('Usuario', 'Usuario.IdUsuario', '=', 'Fornecedor.IdUsuario')
+        .join('Endereco', 'Endereco.IdEndereco', '=', 'Usuario.IdEndereco')
+        .join('Cidades', 'Cidades.IdCidade', '=', 'Endereco.IdCidade')
+        .where('Cidades.CidadeNome', Cidade)
+        
+        return res.json(results)
     },
 
     async createAnuncio(req, res) {
