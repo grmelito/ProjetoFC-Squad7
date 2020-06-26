@@ -1,9 +1,10 @@
 const knex = require('../database');
 const jwt = require('jsonwebtoken');
+const userService = require('../Services/UsuarioService');
 
 module.exports = {
     async index(req, res) {
-        const results = await knex('Usuario').select('*');
+        const results = await userService.findAll();
 
         return res.json(results);
     },
