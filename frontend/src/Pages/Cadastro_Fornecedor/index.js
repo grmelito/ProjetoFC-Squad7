@@ -57,7 +57,7 @@ function CadastroFornecedor() {
                                     <input type="text" className="form-control" id="inputComplemento" />
                                 </div>
                                 <div className="botao-cadastro">
-                                    <button type="submit" className="btn btn-primary">Cadastre-se</button>
+                                    <button type="submit" className="btn btn-primary">Confirmar dados</button>
                                 </div>
 
 

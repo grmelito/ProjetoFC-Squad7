@@ -47,8 +47,10 @@ function Cadastro_Loja() {
                                         <img src={SelecionarFoto}></img>
                                     </div>
                                 </div>
-                                
-                                <button type="submit" className="btn btn-primary">Cadastrar</button>
+                                <div className="botao-cadastro">
+                                    <button type="submit" className="btn btn-primary">Cadastrar</button>
+                                </div>
+
                             </div>
                         </form>
                         <hr></hr>
