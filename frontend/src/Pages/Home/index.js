@@ -31,14 +31,14 @@ function Home() {
 
                         <div className="">
                             <div className="d-flex justify-content-center icones">
-                                <a href="#card-serviços_lar"><img className="rounded-circle min" src={botaoServicos} alt="servicos diversos" /></a>
+                                <a href="#card-serviços_lar"><img className="rounded-circle min" src={botaoServicos} alt="serviços diversos" /></a>
                             </div>
                             <p>Servicos Diversos </p>
                         </div>
 
                         <div className="">
                             <div className="d-flex justify-content-center icones">
-                                <a href="#"><img className="rounded-circle min" src={botaoEletronicos} alt="eletronicos e acessorios" /></a>
+                                <a href="#"><img className="rounded-circle min" src={botaoEletronicos} alt="eletronicos e acessórios" /></a>
                             </div>
                             <p>Eletrônicos e Acessorios </p>
                         </div>
@@ -57,9 +57,9 @@ function Home() {
                         </div>
                         <div className="">
                             <div className="d-flex justify-content-center icones">
-                                <a href="#card-Reparos"><img className="rounded-circle min" src={botaoCasa} alt="reparos domesticos" /></a>
+                                <a href="#card-Reparos"><img className="rounded-circle min" src={botaoCasa} alt="reparos domésticos" /></a>
                             </div>
-                            <p>Reparos Domesticos </p>
+                            <p>Reparos Domésticos </p>
                         </div>
                         <div className="">
                             <div className="d-flex justify-content-center icones">

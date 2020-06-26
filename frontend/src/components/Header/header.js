@@ -17,8 +17,8 @@ function Header() {
         <div>
             <header>
                 <div className="menu-header-home container-fluid">
-                    <div className="logo-header">
-                        <a href="#"><img src={logo} alt="bfriend" /></a>
+                    <div >
+                        <a  href="#"><img className="logo-header" img src={logo} alt="bfriend" /></a>
                     </div>
 
                     <nav className="btn-header-home">

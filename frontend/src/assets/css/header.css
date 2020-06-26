@@ -7,10 +7,14 @@ header{
     width: 100%;
 }
 
+.logo-header{
+    width: 9rem;
+}
+
 .menu-header-home{
     width: 1200px;
     margin: 0 auto;
-	padding: 40px 0;
+	padding: 30px 0;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
