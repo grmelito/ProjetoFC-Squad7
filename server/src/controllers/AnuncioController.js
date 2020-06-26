@@ -56,10 +56,11 @@ module.exports = {
     },
 
     async proxAnuncio(req, res) {
-        const { Cidade, Bairro } = req.query
+        const { Cidade, Bairro, Categoria } = req.query
         const {page = 1} = req.query
 
-        if(!Bairro) {
+        if(!Cidade) return res.json({error: "Selecione uma cidade!"})
+        if(!Bairro && !Categoria) {
             const results = await knex('Anuncio')
             .limit(12).offset((page - 1) * 12)
             .select([
@@ -73,6 +74,39 @@ module.exports = {
             .join('Endereco', 'Endereco.IdEndereco', '=', 'Usuario.IdEndereco')
             .join('Cidades', 'Cidades.IdCidade', '=', 'Endereco.IdCidade')
             .where('Cidades.CidadeNome', Cidade)
+            
+            return res.json(results)
+            
+        } if(!Categoria) {
+            const results = await knex('Anuncio')
+            .limit(12).offset((page - 1) * 12)
+            .select([
+                'Anuncio.IdAnuncio',
+                'Anuncio.Titulo',
+                'Anuncio.ImagemAnuncio',
+                'Anuncio.IdCategoria',
+                'Anuncio.IdFornecedor'])
+            .join('Fornecedor', 'Fornecedor.IdFornecedor', '=', 'Anuncio.IdFornecedor')
+            .join('Usuario', 'Usuario.IdUsuario', '=', 'Fornecedor.IdUsuario')
+            .join('Endereco', 'Endereco.IdEndereco', '=', 'Usuario.IdEndereco')
+            .join('Cidades', 'Cidades.IdCidade', '=', 'Endereco.IdCidade')
+            .where('Cidades.CidadeNome', Cidade).andWhere('Endereco.Bairro', '=', Bairro)
+
+            return res.json(results)
+        } if(!Bairro) {
+            const results = await knex('Anuncio')
+            .limit(12).offset((page - 1) * 12)
+            .select([
+                'Anuncio.IdAnuncio',
+                'Anuncio.Titulo',
+                'Anuncio.ImagemAnuncio',
+                'Anuncio.IdCategoria',
+                'Anuncio.IdFornecedor'])
+            .join('Fornecedor', 'Fornecedor.IdFornecedor', '=', 'Anuncio.IdFornecedor')
+            .join('Usuario', 'Usuario.IdUsuario', '=', 'Fornecedor.IdUsuario')
+            .join('Endereco', 'Endereco.IdEndereco', '=', 'Usuario.IdEndereco')
+            .join('Cidades', 'Cidades.IdCidade', '=', 'Endereco.IdCidade')
+            .where('Cidades.CidadeNome', Cidade).andWhere('Anuncio.IdCategoria', '=', Categoria)
 
             return res.json(results)
         } else {
@@ -88,7 +122,7 @@ module.exports = {
             .join('Usuario', 'Usuario.IdUsuario', '=', 'Fornecedor.IdUsuario')
             .join('Endereco', 'Endereco.IdEndereco', '=', 'Usuario.IdEndereco')
             .join('Cidades', 'Cidades.IdCidade', '=', 'Endereco.IdCidade')
-            .where('Cidades.CidadeNome', Cidade).andWhere('Endereco.Bairro', '=', Bairro)
+            .where('Cidades.CidadeNome', Cidade).andWhere('Endereco.Bairro', '=', Bairro).andWhere('Anuncio.IdCategoria', '=', Categoria)
 
             return res.json(results)
         }
