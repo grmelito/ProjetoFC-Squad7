@@ -14,7 +14,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/anuncio/9",
+							"raw": "http://localhost:3333/anuncio/24",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -22,7 +22,7 @@
 							"port": "3333",
 							"path": [
 								"anuncio",
-								"9"
+								"24"
 							]
 						}
 					},
@@ -34,7 +34,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/anuncios/categoria/3",
+							"raw": "http://localhost:3333/anuncios/categoria/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -43,7 +43,7 @@
 							"path": [
 								"anuncios",
 								"categoria",
-								"3"
+								"4"
 							]
 						}
 					},
@@ -55,7 +55,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/anuncios?page=2",
+							"raw": "http://localhost:3333/anuncios?page=1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -67,8 +67,62 @@
 							"query": [
 								{
 									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Anuncio por Localização",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/anuncios/filtro?Cidade=Santos&Bairro=Centro&Categoria=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"anuncios",
+								"filtro"
+							],
+							"query": [
+								{
+									"key": "Cidade",
+									"value": "Santos"
+								},
+								{
+									"key": "Bairro",
+									"value": "Centro"
+								},
+								{
+									"key": "Categoria",
 									"value": "2"
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Comentários",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/comentario/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"comentario",
+								"4"
 							]
 						}
 					},
@@ -81,7 +135,7 @@
 						"header": [
 							{
 								"key": "auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MTMsIklkVGlwb1VzdWFyaW8iOjIsIklkRm9ybmVjZWRvciI6MTV9XSwiaWF0IjoxNTkyOTM1NzgxfQ.USkUYFzM3URQRv9VN5T2CGnNI2qcfidXGDmcrBeGHrk",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MjYsIklkVGlwb1VzdWFyaW8iOjIsIklkRm9ybmVjZWRvciI6MzB9XSwiaWF0IjoxNTkzMDI4MTIzfQ.PSfRR7OW16DECZfrXEoEpdWvQgttjluwlSQA34JypNU",
 								"type": "text"
 							}
 						],
@@ -90,12 +144,12 @@
 							"formdata": [
 								{
 									"key": "Titulo",
-									"value": "Roupas Mormaii 2",
+									"value": "Roupas Gap 5",
 									"type": "text"
 								},
 								{
 									"key": "Descricao",
-									"value": "Vendo roupas para esportes radicais e acessórios para esportes aquáticos.",
+									"value": "Vendo roupas para pessoas ricas 5",
 									"type": "text"
 								},
 								{
@@ -108,22 +162,22 @@
 								},
 								{
 									"key": "Telefone",
-									"value": "13999241021",
+									"value": "13999391021 5",
 									"type": "text"
 								},
 								{
 									"key": "Instagram",
-									"value": "roupas.mormaii 2 ",
+									"value": "roupas.gap 5",
 									"type": "text"
 								},
 								{
 									"key": "Facebook",
-									"value": "MormaiiOficial 2",
+									"value": "GapOficial 5",
 									"type": "text"
 								},
 								{
 									"key": "Site",
-									"value": "https://roupas-mormaii2.com.br",
+									"value": "https://gap.com.br",
 									"type": "text"
 								},
 								{
@@ -157,6 +211,42 @@
 					"response": []
 				},
 				{
+					"name": "Postar Comentário",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6NCwiSWRUaXBvVXN1YXJpbyI6MiwiSWRGb3JuZWNlZG9yIjozfV0sImlhdCI6MTU5MzA1ODE0N30.HoXZYBT0BihnIyOXU1XwzsTAk60F_pn_3acZynbSmZg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Comentario\": \"Ta funcionando os comentários!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/anuncio/4/comentario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"anuncio",
+								"4",
+								"comentario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Atualizar Anuncio",
 					"request": {
 						"method": "PUT",
@@ -164,7 +254,7 @@
 							{
 								"key": "auth-token",
 								"type": "text",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MTAsIklkVGlwb1VzdWFyaW8iOjIsIklkRm9ybmVjZWRvciI6MTJ9LHsiSWRVc3VhcmlvIjoxMCwiSWRUaXBvVXN1YXJpbyI6MiwiSWRGb3JuZWNlZG9yIjoxM31dLCJpYXQiOjE1OTI4NTM5NDN9.8E0BU87Rc0IRtcuAluqlQoGV5raeg96-MxdpxVhK8cg"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MjYsIklkVGlwb1VzdWFyaW8iOjIsIklkRm9ybmVjZWRvciI6MzB9XSwiaWF0IjoxNTkzMTA3NDQ1fQ.ZMh0tB_kfy8BILmMbV2ng3lhce_GCXJJl0yqsVedU6w"
 							}
 						],
 						"body": {
@@ -172,18 +262,18 @@
 							"formdata": [
 								{
 									"key": "Titulo",
-									"value": "Game Stop 4",
+									"value": "Agora vai 2",
 									"type": "text"
 								},
 								{
 									"key": "Descricao",
-									"value": "Loja de Jogos 2 ",
+									"value": "Opa 2",
 									"type": "text"
 								},
 								{
-									"key": "file",
+									"key": "files",
 									"type": "file",
-									"src": "/C:/Users/grmel/Downloads/Clark-Street-Mercantile.jpg"
+									"src": "/C:/Users/grmel/OneDrive/Imagens/Imagens pra Photoshop/seu aldo.jpg"
 								}
 							],
 							"options": {
@@ -254,6 +344,110 @@
 			"protocolProfileBehavior": {}
 		},
 		{
+			"name": "Requests Endereço",
+			"item": [
+				{
+					"name": "Listar Estados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/estados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"estados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Cidades",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/cidades",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"cidades"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Requests Fornecedor",
+			"item": [
+				{
+					"name": "Listar Fornecedores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3333/fornecedores",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"fornecedores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upgrade Conta Fornecedor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MjYsIklkVGlwb1VzdWFyaW8iOjF9XSwiaWF0IjoxNTkzMDI4MTExfQ.SDLTbINf55WRNqSO4fr2hgonmmeIqGnqPLH6k5pn_1w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"CPFouCNPJ\": \"80078992225\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/upgrade/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"upgrade",
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
 			"name": "Requests Usuarios",
 			"item": [
 				{
@@ -313,7 +507,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Email\": \"CarlosKaka@gmail.com\",\r\n    \"Senha\": \"carlos123\"\r\n}",
+							"raw": "{\r\n    \"Email\": \"marta12@gmail.com\",\r\n    \"Senha\": \"1234\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -341,7 +535,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Nome\": \"Yuri Santos\",\r\n    \"Email\": \"yuri@gmail.com\",\r\n    \"Senha\": \"yuri123\"\r\n}",
+							"raw": "{\r\n    \"Nome\": \"Marta 11\",\r\n    \"Email\": \"marta12@gmail.com\",\r\n    \"Senha\": \"1234\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -467,66 +661,6 @@
 								"update",
 								"profile",
 								"image"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "Requests Fornecedor",
-			"item": [
-				{
-					"name": "Listar Fornecedores",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3333/fornecedores",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"fornecedores"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Upgrade Conta Fornecedor",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MTMsIklkVGlwb1VzdWFyaW8iOjF9XSwiaWF0IjoxNTkyOTM1NTA0fQ.z4Y1fNv0jVc3uRUe5rf9k2ZP5BhWvsPUIcPLDKmT05w",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"CPFouCNPJ\": \"37191182735\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3333/upgrade/usuario",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3333",
-							"path": [
-								"upgrade",
-								"usuario"
 							]
 						}
 					},
