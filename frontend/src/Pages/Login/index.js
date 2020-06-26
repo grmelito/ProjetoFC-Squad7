@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../assets/css/style.css';
 
-import QuaseLogo from '../../assets/img/Nome.png'
+import Logo from '../../assets/img/LogoAtualizada.PNG'
 
 
 function Login() {
@@ -11,7 +11,7 @@ function Login() {
                 <div className="">
                     <div className="fundo-forms col-9">
                         <div className="logo">
-                            <img src={QuaseLogo} />
+                            <img src={Logo} />
                             <p className="subtitulo">Aproximando pessoas. Fazendo negócios</p>
                         </div>
                         <form >

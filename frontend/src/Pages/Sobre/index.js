@@ -1,6 +1,6 @@
 import React from 'react';
 import ilustrativa from '../../assets/img/Sobre.png';
-import QuaseLogo from '../../assets/img/Nome.png';
+import Logo from '../../assets/img/LogoAtualizada.PNG'
 import '../../assets/css/style.css';
 
 function Sobre() {
@@ -26,7 +26,7 @@ function Sobre() {
 
 
                         <div className="pseudo-footer">
-                            <img src={QuaseLogo} />
+                            <img src={Logo} />
                             <p className="subtitulo">Aproximando pessoas. Fazendo negócios</p>
                         </div>
 

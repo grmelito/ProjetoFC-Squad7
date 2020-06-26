@@ -1,6 +1,6 @@
 import React from 'react';
 import ilustrativa from '../../assets/img/Duvidas.png';
-import QuaseLogo from '../../assets/img/Nome.png';
+import Logo from '../../assets/img/LogoAtualizada.PNG'
 import '../../assets/css/style.css';
 import '../../assets/css/reset.css';
 
@@ -114,8 +114,12 @@ function Duvidas() {
                             <h2>A BFriend pode interferir em um anúncio?</h2>
                             <br></br>
                             <p className="txt-duvidas">
-                            Sim, se ferir alguma das nossa politicas de segurança, respeito <br></br> e privacidade. 
-                            Você pode ter não somente seu anúncio como sua conta <br></br>banida por  tempo indeterminado.
+                            Sim, se ferir alguma das nossa politicas de segurança, respeito
+                            <br></br>
+                             e privacidade. 
+                            Você pode ter não somente seu anúncio como sua conta 
+                            <br></br>
+                            banida por  tempo indeterminado.
                             </p>
                         </div>
                         <div className="perguntas">
@@ -123,8 +127,14 @@ function Duvidas() {
                             <br></br>
                             <p className="txt-duvidas">
                             Temos uma politica bem clara quando a isso. 
-                            Pornografia, venda de <br></br> animais,  violência, armas entre outros são extremamente proibidos e <br></br> quais quer anúncios que violem nossos
-                            termos de adesão serão bloque-<br></br>ados e banidos de nossa comunidade.
+                            Pornografia, venda de 
+                            <br></br>
+                             animais,  violência, armas entre outros são extremamente proibidos e 
+                             <br></br>
+                            quais quer anúncios que violem nossos
+                            termos de adesão serão bloque-
+                            <br></br>
+                            ados e banidos de nossa comunidade.
                             </p>
                         </div>
                         <div className="perguntas">
@@ -133,14 +143,14 @@ function Duvidas() {
                             <p className="txt-duvidas">
                             Você pode usar qualquer um de nossos canais nas mídias sociais ou <br></br>clicar no 
                             link contato e mandar um E-mail com o titulo DENÚNCIA,
-                            <br></br> dai iremos tomar as devidas providencias em no máximo 24 horas.
+                            <br></br> dai, iremos tomar as devidas providencias em no máximo 24 horas.
                             </p>
                         </div>
 
 
 
                         <div className="pseudo-footer">
-                            <img src={QuaseLogo} />
+                            <img src={Logo} />
                             <p className="subtitulo">Aproximando pessoas. Fazendo negócios</p>
                         </div>
 
