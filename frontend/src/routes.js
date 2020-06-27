@@ -25,7 +25,7 @@ export default function Routes() {
                 <Route path="/cadastroLoja" component={Cadastro_Loja}/>
                 <Route path="/recuperarSenha" component={RecuperarSenha}/>
                 <Route path="/duvidas" component={Duvidas}/>
-                <Route path="/duvidas" component={Contato}/>
+                <Route path="/contato" component={Contato}/>
                 <Route path="/cadastroFornecedor" component={CadastroFornecedor}/>
             
             </Switch>
