@@ -1,4 +1,4 @@
-body, html{
+﻿body, html{
   height: 100%;
 }
 
@@ -178,8 +178,6 @@ hr{
   }
 
   /* Fim Estilização SOBRE */
-
-  /*Início cadastro de loja*/
   
   .fundo-loja{
     background-color: snow;
@@ -274,7 +272,134 @@ hr{
     font-size: 2rem !important;
   }
 
+
+
+
+
+  /* Inicio página loja */
+
+.box-loja{
+ display: flex;
+ justify-content: space-around;
+}
+
+  .loja-descricao{
+    width: 600px;
+    height: 250px;
+    border: 1px solid  #DFDFDF;
+    border-radius: 22px;
+    opacity: 1;
+    display: block;
+    padding-top: 35px;
+  }
+
+
+  .p-descricao{
+    color: #04329B;
+    font-size: 16px;    
+  }
   
+  .top-loja{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .p-top-loja{
+    margin-left: 300px;
+  }
+
+  .subnome-loja{
+    color:#04329B;
+    font-size: 20px;
+  }
+  
+  .img-1{
+    background: blue;
+    width: 220px;
+    height: 200px;
+  }
+  
+  .img-2{
+    background:pink;
+    width: 220px;
+    height: 200px;
+  }
+  
+  .img-3{
+    background: yellow;
+    width: 220px;
+    height: 200px;
+  }
+  
+  .img-4{
+    background: green;
+    width: 220px;
+    height: 200px;
+  }
+  .galeria-loja{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+  }
+  
+  .img-perfil-loja{
+    width: 100px;
+    height: 100px;
+    background-color: indianred;
+  }
+  
+  .dados-loja{
+    width: 300px;
+    height: 250px;
+    border: 1px solid  #DFDFDF;
+    border-radius: 22px;
+    opacity: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+  }
+
+  .loja-info{
+    width: 250px;
+    height: 50px;
+    border: 1px solid #DFDFDF;
+    border-radius: 20px;
+    opacity: 1;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+  .p-info{
+    text-align: center;
+    color: #04329B;
+    font-size: 16px;
+  
+  }
+  /* FIm da loja  */
+
+  /* Inicio Contato */
+
+  
+.container-contato{
+  width: 100%;
+  height: 647px;
+  background: #DFDFDF;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-contato {
+  height: 600px;
+  background: #fff;
+  border-radius: 22px;
+  }
+
+
 
  
 

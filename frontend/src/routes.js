@@ -7,11 +7,12 @@ import Login from './Pages/Login'
 import Cadastro from './Pages/Cadastro';
 import HomeLogada from './Pages/Home_Logada';
 import Sobre from './Pages/Sobre';
-import Cadastro_Loja from './Pages/Cadastro_Loja'
-import RecuperarSenha from './Pages/Recuperar_Senha'
-import Duvidas from './Pages/Duvidas'
-import Contato from './Pages/Contato'
-import CadastroFornecedor from './Pages/Cadastro_Fornecedor'
+import Cadastro_Loja from './Pages/Cadastro_Loja';
+import RecuperarSenha from './Pages/Recuperar_Senha';
+import Duvidas from './Pages/Duvidas';
+import Contato from './Pages/Contato';
+import CadastroFornecedor from './Pages/Cadastro_Fornecedor';
+import Loja from './Pages/Loja';
 
 export default function Routes() {
     return (
@@ -19,15 +20,16 @@ export default function Routes() {
             <Switch>
                 <Route path="/" exact component={Home} />
                 <Route exact path="/login" component={Login} />
-                <Route exact path="/cadastro" component={Cadastro}/>
-                <Route path="/homeLogada" component={HomeLogada}/>
-                <Route path="/sobre" component={Sobre}/>
-                <Route path="/cadastroLoja" component={Cadastro_Loja}/>
-                <Route path="/recuperarSenha" component={RecuperarSenha}/>
-                <Route path="/duvidas" component={Duvidas}/>
-                <Route path="/contato" component={Contato}/>
-                <Route path="/cadastroFornecedor" component={CadastroFornecedor}/>
-            
+                <Route exact path="/cadastro" component={Cadastro} />
+                <Route path="/homeLogada" component={HomeLogada} />
+                <Route path="/sobre" component={Sobre} />
+                <Route path="/cadastroLoja" component={Cadastro_Loja} />
+                <Route path="/recuperarSenha" component={RecuperarSenha} />
+                <Route path="/duvidas" component={Duvidas} />
+                <Route path="/contato" component={Contato} />
+                <Route path="/cadastroFornecedor" component={CadastroFornecedor} />
+                <Route path="/loja" component={Loja} />
+
             </Switch>
         </BrowserRouter>
     );
