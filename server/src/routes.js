@@ -14,7 +14,7 @@ const upload = multer(multerConfig);
 
 //routes.get('/categorias/1', CategoriaController.showCategoria)
 routes.get('/categorias', CategoriaController.index)
-routes.get('/usuarios', verifyToken, UsuarioController.index)
+routes.get('/usuarios', UsuarioController.index)
 routes.get('/profile', verifyToken, UsuarioController.showProfile)
 routes.get('/anuncio/:id', AnuncioController.showAnuncio)
 routes.get('/anuncios', AnuncioController.indexPage)
