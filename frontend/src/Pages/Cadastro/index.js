@@ -60,7 +60,7 @@ function Cadastro() {
                             </div>
                         </form>
                         <hr></hr>
-                        <p>Já tem uma conta?<a className="redirect">Faça Login</a></p>
+                        <p>Já tem uma conta?<a href="/login" className="redirect">Faça Login</a></p>
                     </div>
                     <p>Ao se cadastrar você concorda com os <a className="redirect">Termos de Uso  </a> e a <a className="redirect">Política de Privacidade</a> de BFriend.</p>
                 </div>

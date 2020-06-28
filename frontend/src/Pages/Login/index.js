@@ -55,7 +55,7 @@ function Login() {
                             </div>
                         </form>
                         <hr></hr>
-                        <p>Não tem uma conta?<a className="redirect">Cadastre-se</a></p>
+                        <p>Não tem uma conta?<a href="/cadastro" className="redirect">Cadastre-se</a></p>
                     </div>
 
                     <div className="text-temos">
