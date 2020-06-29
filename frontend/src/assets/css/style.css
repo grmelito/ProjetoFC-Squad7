@@ -282,9 +282,7 @@ hr{
 
 
 
-
-
-  /* Inicio página loja */
+  /* INÍCIO PÁGINA LOJA */
 
 .box-loja{
  display: flex;
@@ -386,9 +384,9 @@ hr{
     font-size: 16px;
   
   }
-  /* FIm da loja  */
+  /* FIM LOJA  */
 
-  /* Inicio Contato */
+  /* INÍCIO CONTATO */
 
   
 .container-contato{
@@ -406,6 +404,9 @@ hr{
   background: #fff;
   border-radius: 22px;
   }
+
+   /* FIM CONTATO */
+
 
 
 

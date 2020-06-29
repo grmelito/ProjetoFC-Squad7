@@ -66,8 +66,6 @@ function PerfilUsuario() {
                                 <div className="botao-cadastro">
                                     <button type="submit" className="btn btn-primary">Crie uma loja</button>
                                 </div>
-
-
                             </div>
                         </form>
                         <hr></hr>

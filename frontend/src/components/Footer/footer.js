@@ -8,6 +8,7 @@ import yt from '../../assets/img/youtube.png';
 
 
 function Footer(){
+    
     return (
         <div className="container my-4">
             <div className="row container-fluid">

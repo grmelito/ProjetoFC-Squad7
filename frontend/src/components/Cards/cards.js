@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../assets/css/cards.css';
+import '../../assets/css/reset.css'
 import {
   Card, CardImg, CardText, CardBody,
   CardTitle, Button
@@ -34,7 +35,7 @@ function Cards() {
               <CardBody className="body-card">
                 <CardTitle className="card-title">Hamburguer Vegano</CardTitle>
                 <CardText className="card-text">O melhor hamburger vegano do litoral paulista.</CardText>
-                <Button className="card-btn">Saiba mais</Button>
+                <Button className="">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -46,7 +47,7 @@ function Cards() {
               <CardBody className="body-card">
                 <CardTitle className="card-title">Super Salgados</CardTitle>
                 <CardText className="card-text">Quer comer aquele salgado? vaifazer </CardText>
-                <Button className="card-btn">Saiba mais</Button>
+                <Button>Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -57,7 +58,7 @@ function Cards() {
               <CardBody className="body-card">
                 <CardTitle className="card-title">Massas da Mama</CardTitle>
                 <CardText className="card-text">Nós fazemos a melhor massa caseira da.</CardText>
-                <Button className="card-btn">Saiba mais</Button>
+                <Button>Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -68,7 +69,7 @@ function Cards() {
               <CardBody className="body-card">
                 <CardTitle className="card-title">Kilo do Bairro</CardTitle>
                 <CardText className="card-text">Quer comer aquela marmita em casa.</CardText>
-                <Button className="card-btn">Saiba mais</Button>
+                <Button>Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -88,7 +89,7 @@ function Cards() {
               <CardBody className="body-card">
                 <CardTitle className="card-title">Dr Faz Tudo</CardTitle>
                 <CardText className="card-text">O melhor hamburger vegano do litoral paulista.</CardText>
-                <Button className="card-btn">Saiba mais</Button>
+                <Button className="">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -99,7 +100,7 @@ function Cards() {
               <CardBody className="body-card">
                 <CardTitle className="card-title">Casa de Força</CardTitle>
                 <CardText className="card-text">Quer comer aquele salgado? vaifazer </CardText>
-                <Button className="card-btn">Saiba mais</Button>
+                <Button className="">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -110,7 +111,7 @@ function Cards() {
               <CardBody className="body-card">
                 <CardTitle className="card-title">Bira Auto Mecânica</CardTitle>
                 <CardText className="card-text">Nós fazemos a melhor massa caseira da.</CardText>
-                <Button className="card-btn">Saiba mais</Button>
+                <Button className="">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -121,7 +122,7 @@ function Cards() {
               <CardBody className="body-card">
                 <CardTitle className="card-title">Alta Costura</CardTitle>
                 <CardText className="card-text">Quer comer aquela marmita em casa.</CardText>
-                <Button className="card-btn">Saiba mais</Button>
+                <Button className="">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -141,7 +142,7 @@ function Cards() {
               <CardBody className="body-card">
                 <CardTitle className="card-title">Vida Cell</CardTitle>
                 <CardText className="card-text">O melhor hamburger vegano do litoral paulista.</CardText>
-                <Button className="card-btn">Saiba mais</Button>
+                <Button className="">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -153,7 +154,7 @@ function Cards() {
               <CardBody className="body-card">
                 <CardTitle className="card-title">Conserto Tvs</CardTitle>
                 <CardText className="card-text">Quer comer aquele salgado? vaifazer </CardText>
-                <Button className="card-btn">Saiba mais</Button>
+                <Button className="">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -164,7 +165,7 @@ function Cards() {
               <CardBody className="body-card">
                 <CardTitle className="card-title">Conserto Tvs</CardTitle>
                 <CardText className="card-text">Nós fazemos a melhor massa caseira da.</CardText>
-                <Button className="card-btn">Saiba mais</Button>
+                <Button className="">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -175,7 +176,7 @@ function Cards() {
               <CardBody className="body-card">
                 <CardTitle className="card-title">Conserto Som</CardTitle>
                 <CardText className="card-text">Quer comer aquela marmita em casa.</CardText>
-                <Button className="card-btn">Saiba mais</Button>
+                <Button className="">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
