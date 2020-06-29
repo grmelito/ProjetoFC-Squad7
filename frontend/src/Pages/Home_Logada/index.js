@@ -72,13 +72,18 @@ function HomeLogada() {
            
         };
 
-        //const query = queryString.parse(location.search);
-        const res = await api.get('anuncio/filtro?Cidade=' + data); {   
-            console.log(data)
+        const res = await api.get('anuncios/filtro', {
+            params: {
+                Cidade: data.Cidade,
+                Bairro: data.Bairro,
+                Categoria: data.Categoria
+            }
+        }).then(res => {
+            console.log(res.data)
+        })   
+            //console.log(res)
         }
-    
-    }
-    
+      
     return (
         <div>
             <header>
