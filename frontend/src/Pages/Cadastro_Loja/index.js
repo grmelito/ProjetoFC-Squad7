@@ -19,24 +19,20 @@ function Cadastro_Loja() {
                                     <input className="form-control" id="inputEmail4" placeholder="Nome" />
                                 </div>
                                 <div className="form-group col-md-12">
+                                    <label htmlFor="inputEmail">Email</label>
+                                    <input type="email" className="form-control" id="inputEmail" placeholder="usuario@gmail.com" />
+                                </div>
+                                <div className="form-group col-md-12">
                                     <label htmlFor="inputDescricao">Descrição</label>
-                                    <input type="text" className="form-grande" id="inputEmail4" placeholder="" />
+                                    <input type="text" className="form-grande" id="inputDescricaoLoja" placeholder="" />
                                 </div>
                                 <div className="form-group col-md-6">
                                     <label htmlFor="inputCelular">Celular/WhatsApp</label>
-                                    <input type="text" className="form-control" id="inputPassword4" placeholder="Cel:(WhatsApp)" />
+                                    <input type="text" className="form-control" id="inputCelular" placeholder="Cel:(WhatsApp)" />
                                 </div>
                                 <div className="form-group col-md-6">
                                     <label htmlFor="inputCategoria">Categoria</label>
-                                    <input type="text" className="form-control" id="inputPassword4" placeholder="Categoria" />
-                                </div>
-                                <div className="form-group col-md-6">
-                                    <label htmlFor="inputEmail">Email</label>
-                                    <input type="email" className="form-control" id="inputPassword4" placeholder="usuario@gmail.com" />
-                                </div>
-                                <div className="form-group col-md-6">
-                                    <label htmlFor="inputCpf">CPF</label>
-                                    <input type="text" className="form-control" id="inputPassword4" placeholder="123.456.789-01" />
+                                    <input type="text" className="form-control" id="inputCategoria" placeholder="Categoria" />
                                 </div>
                                 <div className="selecionar-fotos col-md-12">
                                     <label>Inserir pelo menos 4 fotos</label>

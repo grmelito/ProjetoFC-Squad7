@@ -25,23 +25,27 @@ function CadastroFornecedor() {
                                     <input type="date" className="form-control" id="inputData" />
                                 </div>
                                 <div className="form-group col-md-7">
-                                    <label htmlFor="inputPassword">Gênero</label>
+                                    <label htmlFor="inputGenero">Gênero</label>
                                     <input type="text" className="form-control" id="inputGenero" />
                                 </div>
                                 <div className="form-group col-md-6">
-                                    <label htmlFor="inputPassword">CEP</label>
+                                    <label htmlFor="inputCPF">CPF</label>
+                                    <input type="text" className="form-control" placeholder="123.456.789-01" id="inputCPF" />
+                                </div>
+                                <div className="form-group col-md-6">
+                                    <label htmlFor="inputCEP">CEP</label>
                                     <input type="text" className="form-control" id="inputCep" placeholder="08888-000" />
                                 </div>
                                 <div className="form-group col-md-12">
-                                    <label htmlFor="inputPassword">Endereço</label>
-                                    <input type="password" className="form-control" id="inputPassword4" placeholder="Senha" />
+                                    <label htmlFor="inputEnderco">Endereço</label>
+                                    <input type="text" className="form-control" id="inputEndereco" />
                                 </div>
                                 <div className="form-group col-md-5">
-                                    <label htmlFor="inputData">Número</label>
+                                    <label htmlFor="inputNumero">Número</label>
                                     <input type="text" className="form-control" id="inputNumero" />
                                 </div>
                                 <div className="form-group col-md-7">
-                                    <label htmlFor="inputPassword">Complemento</label>
+                                    <label htmlFor="inputComplemento">Complemento</label>
                                     <input type="text" className="form-control" id="inputComplemento" />
                                 </div>
                                 <div className="form-group col-md-10">
