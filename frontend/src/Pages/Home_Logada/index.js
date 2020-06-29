@@ -63,8 +63,8 @@ function HomeLogada() {
         <div>
             <header>
                 <div className="menu-header-home container-fluid">
-                    <div className="logo-header">
-                        <a href="#"><img src={logo} alt="bfriend" /></a>
+                    <div >
+                        <a href="#"><img className="logo-header" src={logo} alt="bfriend" /></a>
                     </div>
 
                     <nav className="btn-header-home">
@@ -78,6 +78,7 @@ function HomeLogada() {
             </header>
             <div className="hero-image">
                 <img className="banner" src={banner5}></img>
+                
             </div>
             <div className="fundo-pesquisa">
                 <div className="form-pl">

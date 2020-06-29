@@ -2,8 +2,35 @@ import React from 'react';
 import '../../assets/css/style.css';
 import FotoUsuario from "../../assets/img/Id_Rosto.png"
 import SelecionarFoto from "../../assets/img/AdicionarFoto.png"
+import api from '../../services/api'
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 function Cadastro_Loja() {
+
+    const [Categorias, setCategorias] = useState([]);
+    const [selectedCategoria, setSelectedCategoria] = useState('0');
+
+    useEffect(() => {
+        api.get('categorias').then(res => {
+            const categoriaName = res.data.map(IdCategoria => IdCategoria.CategoriaNome)
+
+            setCategorias(categoriaName);
+        })
+    }, []);
+
+    function handleSelectCategoria(event) {
+        const Categoria = event.target.value
+
+        setSelectedCategoria(Categoria);
+    }
+
+    useEffect(() => {
+        if (selectedCategoria === '0') {
+            return;
+        }
+    })
+
     return (
         <div>
             <div className="fundo-cadastro">
@@ -32,10 +59,15 @@ function Cadastro_Loja() {
                                 </div>
                                 <div className="form-group col-md-6">
                                     <label htmlFor="inputCategoria">Categoria</label>
-                                    <input type="text" className="form-control" id="inputCategoria" placeholder="Categoria" />
+                                    <select className="form-control" name="categoria" id="categoria" value={selectedCategoria} onChange={handleSelectCategoria}>
+                                        <option value="0">Selecione uma Categoria</option>
+                                        {Categorias.map(Categoria => (
+                                            <option key={Categoria} value={Categoria}>{Categoria}</option>
+                                        ))}
+                                    </select>
                                 </div>
                                 <div className="selecionar-fotos col-md-12">
-                                    <label>Inserir pelo menos 4 fotos</label>
+                                    <label className="label-fotos">Inserir pelo menos 4 fotos</label>
                                     <div className="colunas col-md-12">
                                         <img src={SelecionarFoto}></img>
                                         <img src={SelecionarFoto}></img>

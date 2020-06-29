@@ -13,6 +13,7 @@ import Duvidas from './Pages/Duvidas';
 import Contato from './Pages/Contato';
 import CadastroFornecedor from './Pages/Cadastro_Fornecedor';
 import Loja from './Pages/Loja';
+import PerfilUsuario from './Pages/Perfil_Usuario'
 
 export default function Routes() {
     return (
@@ -29,6 +30,7 @@ export default function Routes() {
                 <Route path="/contato" component={Contato} />
                 <Route path="/cadastroFornecedor" component={CadastroFornecedor} />
                 <Route path="/loja" component={Loja} />
+                <Route path="/perfilUsuario" component={PerfilUsuario}/>
 
             </Switch>
         </BrowserRouter>
