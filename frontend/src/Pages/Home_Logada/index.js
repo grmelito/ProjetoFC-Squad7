@@ -58,6 +58,26 @@ function HomeLogada() {
             return;
         }
     })
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+
+        const Cidade = selectedCidade;
+        const Categoria = selectedCategoria;
+
+        const data = {
+            Cidade,
+            Bairro,
+            Categoria
+           
+        };
+
+        //const query = queryString.parse(location.search);
+        const res = await api.get('anuncio/filtro?Cidade=' + data); {   
+            console.log(data)
+        }
+    
+    }
     
     return (
         <div>
@@ -80,7 +100,8 @@ function HomeLogada() {
                 <img className="banner" src={banner5}></img>
             </div>
             <div className="fundo-pesquisa">
-                <div className="form-pl">
+                
+                <div className="form-pl" onSubmit={handleSubmit}>
                     <div className="form-group col-md-4">
                         <label className="text-light " htmlFor="inputText">Em qual cidade?</label>
                         <select name="cidade" id="cidade" value={selectedCidade} onChange={handleSelectCidade}>
@@ -93,7 +114,8 @@ function HomeLogada() {
                     </div>
                     <div className="form-group col-md-4">
                         <label htmlFor="inputText" className="text-light " >Qual Bairro?</label>
-                        <input type="text" className="form-control" id="inputBairro" />
+                        <input type="text" className="form-control" name="Bairro" id="Bairro"
+                        value={Bairro} onChange={event => setBairro(event.target.value)} />
                     </div>
                     <div className="form-group col-md-4">
                         <label htmlFor="inputText" className="text-light " >Qual Categoria?</label>
@@ -106,8 +128,9 @@ function HomeLogada() {
                         <input type="text" className="form-control" id="inputCategoria"  />
                     </div>
                 </div>
-                <button type="submit" className="btn btn-primary">Buscar</button>
+                <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Buscar</button>
             </div>
+            
             <Cards/>
             <Footer/>
         </div>
