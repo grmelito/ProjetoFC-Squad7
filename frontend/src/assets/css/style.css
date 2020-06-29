@@ -43,6 +43,10 @@ hr{
       }
   }
 
+  .logo-header{
+    width: 9rem;
+}
+
  /*fim da estilização home*/
 
  /*estilização cadastro*/
@@ -144,6 +148,10 @@ hr{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
   }
 
+  .label-fotos{
+    margin-bottom: 0.5rem;
+  }
+
   /* Fim da estilização do cadastro */
 
 
@@ -233,7 +241,7 @@ hr{
   }
 
   .botao-cadastro{
-    margin-left: 18.5rem;
+    margin-left: 18rem;
   }
 
   .foto-usuario{

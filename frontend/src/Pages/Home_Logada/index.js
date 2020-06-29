@@ -83,8 +83,8 @@ function HomeLogada() {
         <div>
             <header>
                 <div className="menu-header-home container-fluid">
-                    <div className="logo-header">
-                        <a href="#"><img src={logo} alt="bfriend" /></a>
+                    <div >
+                        <a href="#"><img className="logo-header" src={logo} alt="bfriend" /></a>
                     </div>
 
                     <nav className="btn-header-home">
@@ -98,19 +98,20 @@ function HomeLogada() {
             </header>
             <div className="hero-image">
                 <img className="banner" src={banner5}></img>
+                
             </div>
             <div className="fundo-pesquisa">
                 
                 <div className="form-pl" onSubmit={handleSubmit}>
                     <div className="form-group col-md-4">
                         <label className="text-light " htmlFor="inputText">Em qual cidade?</label>
-                        <select name="cidade" id="cidade" value={selectedCidade} onChange={handleSelectCidade}>
+                        <select className="form-control" name="cidade" id="cidade" value={selectedCidade} onChange={handleSelectCidade}>
                         <option value ="0">Selecione uma Cidade</option>
                         {Cidades.map(Cidade => (
-                            <option key={Cidade} value={Cidade}>{Cidade}</option>
+                            <option  key={Cidade} value={Cidade}>{Cidade}</option>
                         ))}
                         </select>
-                        <input type="text" className="form-control" id="inputCidade" />
+                       
                     </div>
                     <div className="form-group col-md-4">
                         <label htmlFor="inputText" className="text-light " >Qual Bairro?</label>
@@ -119,13 +120,12 @@ function HomeLogada() {
                     </div>
                     <div className="form-group col-md-4">
                         <label htmlFor="inputText" className="text-light " >Qual Categoria?</label>
-                        <select name="categoria" id="categoria" value={selectedCategoria} onChange={handleSelectCategoria}>
+                        <select className="form-control" name="categoria" id="categoria" value={selectedCategoria} onChange={handleSelectCategoria}>
                         <option value ="0">Selecione uma Categoria</option>
                         {Categorias.map(Categoria => (
                             <option key={Categoria} value={Categoria}>{Categoria}</option>
                         ))}
                         </select>
-                        <input type="text" className="form-control" id="inputCategoria"  />
                     </div>
                 </div>
                 <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Buscar</button>
