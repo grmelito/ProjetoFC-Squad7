@@ -36,7 +36,7 @@ function Cards() {
                 <CardTitle className="card-title">Hamburguer Vegano</CardTitle>
                 <hr className="hr-card"></hr>
                 <CardText className="card-text">O melhor hamburger vegano do litoral paulista.</CardText>
-                <Button className="btn btn-outline-primary">Saiba mais</Button>
+                <Button outline color="primary">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -49,7 +49,7 @@ function Cards() {
                 <CardTitle className="card-title">Super Salgados</CardTitle>
                 <hr className="hr-card"></hr>
                 <CardText className="card-text">Quer comer aquele salgado? vaifazer </CardText>
-                <Button className="btn btn-outline-primary">Saiba mais</Button>
+                <Button outline color="primary">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -61,7 +61,7 @@ function Cards() {
                 <CardTitle className="card-title">Massas da Mama</CardTitle>
                 <hr className="hr-card"></hr>
                 <CardText className="card-text">Nós fazemos a melhor massa caseira da.</CardText>
-                <Button className="">Saiba mais</Button>
+                <Button outline color="primary">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -73,7 +73,7 @@ function Cards() {
                 <CardTitle className="card-title">Kilo do Bairro</CardTitle>
                 <hr className="hr-card"></hr>
                 <CardText className="card-text">Quer comer aquela marmita em casa.</CardText>
-                <Button>Saiba mais</Button>
+                <Button outline color="primary">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -94,7 +94,7 @@ function Cards() {
                 <CardTitle className="card-title">Dr Faz Tudo</CardTitle>
                 <hr className="hr-card"></hr>
                 <CardText className="card-text">O melhor hamburger vegano do litoral paulista.</CardText>
-                <Button className="">Saiba mais</Button>
+                <Button outline color="primary">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -106,7 +106,7 @@ function Cards() {
                 <CardTitle className="card-title">Casa de Força</CardTitle>
                 <hr className="hr-card"></hr>
                 <CardText className="card-text">Quer comer aquele salgado? vaifazer </CardText>
-                <Button className="">Saiba mais</Button>
+                <Button outline color="primary">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -118,7 +118,7 @@ function Cards() {
                 <CardTitle className="card-title">Bira Auto Mecânica</CardTitle>
                 <hr className="hr-card"></hr>
                 <CardText className="card-text">Nós fazemos a melhor massa caseira da.</CardText>
-                <Button className="">Saiba mais</Button>
+                <Button outline color="primary">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -130,7 +130,7 @@ function Cards() {
                 <CardTitle className="card-title">Alta Costura</CardTitle>
                 <hr className="hr-card"></hr>
                 <CardText className="card-text">Quer comer aquela marmita em casa.</CardText>
-                <Button className="">Saiba mais</Button>
+                <Button outline color="primary">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -151,7 +151,7 @@ function Cards() {
                 <CardTitle className="card-title">Vida Cell</CardTitle>
                 <hr className="hr-card"></hr>
                 <CardText className="card-text">O melhor hamburger vegano do litoral paulista.</CardText>
-                <Button className="">Saiba mais</Button>
+                <Button outline color="primary">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -164,7 +164,7 @@ function Cards() {
                 <CardTitle className="card-title">Conserto Tvs</CardTitle>
                 <hr className="hr-card"></hr>
                 <CardText className="card-text">Quer comer aquele salgado? vaifazer </CardText>
-                <Button className="">Saiba mais</Button>
+                <Button outline color="primary">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -176,7 +176,7 @@ function Cards() {
                 <CardTitle className="card-title">Conserto Tvs</CardTitle>
                 <hr className="hr-card"></hr>
                 <CardText className="card-text">Nós fazemos a melhor massa caseira da.</CardText>
-                <Button className="">Saiba mais</Button>
+                <Button outline color="primary">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -188,7 +188,7 @@ function Cards() {
                 <CardTitle className="card-title">Conserto Som</CardTitle>
                 <hr className="hr-card"></hr>
                 <CardText className="card-text">Quer comer aquela marmita em casa.</CardText>
-                <Button className="">Saiba mais</Button>
+                <Button outline color="primary">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>

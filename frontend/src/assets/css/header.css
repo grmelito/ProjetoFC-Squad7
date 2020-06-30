@@ -8,7 +8,7 @@ header{
 }
 
 .logo-header{
-    width: 9rem;
+    width: 10rem;
 }
 
 .menu-header-home{
@@ -26,8 +26,8 @@ header{
     border-color:#DFDFDF;
     border-radius: 1.5rem;
     color: #ffffff;
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     text-align: center;
@@ -43,8 +43,8 @@ header{
     border-color:#BDCEFC;
     border-radius: 1.5rem;
     color: #0F1570;
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     text-align: center;

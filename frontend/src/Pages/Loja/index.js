@@ -12,7 +12,6 @@ function Loja() {
                 <h1 className="nome-loja col-10">Dr. Faz Tudo</h1>
                 <div className="top-loja col-11">
                     <h2 className="subnome-loja"> Reparos Domésticos</h2>
-                    <p className="p-top-loja">Bem vindo A loja</p>
                     <a href="/cadastroLoja">Editar Loja</a>
                 </div>
                 <div className="galeria-loja col-12">

@@ -16,17 +16,6 @@ function Duvidas() {
                         </div>
                         <h1 className="duvidas">Tá com dúvidas? Calma, vamos te ajudar</h1>
                         <div className="perguntas">
-                            <h2>Como excluir minha conta?</h2>
-                            <br></br>
-                            <p className="txt-duvidas"> Para excluir sua conta é bem simples.
-                            <br></br>
-                            Ente com seu login e senha clique em Perfil.
-                            <br></br>
-                            Na parte de baixo da tela, você irá encontrar a opção excluir perfil, <br></br> clique nela. 
-                            <br></br>
-                            Insira sua senha, confirme e pronto sua conta estará excluida.</p>
-                        </div>
-                        <div className="perguntas">
                             <h2>Como alterar o CPF/CNPJ cadastrado?</h2>
                             <br></br>
                             <p className="txt-duvidas"> Entre com seu login e senha. 

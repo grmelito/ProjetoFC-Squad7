@@ -47,6 +47,10 @@ hr{
     width: 9rem;
 }
 
+.icones{
+  margin-bottom: 5px;
+}
+
  /*fim da estilização home*/
 
  /*estilização cadastro*/
@@ -152,6 +156,10 @@ hr{
     margin-bottom: 0.5rem;
   }
 
+  .iformacoes-gerais{
+    margin-bottom: 2.5em;
+  }
+
   /* Fim da estilização do cadastro */
 
 
@@ -195,6 +203,7 @@ hr{
     max-width: 45rem;
     margin-top: 7rem;
     margin-bottom: 10rem;
+    box-shadow: 0.1rem 0.2rem #B0B3B8;
   }
 
   .form-grande {
@@ -210,6 +219,8 @@ hr{
     border-radius: 0.75rem;
       
   }
+
+  
 
   .selecionar-fotos{
     display: flex;
