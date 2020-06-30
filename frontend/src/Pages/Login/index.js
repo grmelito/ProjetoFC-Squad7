@@ -34,7 +34,7 @@ function Login() {
                 <div className="">
                     <div className="fundo-forms col-9">
                         <div className="logo">
-                            <img src={Logo} />
+                            <img className="logo-forms" src={Logo} />
                             <p className="subtitulo">Aproximando pessoas. Fazendo negócios</p>
                         </div>
                         <form onSubmit={handleLogin}>

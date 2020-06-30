@@ -18,6 +18,7 @@ import cell from '../../assets/img/celular.png';
 import conserto from '../../assets/img/Tves.png';
 import tela from '../../assets/img/Tela.png';
 import som from '../../assets/img/Som.png';
+import icone from '../../assets/img/IconeCards.png'
 
 function Cards() {
   return (
@@ -25,7 +26,7 @@ function Cards() {
       <section id="card-alimentacao" className="card-section" >
 
         <div className="card-name">
-          <h3 className="h3-card">Alimentação</h3>
+          <h3 className="h3-card"><img className="icone-cards" src={icone}/>Alimentação</h3>
         </div>
 
         <div className="container-cards">
@@ -83,7 +84,7 @@ function Cards() {
       <section id="card-serviços_lar" className="card-section" >
 
         <div className="card-name">
-          <h3 className="h3-card">Serviços para o lar</h3>
+          <h3 className="h3-card"><img className="icone-cards" src={icone}/>Serviços para o lar</h3>
         </div>
 
         <div className="container-cards">
@@ -140,7 +141,7 @@ function Cards() {
       <section id="card-Reparos" className="card-section" >
 
         <div className="card-name">
-          <h3 className="h3-card">Reparos domésticos</h3>
+          <h3 className="h3-card"><img className="icone-cards" src={icone}/>Reparos domésticos</h3>
         </div>
 
         <div className="container-cards">

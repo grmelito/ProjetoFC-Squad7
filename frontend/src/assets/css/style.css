@@ -93,8 +93,7 @@ hr{
     line-height: 1.5;
     background-clip: padding-box;
     border: 1px solid #ced4da;
-    border-radius: 0.75rem;
-      
+    border-radius: 0.5rem !important;     
   }
 
   .fundo-forms{
@@ -113,6 +112,10 @@ hr{
     background-color: #DFDFDF;
     justify-content: center   ;
     
+  }
+
+  .fundo-pesquisa{
+    margin-bottom: 4rem;
   }
 
   .btn-primary {
@@ -138,7 +141,15 @@ hr{
   }
 
   .logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 2.5rem; 
+    margin-top: 2.5rem;
+  }
+
+  .logo-forms{
+    width: 15rem;
   }
 
   .subtitulo{
@@ -159,6 +170,8 @@ hr{
   .iformacoes-gerais{
     margin-bottom: 2.5em;
   }
+
+  
 
   /* Fim da estilização do cadastro */
 
@@ -220,7 +233,6 @@ hr{
       
   }
 
-  
 
   .selecionar-fotos{
     display: flex;
