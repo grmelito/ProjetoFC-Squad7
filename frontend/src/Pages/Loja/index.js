@@ -1,25 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../assets/css/reset.css';
 import '../../assets/css/style.css';
 import Header from '../../components/Header/header';
 import Footer from '../../components/Footer/footer';
+import api from '../../services/api'
 
 function Loja() {
+    const token = localStorage.getItem('token')
+
+    const [Anuncio, setAnuncio] = useState([])
+
+    const id = 25
+
+    useEffect(() => {
+        const res = api.get(`anuncio/${id}` , {
+           headers: {
+               'auth-token': token 
+           },
+       }).then(res => {
+           setAnuncio(res.data);
+       })}, []);
+
+
     return (
         <div>
             <Header />
             <section className="conteiner-loja">
-                <h1 className="nome-loja col-10">Dr. Faz Tudo</h1>
+                {Anuncio.map(Anuncio =>
+                <h1 className="nome-loja col-10">{Anuncio.Titulo}</h1>
+                )}
+                {Anuncio.map(Anuncio =>
                 <div className="top-loja col-11">
-                    <h2 className="subnome-loja"> Reparos Domésticos</h2>
-                    <p className="p-top-loja">Bem vindo A loja</p>
+                <h2 className="subnome-loja">{Anuncio.CategoriaNome}</h2>
                     <a href="/cadastroLoja">Editar Loja</a>
                 </div>
+                )}
                 <div className="galeria-loja col-12">
+                    {Anuncio.map(Anuncio => (
                     <div className="img-1 ">
-
+                        <img key={Anuncio} src={'http://localhost:3333/uploads/' + Anuncio.ImagemAnuncio} width='220' height='200' />
                     </div>
-
+                    ))}
                     <div className="img-2">
 
                     </div>
@@ -32,33 +53,27 @@ function Loja() {
 
                     </div>
                 </div>
-
+                {Anuncio.map(Anuncio =>
                 <div className="box-loja">
                     <div className="loja-descricao col-5">
-                        <p className="p-descricao">
-                            O nosso lar tá sempre precisando de pequenos reparos. Pia, torneira, banheiro, móveis e elétrica. No dia a dia a gente nunca tem tempo para fazer essas pequenas tarefas e isso pode ser um problema. Imagine se você vai tomar banho e o chuveiro não sai água? Não espere mais. Fazemos todos esses serviços com o melhor preço do bairro. Atendimento e orçamento no mesmo dia.
-                            </p>
-                        <p className="p-descricao">Temos mais de 10 anos de trabalho prestados no nosso bairro, atendemos condominios e residencias sempre com boas recomendações. Entre em contato agora com por telefone ou e-mail é simples e rapidamente estaremos em sua residencia para fazer seu orçamento. E o melhor é tudo por nossa conta você só paga se aceitar orçamento.
-                        </p>
+                        <p className="p-descricao">{Anuncio.Descricao}</p>
                     </div>
                     <div className="dados-loja col-5">
                         <div className="img-perfil-loja">
-
                         </div >
                         <div className="loja-cont" >
                             <p className="p-info" >Herbert Thomas Cardoso</p>
                             <div className="loja-info">
-                                <p className="p-info"> (13) 99177-4482 </p>
+                                <p className="p-info">{Anuncio.Telefone}</p>
                             </div>
 
                             <div className="loja-info">
                                 <p className="p-info"> herbertthomasgja@gmail.com  </p>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
+                )}
             </section>
             <Footer />
         </div>
