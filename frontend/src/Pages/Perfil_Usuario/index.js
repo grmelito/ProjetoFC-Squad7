@@ -25,7 +25,9 @@ function PerfilUsuario() {
                 <div className="">
                     <div className="fundo-loja col-9">
                         <div className="foto-usuario">
-                            <img src={SelecionarFoto} className="rounded-circle"></img>
+                        {Perfil.map(Perfil =>
+                            <img src={'http://localhost:3333/uploads/' + Perfil.ImagemUsuario} className="rounded-circle"></img>
+                        )}
                         </div>
                         <div className="botao-cadastro">
                                     <button type="submit" className="btn btn-primary">Alterar Dados</button>
