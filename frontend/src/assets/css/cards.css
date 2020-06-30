@@ -33,18 +33,35 @@
     justify-content: start;
 }
 .body-card{
-    background:#EC0058;
+    background:#FFFF;
     color: #FFFFFF;
 }
 
 .card-title{
+ color: #0F1570;
+ font-family: sans-serif;
  font-size: 24px;
  text-align: center; 
 }
 
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 5px solid;
+}
+
+.hr-card{
+    color: #0F1570;
+    height: 5px;
+    
+}
+
 .card-text{
+    color: #0F1570;
     font-size: 20px;
     text-align: left;
+    font-family: sans-serif;
 }
 
 .card-btn{
