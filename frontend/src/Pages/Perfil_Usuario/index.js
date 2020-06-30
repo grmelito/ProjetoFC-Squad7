@@ -26,7 +26,8 @@ function PerfilUsuario() {
                     <div className="fundo-loja col-9">
                         <div className="foto-usuario">
                         {Perfil.map(Perfil =>
-                            <img src={'http://localhost:3333/uploads/' + Perfil.ImagemUsuario} className="rounded-circle"></img>
+                            <img src={'http://localhost:3333/uploads/' + Perfil.ImagemUsuario} className="rounded-circle" 
+                            width='220' height='200'></img>
                         )}
                         </div>
                         <div className="botao-cadastro">

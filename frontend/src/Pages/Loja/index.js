@@ -4,6 +4,7 @@ import '../../assets/css/style.css';
 import Header from '../../components/Header/header';
 import Footer from '../../components/Footer/footer';
 import api from '../../services/api'
+import SelecionarFoto from "../../assets/img/AdicionarFoto.png";
 
 function Loja() {
     const token = localStorage.getItem('token')
@@ -17,10 +18,14 @@ function Loja() {
            headers: {
                'auth-token': token 
            },
+
        }).then(res => {
            setAnuncio(res.data);
        })}, []);
 
+    function handleError (e) {
+        this.onerror=null;this.src={SelecionarFoto}
+    }
 
     return (
         <div>
@@ -35,24 +40,29 @@ function Loja() {
                     <a href="/cadastroLoja">Editar Loja</a>
                 </div>
                 )}
+                {Anuncio.map(Anuncio => (
                 <div className="galeria-loja col-12">
-                    {Anuncio.map(Anuncio => (
                     <div className="img-1 ">
-                        <img key={Anuncio} src={'http://localhost:3333/uploads/' + Anuncio.ImagemAnuncio} width='220' height='200' />
+                        <img key={Anuncio} src={'http://localhost:3333/uploads/' + Anuncio.ImagemAnuncio[0]}
+                        width='220' height='200'/>
                     </div>
-                    ))}
+                    
                     <div className="img-2">
-
+                    <img key={Anuncio} src={'http://localhost:3333/uploads/' + Anuncio.ImagemAnuncio[1]}
+                        width='220' height='200'/>
                     </div>
 
                     <div className="img-3">
-
+                    <img key={Anuncio} src={'http://localhost:3333/uploads/' + Anuncio.ImagemAnuncio[2]}
+                        width='220' height='200'/>
                     </div>
 
                     <div className="img-4">
-
-                    </div>
+                    <img key={Anuncio} src={'http://localhost:3333/uploads/' + Anuncio.ImagemAnuncio[3]}
+                        width='220' height='200' onerror={handleError}/>
+                    </div> 
                 </div>
+                ))}
                 {Anuncio.map(Anuncio =>
                 <div className="box-loja">
                     <div className="loja-descricao col-5">
