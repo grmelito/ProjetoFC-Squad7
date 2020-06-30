@@ -26,25 +26,35 @@ header{
     border-color:#DFDFDF;
     border-radius: 1.5rem;
     color: #ffffff;
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     text-align: center;
     vertical-align: middle;
-    font-size: 1rem;
+    font-size: 1.5rem;
     border: 1px solid transparent;
     margin-right: 30px;
+    
 }
 
 .btn-entrar-header{
-    background: #fFFFFF;
-    border-color:#0f1570;
+    background:#fff;
+    border-color:#BDCEFC;
     border-radius: 1.5rem;
-    color: #0f1570;
-    text-align: center;
-    font-style: bold;
+    color: #0F1570;
     padding-right: 1rem;
     padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.5rem;
+    border: 1px solid ;
+    margin-right: 30px;
+    
 }
+
 
 .container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
     width: 100%;

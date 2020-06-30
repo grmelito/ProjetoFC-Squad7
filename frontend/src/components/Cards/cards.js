@@ -34,8 +34,9 @@ function Cards() {
               <CardImg top width="100%" src={hamburguer} alt="Card image cap" />
               <CardBody className="body-card">
                 <CardTitle className="card-title">Hamburguer Vegano</CardTitle>
+                <hr className="hr-card"></hr>
                 <CardText className="card-text">O melhor hamburger vegano do litoral paulista.</CardText>
-                <Button className="">Saiba mais</Button>
+                <Button className="btn btn-outline-primary">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -46,8 +47,9 @@ function Cards() {
               <CardImg top width="100%" src={coxinha} alt="Card image cap" />
               <CardBody className="body-card">
                 <CardTitle className="card-title">Super Salgados</CardTitle>
+                <hr className="hr-card"></hr>
                 <CardText className="card-text">Quer comer aquele salgado? vaifazer </CardText>
-                <Button>Saiba mais</Button>
+                <Button className="btn btn-outline-primary">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -57,8 +59,9 @@ function Cards() {
               <CardImg top width="100%" src={massas} alt="Card image cap" />
               <CardBody className="body-card">
                 <CardTitle className="card-title">Massas da Mama</CardTitle>
+                <hr className="hr-card"></hr>
                 <CardText className="card-text">Nós fazemos a melhor massa caseira da.</CardText>
-                <Button>Saiba mais</Button>
+                <Button className="">Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
@@ -68,6 +71,7 @@ function Cards() {
               <CardImg top width="100%" src={marmita} alt="Card image cap" />
               <CardBody className="body-card">
                 <CardTitle className="card-title">Kilo do Bairro</CardTitle>
+                <hr className="hr-card"></hr>
                 <CardText className="card-text">Quer comer aquela marmita em casa.</CardText>
                 <Button>Saiba mais</Button>
               </CardBody>
@@ -88,6 +92,7 @@ function Cards() {
               <CardImg top width="100%" src={faz_tudo} alt="Card image cap" />
               <CardBody className="body-card">
                 <CardTitle className="card-title">Dr Faz Tudo</CardTitle>
+                <hr className="hr-card"></hr>
                 <CardText className="card-text">O melhor hamburger vegano do litoral paulista.</CardText>
                 <Button className="">Saiba mais</Button>
               </CardBody>
@@ -99,6 +104,7 @@ function Cards() {
               <CardImg top width="100%" src={casa_forca} alt="Card image cap" />
               <CardBody className="body-card">
                 <CardTitle className="card-title">Casa de Força</CardTitle>
+                <hr className="hr-card"></hr>
                 <CardText className="card-text">Quer comer aquele salgado? vaifazer </CardText>
                 <Button className="">Saiba mais</Button>
               </CardBody>
@@ -110,6 +116,7 @@ function Cards() {
               <CardImg top width="100%" src={mecanica} alt="Card image cap" />
               <CardBody className="body-card">
                 <CardTitle className="card-title">Bira Auto Mecânica</CardTitle>
+                <hr className="hr-card"></hr>
                 <CardText className="card-text">Nós fazemos a melhor massa caseira da.</CardText>
                 <Button className="">Saiba mais</Button>
               </CardBody>
@@ -121,6 +128,7 @@ function Cards() {
               <CardImg top width="100%" src={costura} alt="Card image cap" />
               <CardBody className="body-card">
                 <CardTitle className="card-title">Alta Costura</CardTitle>
+                <hr className="hr-card"></hr>
                 <CardText className="card-text">Quer comer aquela marmita em casa.</CardText>
                 <Button className="">Saiba mais</Button>
               </CardBody>
@@ -141,6 +149,7 @@ function Cards() {
               <CardImg top width="100%" src={cell} alt="Card image cap" />
               <CardBody className="body-card">
                 <CardTitle className="card-title">Vida Cell</CardTitle>
+                <hr className="hr-card"></hr>
                 <CardText className="card-text">O melhor hamburger vegano do litoral paulista.</CardText>
                 <Button className="">Saiba mais</Button>
               </CardBody>
@@ -153,6 +162,7 @@ function Cards() {
               <CardImg top width="100%" src={conserto} alt="Card image cap" />
               <CardBody className="body-card">
                 <CardTitle className="card-title">Conserto Tvs</CardTitle>
+                <hr className="hr-card"></hr>
                 <CardText className="card-text">Quer comer aquele salgado? vaifazer </CardText>
                 <Button className="">Saiba mais</Button>
               </CardBody>
@@ -164,6 +174,7 @@ function Cards() {
               <CardImg top width="100%" src={tela} alt="Card image cap" />
               <CardBody className="body-card">
                 <CardTitle className="card-title">Conserto Tvs</CardTitle>
+                <hr className="hr-card"></hr>
                 <CardText className="card-text">Nós fazemos a melhor massa caseira da.</CardText>
                 <Button className="">Saiba mais</Button>
               </CardBody>
@@ -175,6 +186,7 @@ function Cards() {
               <CardImg top width="100%" src={som} alt="Card image cap" />
               <CardBody className="body-card">
                 <CardTitle className="card-title">Conserto Som</CardTitle>
+                <hr className="hr-card"></hr>
                 <CardText className="card-text">Quer comer aquela marmita em casa.</CardText>
                 <Button className="">Saiba mais</Button>
               </CardBody>
