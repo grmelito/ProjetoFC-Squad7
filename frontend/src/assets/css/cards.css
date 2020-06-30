@@ -27,6 +27,7 @@
     font-size: 20px;
     margin-left: 10px;
     font-weight: bold;
+    font-family: sans-serif;
 }
 .card-name{
     display: flex;
@@ -40,7 +41,7 @@
 .card-title{
  color: #0F1570;
  font-family: sans-serif;
- font-size: 24px;
+ font-size: 22px;
  text-align: center; 
 }
 
@@ -59,7 +60,7 @@ hr {
 
 .card-text{
     color: #0F1570;
-    font-size: 20px;
+    font-size: 19px;
     text-align: left;
     font-family: sans-serif;
 }
@@ -68,5 +69,23 @@ hr {
     margin-top: 20px;
     background:#FFFFFF;
     color:#EC0058;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    box-shadow: 0.1em 0.1em #EEEEEE;
+}
+
+.btn {    
+    color: #04329B !important;    
+    border-color: #04329B !important;
 }
 

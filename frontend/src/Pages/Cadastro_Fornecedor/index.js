@@ -3,6 +3,7 @@ import SelecionarFoto from "../../assets/img/AdicionarFoto.png"
 import api from '../../services/api'
 import { useState } from 'react';
 import { useEffect } from 'react';
+import logo from '../../assets/img/LogoAtualizada.PNG';
 
 function CadastroFornecedor() {
 
@@ -32,6 +33,21 @@ function CadastroFornecedor() {
 
     return (
         <div>
+            <header>
+                <div className="menu-header-home container-fluid">
+                    <div >
+                        <a href="#"><img className="logo-header" src={logo} alt="bfriend" /></a>
+                    </div>
+
+                    <nav className="btn-header-home">
+                       
+                            <button className="btn-header" >Perfil</button>
+                        
+                        <button className="btn-header">Sair</button>
+                            
+                    </nav>
+                </div>
+            </header>
             <div className="fundo-cadastro">
                 <div className="">
                     <div className="fundo-loja col-9">
@@ -39,37 +55,39 @@ function CadastroFornecedor() {
                             <img src={SelecionarFoto} className="rounded-circle"></img>
                         </div>
                         <form >
+                            
                             <div className="form-div">
                                 <div className="form-group col-md-12">
-                                    <label htmlFor="inputNome">Nome Completo</label>
-                                    <input className="form-control" id="inputEmail4" placeholder="Nome" />
+                                    <input className="form-control" id="inputEmail4" placeholder="Nome Completo" />
                                 </div>
                                 <div className="form-group col-md-12">
-                                    <label htmlFor="inputEmail">Email</label>
-                                    <input type="text" className="form-control" id="inputEmail4" placeholder="E-mail" />
+                                    
+                                    <input type="text" className="form-control" id="inputEmail4" placeholder="Email" />
                                 </div>
                                 <div className="form-group col-md-5">
-                                    <label htmlFor="inputData">Data de Nascimento</label>
-                                    <input type="date" className="form-control" id="inputData" />
+                                    
+                                    <input type="date" className="form-control" id="inputData" placeholder="Data de Nascimento" />
                                 </div>
                                 <div className="form-group col-md-7">
-                                    <label htmlFor="inputGenero">Gênero</label>
-                                    <input type="text" className="form-control" id="inputGenero" />
+                                    
+                                    <input type="text" className="form-control" id="inputGenero" placeholder="Gênero" />
+
+                                </div>
+                                
+                                <div className="form-group col-md-6">
+                                    
+                                    <input type="text" className="form-control" placeholder="CPF" id="inputCPF" />
                                 </div>
                                 <div className="form-group col-md-6">
-                                    <label htmlFor="inputCPF">CPF</label>
-                                    <input type="text" className="form-control" placeholder="123.456.789-01" id="inputCPF" />
-                                </div>
-                                <div className="form-group col-md-6">
-                                    <label htmlFor="inputCEP">CEP</label>
-                                    <input type="text" className="form-control" id="inputCep" placeholder="08888-000" />
+                                    
+                                    <input type="text" className="form-control" id="inputCep" placeholder="CEP" />
                                 </div>
                                 <div className="form-group col-md-3">
-                                    <label htmlFor="inputData">Estado</label>
-                                    <input type="text" className="form-control" id="inputNumero" />
+                                    
+                                    <input type="text" className="form-control" id="inputNumero" placeholder="Estado" />
                                 </div>
                                 <div className="form-group col-md-9">
-                                    <label htmlFor="inputPassword">Cidade</label>
+                                    
                                     <select className="form-control" name="cidade" id="cidade" value={selectedCidade} onChange={handleSelectCidade}>
                                         <option value="0">Selecione uma Cidade</option>
                                         {Cidades.map(Cidade => (
@@ -78,20 +96,20 @@ function CadastroFornecedor() {
                                     </select>
                                 </div>
                                 <div className="form-group col-md-12">
-                                    <label htmlFor="inputEnderco">Endereço</label>
-                                    <input type="text" className="form-control" id="inputEndereco" />
+                                    
+                                    <input type="text" className="form-control" id="inputEndereco" placeholder="Endereço" />
                                 </div>
                                 <div className="form-group col-md-5">
-                                    <label htmlFor="inputNumero">Número</label>
-                                    <input type="text" className="form-control" id="inputNumero" />
+                                    
+                                    <input type="text" className="form-control" id="inputNumero" placeholder="Número"/>
                                 </div>
                                 <div className="form-group col-md-7">
-                                    <label htmlFor="inputComplemento">Complemento</label>
-                                    <input type="text" className="form-control" id="inputComplemento" />
+                                    
+                                    <input type="text" className="form-control" id="inputComplemento" placeholder="Complemento"/>
                                 </div>
                                 <div className="form-group col-md-10">
-                                    <label htmlFor="inputPassword">Bairro</label>
-                                    <input type="text" className="form-control" id="inputBairro" />
+                                    
+                                    <input type="text" className="form-control" id="inputBairro" placeholder="Bairro"/>
                                 </div>
                                 
                                 <div className="botao-cadastro">

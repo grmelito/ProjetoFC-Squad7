@@ -3,6 +3,7 @@ import '../../assets/css/style.css';
 import FotoUsuario from "../../assets/img/Id_Rosto.png"
 import SelecionarFoto from "../../assets/img/AdicionarFoto.png"
 import api from '../../services/api'
+import logo from '../../assets/img/LogoAtualizada.PNG';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
@@ -33,6 +34,21 @@ function Cadastro_Loja() {
 
     return (
         <div>
+            <header>
+                <div className="menu-header-home container-fluid">
+                    <div >
+                        <a href="#"><img className="logo-header" src={logo} alt="bfriend" /></a>
+                    </div>
+
+                    <nav className="btn-header-home">
+                       
+                            <button className="btn-header" >Perfil</button>
+                        
+                        <button className="btn-header">Sair</button>
+                            
+                    </nav>
+                </div>
+            </header>
             <div className="fundo-cadastro">
                 <div className="">
                     <div className="fundo-loja col-9">
@@ -42,23 +58,23 @@ function Cadastro_Loja() {
                         <form >
                             <div className="form-div">
                                 <div className="form-group col-md-12">
-                                    <label htmlFor="inputNome">Nome</label>
-                                    <input className="form-control" id="inputEmail4" placeholder="Nome" />
+                                    
+                                    <input className="form-control" id="inputEmail4" placeholder="Nome da Loja" />
                                 </div>
                                 <div className="form-group col-md-12">
-                                    <label htmlFor="inputEmail">Email</label>
-                                    <input type="email" className="form-control" id="inputEmail" placeholder="usuario@gmail.com" />
+                                    
+                                    <input type="email" className="form-control" id="inputEmail" placeholder="Email Comercial" />
                                 </div>
                                 <div className="form-group col-md-12">
-                                    <label htmlFor="inputDescricao">Descrição</label>
-                                    <input type="text" className="form-grande" id="inputDescricaoLoja" placeholder="" />
+                                    
+                                    <input type="text" className="form-grande" id="inputDescricaoLoja" placeholder="Descrição" />
                                 </div>
                                 <div className="form-group col-md-6">
-                                    <label htmlFor="inputCelular">Celular/WhatsApp</label>
-                                    <input type="text" className="form-control" id="inputCelular" placeholder="Cel:(WhatsApp)" />
+                                    
+                                    <input type="text" className="form-control" id="inputCelular" placeholder="Celular/WhatsApp" />
                                 </div>
                                 <div className="form-group col-md-6">
-                                    <label htmlFor="inputCategoria">Categoria</label>
+                                    
                                     <select className="form-control" name="categoria" id="categoria" value={selectedCategoria} onChange={handleSelectCategoria}>
                                         <option value="0">Selecione uma Categoria</option>
                                         {Categorias.map(Categoria => (
@@ -90,6 +106,7 @@ function Cadastro_Loja() {
                     <p>Ao se cadastrar você concorda com os <a className="redirect">Termos de Uso  </a> e a <a className="redirect">Política de Privacidade</a> de BFriend.</p>
                 </div>
             </div>
+            
         </div>
     )
 } export default Cadastro_Loja;
