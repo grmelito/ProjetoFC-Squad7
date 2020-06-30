@@ -26,7 +26,7 @@ module.exports = {
                     'Usuario.DataNascimento','Usuario.Genero',
                     'Usuario.ImagemUsuario','Endereco.Bairro',
                     'Endereco.Rua','Endereco.Numero',
-                    'Endereco.Complemento',
+                    'Endereco.Complemento', 'Endereco.Cep',
                     'Cidades.CidadeNome','Estados.EstadoNome'
                 ]).join('Endereco', 'Endereco.IdEndereco' ,'=', 'Usuario.IdEndereco')
                 .join('Cidades', 'Cidades.IdCidade', '=', 'Endereco.IdCidade')

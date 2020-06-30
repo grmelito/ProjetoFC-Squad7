@@ -56,7 +56,7 @@ function PerfilUsuario() {
                                 </div>
                                 <div className="form-group col-md-6">
                                     <label htmlFor="inputCEP">CEP</label>
-                                    <input type="text" className="form-control" id="inputCep" placeholder="08888-000" value={Perfil.CEP} />
+                                    <input type="text" className="form-control" id="inputCep" placeholder="08888-000" value={Perfil.Cep} />
                                 </div>
                                 <div className="form-group col-md-12">
                                     <label htmlFor="inputEnderco">Endereço</label>
