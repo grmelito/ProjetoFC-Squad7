@@ -41,7 +41,7 @@ function HomeLogada() {
 // React de Categorias
     useEffect(() => {
         api.get('categorias').then(res => {
-            const categoriaName = res.data.map(IdCategoria => IdCategoria.CategoriaNome)
+            const categoriaName = res.data
     
             setCategorias(categoriaName);
         })
@@ -81,7 +81,7 @@ function HomeLogada() {
         }).then(res => {
             console.log(res.data)
         })   
-            //console.log(res)
+        
         }
       
     return (
@@ -128,7 +128,7 @@ function HomeLogada() {
                         <select className="form-control" name="categoria" id="categoria" value={selectedCategoria} onChange={handleSelectCategoria}>
                         <option value ="0">Selecione uma Categoria</option>
                         {Categorias.map(Categoria => (
-                            <option key={Categoria} value={Categoria}>{Categoria}</option>
+                            <option key={Categoria.IdCategoria} value={Categoria.IdCategoria}>{Categoria.CategoriaNome}</option>
                         ))}
                         </select>
                     </div>
