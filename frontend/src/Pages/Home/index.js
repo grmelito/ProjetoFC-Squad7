@@ -17,7 +17,17 @@ import api from '../../services/api'
 
 function Home() {
     const [Categorias, setCategorias] = useState([]);
+    const [Anuncios, setAnuncios] = useState([]);
 
+    // Carregando Anuncios
+    useEffect(() => {
+        api.get('anuncios').then(res => {
+            const AllAnuncios = res.data
+            
+            setAnuncios(AllAnuncios);
+        })
+    }, []);
+    
     // Listando Categorias
     useEffect(() => {
         api.get('categorias').then(res => {
@@ -35,7 +45,7 @@ function Home() {
         
         const res = await api.get(`anuncios/categoria/${id}` ,{
         }).then(res => {
-            console.log(res.data)
+            const AnuncioCategoria = res.data
         })
     }
 
@@ -106,7 +116,7 @@ function Home() {
                     </div>
                 </div>   
             </section> 
-            <Cards />
+            <Cards Anuncios={Anuncios}/> 
             <Footer />
         </div>
     );

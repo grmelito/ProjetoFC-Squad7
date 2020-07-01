@@ -19,8 +19,17 @@ import conserto from '../../assets/img/Tves.png';
 import tela from '../../assets/img/Tela.png';
 import som from '../../assets/img/Som.png';
 import icone from '../../assets/img/IconeCards.png'
+import api from '../../services/api'
 
-function Cards() {
+function Cards({Anuncios}) {
+
+  function handlePageLoja (event) {
+    const Loja = event.target.id
+
+
+    console.log(Loja)
+  }
+
   return (
     <div>
       <section id="card-alimentacao" className="card-section" >
@@ -30,17 +39,19 @@ function Cards() {
         </div>
 
         <div className="container-cards">
-          <div className="item-cards">
+        {Anuncios.map(Anuncio => (
+          <div className="item-cards" id={Anuncio.IdCategoria}>
             <Card className="card-inicio">
-              <CardImg top width="100%" src={hamburguer} alt="Card image cap" />
+              <CardImg top width="100%" src={'http://localhost:3333/uploads/' + Anuncio.ImagemAnuncio[0]} alt="Card image cap" />
               <CardBody className="body-card">
-                <CardTitle className="card-title">Hamburguer Vegano</CardTitle>
+                <CardTitle className="card-title">{Anuncio.Titulo}</CardTitle>
                 <hr className="hr-card"></hr>
                 <CardText className="card-text">O melhor hamburger vegano do litoral paulista.</CardText>
-                <Button outline color="primary">Saiba mais</Button>
+                <Button outline color="primary" id={Anuncio.IdAnuncio} onClick={handlePageLoja}>Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
+          ))}
 
 
           <div className="item-cards">
