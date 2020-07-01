@@ -41,11 +41,11 @@ function Cadastro_Loja() {
                     </div>
 
                     <nav className="btn-header-home">
-                       
-                            <button className="btn-header" >Perfil</button>
-                        
+
+                        <button className="btn-header" >Perfil</button>
+
                         <button className="btn-header">Sair</button>
-                            
+
                     </nav>
                 </div>
             </header>
@@ -58,23 +58,34 @@ function Cadastro_Loja() {
                         <form >
                             <div className="form-div">
                                 <div className="form-group col-md-12">
-                                    
-                                    <input className="form-control" id="inputEmail4" placeholder="Nome da Loja" />
+
+                                    <input className="input-cadloja" id="inputEmail4" placeholder="Nome da Loja" />
                                 </div>
                                 <div className="form-group col-md-12">
-                                    
-                                    <input type="email" className="form-control" id="inputEmail" placeholder="Email Comercial" />
+
+                                    <input className="input-cadloja" id="inpufacebook" placeholder="Facebook" />
                                 </div>
+
                                 <div className="form-group col-md-12">
-                                    
+
+                                    <input className="input-cadloja" id="inputintagram" placeholder="Instagram" />
+                                </div>
+
+                                <div className="form-group col-md-12">
+
+                                    <input className="input-cadloja" id="inputSite" placeholder="Site" />
+                                </div>
+
+                                <div className="form-group col-md-12">
+
                                     <input type="text" className="form-grande" id="inputDescricaoLoja" placeholder="Descrição" />
                                 </div>
                                 <div className="form-group col-md-6">
-                                    
-                                    <input type="text" className="form-control" id="inputCelular" placeholder="Celular/WhatsApp" />
+
+                                    <input type="text" className="input-cadloja" id="inputCelular" placeholder="Celular/WhatsApp" />
                                 </div>
                                 <div className="form-group col-md-6">
-                                    
+
                                     <select className="form-control" name="categoria" id="categoria" value={selectedCategoria} onChange={handleSelectCategoria}>
                                         <option value="0">Selecione uma Categoria</option>
                                         {Categorias.map(Categoria => (
@@ -103,10 +114,10 @@ function Cadastro_Loja() {
                         </div>
 
                     </div>
-                    <p>Ao se cadastrar você concorda com os <a className="redirect">Termos de Uso  </a> e a <a className="redirect">Política de Privacidade</a> de BFriend.</p>
+                    <p>Ao cadastrar sua loja você concorda com os <a className="redirect">Termos de Uso  </a> e a <a className="redirect">Política de Privacidade</a> de BFriend.</p>
                 </div>
             </div>
-            
+
         </div>
     )
 } export default Cadastro_Loja;
