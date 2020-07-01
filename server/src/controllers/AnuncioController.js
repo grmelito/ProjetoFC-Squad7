@@ -178,8 +178,13 @@ module.exports = {
         'Anuncio.Instagram',
         'Anuncio.Facebook',
         'Anuncio.Site',
+        'Usuario.Nome',
+        'Usuario.Email',
+        'Usuario.ImagemUsuario',
         'Categorias.CategoriaNome'])
         .join('Categorias', 'Categorias.IdCategoria','=', 'Anuncio.IdCategoria')
+        .join('Fornecedor', 'Fornecedor.IdFornecedor', '=', 'Anuncio.IdFornecedor')
+        .join('Usuario',  'Usuario.IdUsuario', '=', 'Fornecedor.IdUsuario')
         .where('Anuncio.IdAnuncio', id)
 
         results[0].ImagemAnuncio = results[0].ImagemAnuncio.split(";");
