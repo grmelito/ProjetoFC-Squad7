@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom'
 import Header from '../../components/Header/header';
 import Footer from '../../components/Footer/footer';
 import Cards from '../../components/Cards/cards';
@@ -12,12 +13,23 @@ import { useEffect } from 'react';
 
 function HomeLogada() {
 
+    const [Anuncios, setAnuncios] = useState([]);
     const [Cidades, setCidades] = useState([]);
     const [Bairro, setBairro] = useState('');
     const [Categorias, setCategorias] = useState([]);
 
     const [selectedCidade, setSelectedCidade] = useState('0');
     const [selectedCategoria, setSelectedCategoria] = useState('0');
+    const history = useHistory();
+
+// React de Anuncios
+    useEffect(() => {
+        api.get('anuncios').then(res => {
+            const AllAnuncios = res.data
+            
+            setAnuncios(AllAnuncios);
+        })
+    }, []);
 // React de Cidades
     useEffect(() => {
         api.get('cidades').then(res => {
@@ -81,8 +93,13 @@ function HomeLogada() {
         }).then(res => {
             console.log(res.data)
         })   
-        
-        }
+    }
+    
+    function handleLogout(){
+        localStorage.clear(); 
+
+        history.push('/');
+    }
       
     return (
         <div>
@@ -94,9 +111,9 @@ function HomeLogada() {
 
                     <nav className="btn-header-home">
                        
-                            <button className="btn-header" >Perfil</button>
+                        <a href="/perfilUsuario"><button className="btn-header" >Perfil</button></a>
                         
-                        <button className="btn-header">Sair</button>
+                        <button className="btn-header" onClick={handleLogout}>Sair</button>
                             
                     </nav>
                 </div>
@@ -136,7 +153,7 @@ function HomeLogada() {
                 <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Buscar</button>
             </div>
             
-            <Cards/>
+            <Cards Anuncios={Anuncios}/>
             <Footer/>
         </div>
 
