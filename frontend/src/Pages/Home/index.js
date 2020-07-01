@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Header from '../../components/Header/header';
 import Footer from '../../components/Footer/footer';
 import Cards from '../../components/Cards/cards';
@@ -13,29 +13,51 @@ import botaoServicos from '../../assets/img/manutencao.svg';
 import botaoVestuario from '../../assets/img/vestuaria.svg';
 import botaoEsporte from '../../assets/img/esporte.svg';
 import banner from '../../assets/img/Banner.png';
-
+import api from '../../services/api'
 
 function Home() {
+    const [Categorias, setCategorias] = useState([]);
+
+    // Listando Categorias
+    useEffect(() => {
+        api.get('categorias').then(res => {
+            const categoriaName = res.data
+    
+            setCategorias(categoriaName);
+        })
+    }, []);
+
+    async function handleClick(event) {
+
+        const Categoria = event.target.id
+
+        const id = Categoria
+        
+        const res = await api.get(`anuncios/categoria/${id}` ,{
+        }).then(res => {
+            console.log(res.data)
+        })
+    }
+
     return (
         <div>
             <Header />
-
             <section id="banner-home">
                 <div className="">
-
                     <div className="hero-image">
                         <img className="banner" src={banner}></img>
-                    </div>
-
+                    </div>  
                     <div className="botoes">
-
+                    {Categorias.map(Categoria => (
                         <div className="">
                             <div className="d-flex justify-content-center icones">
-                                <a href="#card-serviços_lar"><img className="rounded-circle min" src={botaoServicos} alt="serviços diversos" /></a>
+                                <a href="#card-serviços_lar">
+                                    <img className="rounded-circle min" src={botaoServicos} alt="serviços diversos"
+                                    id={Categoria.IdCategoria} onClick={handleClick}/></a>
                             </div>
-                            <p>Servicos Diversos </p>
+                                <p>{Categoria.CategoriaNome}</p>
                         </div>
-
+                    ))}
                         <div className="">
                             <div className="d-flex justify-content-center icones">
                                 <a href="#"><img className="rounded-circle min" src={botaoEletronicos} alt="eletronicos e acessórios" /></a>
@@ -79,14 +101,13 @@ function Home() {
                                 <a href="#card-alimentacao"><img className="rounded-circle min" src={botaoAlimentacao} alt="alimentacao" /></a>
                             </div>
                             <p>Alimentacao </p>
+                            
                         </div>
                     </div>
-
-                </div>
-            </section>
+                </div>   
+            </section> 
             <Cards />
             <Footer />
-
         </div>
     );
 }
