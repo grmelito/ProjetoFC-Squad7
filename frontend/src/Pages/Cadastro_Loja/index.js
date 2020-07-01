@@ -5,16 +5,17 @@ import SelecionarFoto from "../../assets/img/AdicionarFoto.png"
 import api from '../../services/api'
 import logo from '../../assets/img/LogoAtualizada.PNG';
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useEffect } from 'react';
 
 function Cadastro_Loja() {
-
+    const history = useHistory();
     const [Categorias, setCategorias] = useState([]);
     const [selectedCategoria, setSelectedCategoria] = useState('0');
 
     useEffect(() => {
         api.get('categorias').then(res => {
-            const categoriaName = res.data.map(IdCategoria => IdCategoria.CategoriaNome)
+            const categoriaName = res.data
 
             setCategorias(categoriaName);
         })
@@ -32,6 +33,12 @@ function Cadastro_Loja() {
         }
     })
 
+    function handleLogout(){
+        localStorage.clear(); 
+
+        history.push('/');
+    }
+
     return (
         <div>
             <header>
@@ -42,9 +49,9 @@ function Cadastro_Loja() {
 
                     <nav className="btn-header-home">
 
-                        <button className="btn-header" >Perfil</button>
+                        <a href="/perfilUsuario"><button className="btn-header" >Perfil</button></a>
 
-                        <button className="btn-header">Sair</button>
+                        <button className="btn-header" onClick={handleLogout}>Sair</button>
 
                     </nav>
                 </div>
@@ -89,7 +96,7 @@ function Cadastro_Loja() {
                                     <select className="form-control" name="categoria" id="categoria" value={selectedCategoria} onChange={handleSelectCategoria}>
                                         <option value="0">Selecione uma Categoria</option>
                                         {Categorias.map(Categoria => (
-                                            <option key={Categoria} value={Categoria}>{Categoria}</option>
+                                            <option key={Categoria.IdCategoria} value={Categoria.IdCategoria}>{Categoria.CategoriaNome}</option>
                                         ))}
                                     </select>
                                 </div>
