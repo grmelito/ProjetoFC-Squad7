@@ -10,10 +10,10 @@ function Login() {
     const [Senha, setSenha] = useState('')
 
     const history = useHistory()
-    async function handleLogin (e) {
+    async function handleLogin(e) {
         e.preventDefault();
 
-        const data ={
+        const data = {
             Email,
             Senha
         }
@@ -22,10 +22,10 @@ function Login() {
             localStorage.setItem('token', res.data)
 
             history.push('/homeLogada')
-        } catch(err) {
+        } catch (err) {
             alert('Erro de login, tente novamente!')
         }
-        
+
     }
 
     return (
@@ -34,28 +34,30 @@ function Login() {
                 <div className="">
                     <div className="fundo-forms col-9">
                         <div className="logo">
-                            <img className="logo-forms" src={Logo} />
-                            <p className="subtitulo">Aproximando pessoas. Fazendo negócios</p>
+                            <div className="logo-conteudo">
+                                <img className="logo-forms" src={Logo} />
+                                <p className="subtitulo">Aproximando pessoas. Fazendo negócios</p>
+                                <p className="t-acesse">Acesse a sua conta</p>
+                            </div>
                         </div>
                         <form onSubmit={handleLogin}>
                             <div className="form-row">
                                 <div className="form-group col-md-12">
-                                    <label htmlFor="inputEmail">Email</label>
-                                    <input type="email" className="form-control" 
-                                    id="inputEmail4" placeholder="Digite seu e-mail"
-                                    value={Email} onChange={e => setEmail(e.target.value)} />
+                                    <input type="email" className="form-control input-tm"
+                                        id="inputEmail4" placeholder="Digite seu e-mail"
+                                        value={Email} onChange={e => setEmail(e.target.value)} />
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label htmlFor="inputPassword">Senha</label>
                                     <input type="password" className="form-control"
-                                     id="inputPassword4" placeholder="Digite sua senha"
-                                     value={Senha} onChange={e => setSenha(e.target.value)} />
+                                        id="inputPassword4" placeholder="Digite sua senha"
+                                        value={Senha} onChange={e => setSenha(e.target.value)} />
                                 </div>
-                                <button type="submit" className="btn btn-primary">Cadastre-se</button>
                             </div>
                         </form>
-                        <hr></hr>
-                        <p>Não tem uma conta?<a href="/cadastro" className="redirect">Cadastre-se</a></p>
+                        <button type="submit" className="btn btn-login">Entre</button>
+                        <hr className="hr-login"></hr>
+                        <p className="login-lembrete">Não tem uma conta?<a href="/cadastro" className="redirect">Cadastre-se</a></p>
+                        <p className="login-lembrete"> Esqueceu sua senha? <a href='/recuperarSenha' className="link-recuperar">Clique aqui</a></p>
                     </div>
 
                     <div className="text-temos">
