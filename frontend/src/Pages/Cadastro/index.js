@@ -25,7 +25,7 @@ function Cadastro() {
             alert('Cadastro realizado com sucesso!')
 
             history.push('/login')
-        } catch(err) {
+        } catch (err) {
             alert('Erro ao se cadastrar, tente novamente!')
         }
     }
@@ -36,25 +36,28 @@ function Cadastro() {
                 <div className="">
                     <div className="fundo-forms col-9">
                         <div className="logo">
-                            <img src={Logo} />
-                            <p className="subtitulo">Aproximando pessoas. Fazendo negócios</p>
+                            <div className="logo-conteudo">
+                                <img className="logo-forms" src={Logo} />
+                                <p className="subtitulo">Aproximando pessoas. Fazendo negócios</p>
+                            </div>
                         </div>
+
                         <form onSubmit={handleCadastro}>
                             <div className="form-row">
                                 <div className="form-group col-md-12">
                                     <label htmlFor="inputNome">Nome</label>
-                                    <input className="form-control" id="inputEmail4" placeholder="Nome"
-                                    value={Nome} onChange={e => setNome(e.target.value)} />
+                                    <input className="form-control input-tm" id="inputEmail4" placeholder="Nome"
+                                        value={Nome} onChange={e => setNome(e.target.value)} />
                                 </div>
                                 <div className="form-group col-md-12">
                                     <label htmlFor="inputEmail">Email</label>
-                                    <input type="email" className="form-control" id="inputEmail4" placeholder="E-mail"
-                                    value={Email} onChange={e => setEmail(e.target.value)} />
+                                    <input type="email" className="form-control input-tm" id="inputEmail4" placeholder="E-mail"
+                                        value={Email} onChange={e => setEmail(e.target.value)} />
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label htmlFor="inputPassword">Senha</label>
-                                    <input type="password" className="form-control" id="inputPassword4" placeholder="Senha"
-                                    value={Senha} onChange={e => setSenha(e.target.value)} />
+                                    <input type="password" className="form-control input-tm" id="inputPassword4" placeholder="Senha"
+                                        value={Senha} onChange={e => setSenha(e.target.value)} />
                                 </div>
                                 <button type="submit" className="btn btn-primary">Cadastre-se</button>
                             </div>
