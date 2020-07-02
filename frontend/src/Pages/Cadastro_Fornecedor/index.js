@@ -3,17 +3,27 @@ import SelecionarFoto from "../../assets/img/AdicionarFoto.png"
 import api from '../../services/api'
 import { useState } from 'react';
 import { useEffect } from 'react';
+import {useHistory} from 'react-router-dom'
 import logo from '../../assets/img/LogoAtualizada.PNG';
 
 function CadastroFornecedor() {
+    const token = localStorage.getItem('token')
+    const history = useHistory()
+
+    const [CPFouCNPJ, setCPFouCNPJ] = useState('')
+    const [Cep, setCep] = useState('')
+    const [Rua, setRua] = useState('')
+    const [Numero, setNumero] = useState('')
+    const [Complemento, setComplemento] = useState('')
+    const [Bairro, setBairro] = useState('')
 
     const [Cidades, setCidades] = useState([]);
     const [selectedCidade, setSelectedCidade] = useState('0')
 
     useEffect(() => {
         api.get('cidades').then(res => {
-            const cityName = res.data.map(IdCidade => IdCidade.CidadeNome);
-            //console.log(cityName)
+            const cityName = res.data
+        
             setCidades(cityName);
         })
     }, []);
@@ -23,13 +33,41 @@ function CadastroFornecedor() {
 
         setSelectedCidade(Cidade);
     }
-
     useEffect(() => {
         if (selectedCidade === '0') {
             return;
         }
     })
 
+    function handleLogout(){
+        localStorage.clear(); 
+
+        history.push('/');
+    }
+
+    async function handleUpgrade(e) {
+        e.preventDefault();
+
+        const IdCidade = selectedCidade
+        const data = {
+            Cep,
+            Rua,
+            Numero,
+            Complemento,
+            Bairro,
+            IdCidade
+        }
+        try {
+            const res = await api.post('create/endereco', data, {
+                headers: {
+                    'auth-token': token
+                },
+            })
+            alert('Endereço Cadastrado com sucesso!')
+        } catch (err) {
+            alert('Erro ao cadastrar o seu endereço!')
+        }
+    }
 
     return (
         <div>
@@ -41,9 +79,9 @@ function CadastroFornecedor() {
 
                     <nav className="btn-header-home">
                        
-                            <button className="btn-header" >Perfil</button>
+                            <a href="/perfilUsuario"><button className="btn-header" >Perfil</button></a>
                         
-                        <button className="btn-header">Sair</button>
+                        <button className="btn-header" onClick={handleLogout}>Sair</button>
                             
                     </nav>
                 </div>
@@ -54,8 +92,7 @@ function CadastroFornecedor() {
                         <div className="foto-usuario">
                             <img src={SelecionarFoto} className="rounded-circle"></img>
                         </div>
-                        <form >
-                            
+                        <form onSubmit={handleUpgrade}>
                             <div className="form-div">
                                 <div className="form-group col-md-12">
                                     <input className="form-control" id="inputEmail4" placeholder="Nome Completo" />
@@ -76,11 +113,13 @@ function CadastroFornecedor() {
                                 
                                 <div className="form-group col-md-6">
                                     
-                                    <input type="text" className="form-control" placeholder="CPF" id="inputCPF" />
+                                    <input type="text" className="form-control" placeholder="CPF" id="inputCPF"
+                                    value={CPFouCNPJ} onChange={e => setCPFouCNPJ(e.target.value)} />
                                 </div>
                                 <div className="form-group col-md-6">
                                     
-                                    <input type="text" className="form-control" id="inputCep" placeholder="CEP" />
+                                    <input type="text" className="form-control" id="inputCep" placeholder="CEP"
+                                    value={Cep} onChange={e => setCep(e.target.value)} />
                                 </div>
                                 <div className="form-group col-md-3">
                                     
@@ -91,31 +130,34 @@ function CadastroFornecedor() {
                                     <select className="form-control" name="cidade" id="cidade" value={selectedCidade} onChange={handleSelectCidade}>
                                         <option value="0">Selecione uma Cidade</option>
                                         {Cidades.map(Cidade => (
-                                            <option key={Cidade} value={Cidade}>{Cidade}</option>
+                                            <option key={Cidade.IdCidade} value={Cidade.IdCidade}>{Cidade.CidadeNome}</option>
                                         ))}
                                     </select>
                                 </div>
                                 <div className="form-group col-md-12">
                                     
-                                    <input type="text" className="form-control" id="inputEndereco" placeholder="Endereço" />
+                                    <input type="text" className="form-control" id="inputEndereco" placeholder="Endereço"
+                                    value={Rua} onChange={e => setRua(e.target.value)} />
                                 </div>
                                 <div className="form-group col-md-5">
                                     
-                                    <input type="text" className="form-control" id="inputNumero" placeholder="Número"/>
+                                    <input type="text" className="form-control" id="inputNumero" placeholder="Número"
+                                    value={Numero} onChange={e => setNumero(e.target.value)}/>
                                 </div>
                                 <div className="form-group col-md-7">
                                     
-                                    <input type="text" className="form-control" id="inputComplemento" placeholder="Complemento"/>
+                                    <input type="text" className="form-control" id="inputComplemento" placeholder="Complemento"
+                                    value={Complemento} onChange={e => setComplemento(e.target.value)}/>
                                 </div>
                                 <div className="form-group col-md-10">
                                     
-                                    <input type="text" className="form-control" id="inputBairro" placeholder="Bairro"/>
+                                    <input type="text" className="form-control" id="inputBairro" placeholder="Bairro"
+                                    value={Bairro} onChange={e => setBairro(e.target.value)}/>
                                 </div>
                                 
                                 <div className="botao-cadastro">
                                     <button type="submit" className="btn btn-primary">Confirmar dados</button>
                                 </div>
-
 
                             </div>
                         </form>
