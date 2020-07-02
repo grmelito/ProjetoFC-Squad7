@@ -103,26 +103,10 @@ function CadastroFornecedor() {
                         </div>
                         <form onSubmit={handleUpgrade}>
                             <div className="form-div">
-                                <div className="form-group col-md-12">
-                                    <input className="form-control" id="inputEmail4" placeholder="Nome Completo" />
-                                </div>
-                                <div className="form-group col-md-12">
-                                    
-                                    <input type="text" className="form-control" id="inputEmail4" placeholder="Email" />
-                                </div>
-                                <div className="form-group col-md-5">
-                                    
-                                    <input type="date" className="form-control" id="inputData" placeholder="Data de Nascimento" />
-                                </div>
-                                <div className="form-group col-md-7">
-                                    
-                                    <input type="text" className="form-control" id="inputGenero" placeholder="Gênero" />
-
-                                </div>
-                                
+                               
                                 <div className="form-group col-md-6">
                                     
-                                    <input type="text" className="form-control" placeholder="CPF" id="inputCPF"
+                                    <input type="text" className="form-control" placeholder="CPF ou CNPJ" id="inputCPF"
                                     value={CPFouCNPJ} onChange={e => setCPFouCNPJ(e.target.value)} />
                                 </div>
                                 <div className="form-group col-md-6">
@@ -130,11 +114,8 @@ function CadastroFornecedor() {
                                     <input type="text" className="form-control" id="inputCep" placeholder="CEP"
                                     value={Cep} onChange={e => setCep(e.target.value)} />
                                 </div>
-                                <div className="form-group col-md-3">
-                                    
-                                    <input type="text" className="form-control" id="inputNumero" placeholder="Estado" />
-                                </div>
-                                <div className="form-group col-md-9">
+                                
+                                <div className="form-group col-md-6">
                                     
                                     <select className="form-control" name="cidade" id="cidade" value={selectedCidade} onChange={handleSelectCidade}>
                                         <option value="0">Selecione uma Cidade</option>
@@ -143,7 +124,7 @@ function CadastroFornecedor() {
                                         ))}
                                     </select>
                                 </div>
-                                <div className="form-group col-md-12">
+                                <div className="form-group col-md-6">
                                     
                                     <input type="text" className="form-control" id="inputEndereco" placeholder="Endereço"
                                     value={Rua} onChange={e => setRua(e.target.value)} />

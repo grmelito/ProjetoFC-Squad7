@@ -40,7 +40,7 @@ function Login() {
                                 <p className="t-acesse">Acesse a sua conta</p>
                             </div>
                         </div>
-                        <form onSubmit={handleLogin}>
+                        <form className="form-botao" onSubmit={handleLogin}>
                             <div className="form-row">
                                 <div className="form-group col-md-12">
                                     <input type="email" className="form-control input-tm"
@@ -53,8 +53,9 @@ function Login() {
                                         value={Senha} onChange={e => setSenha(e.target.value)} />
                                 </div>
                             </div>
+                            <button type="submit" className="btn btn-login">Entre</button>
                         </form>
-                        <button type="submit" className="btn btn-login">Entre</button>
+                        
                         <hr className="hr-login"></hr>
                         <p className="login-lembrete">Não tem uma conta?<a href="/cadastro" className="redirect">Cadastre-se</a></p>
                         <p className="login-lembrete"> Esqueceu sua senha? <a href='/recuperarSenha' className="link-recuperar">Clique aqui</a></p>
