@@ -18,6 +18,7 @@ import api from '../../services/api'
 function Home() {
     const [Categorias, setCategorias] = useState([]);
     const [Anuncios, setAnuncios] = useState([]);
+    const [AnuncioCategoria, setAnuncioCategoria] = useState([]);
 
     // Carregando Anuncios
     useEffect(() => {
@@ -45,7 +46,9 @@ function Home() {
         
         const res = await api.get(`anuncios/categoria/${id}` ,{
         }).then(res => {
-            const AnuncioCategoria = res.data
+            const AnuncioCategoriaFiltro = res.data
+
+            setAnuncioCategoria(AnuncioCategoriaFiltro)
         })
     }
 
@@ -116,7 +119,7 @@ function Home() {
                     </div>
                 </div>   
             </section> 
-            <Cards Anuncios={Anuncios}/> 
+            <Cards Anuncios={Anuncios} AnuncioCategoria={AnuncioCategoria}/> 
             <Footer />
         </div>
     );

@@ -14,6 +14,7 @@ import { useEffect } from 'react';
 function HomeLogada() {
 
     const [Anuncios, setAnuncios] = useState([]);
+    const [AnuncioCategoria, setAnuncioCategoria] = useState([]);
     const [Cidades, setCidades] = useState([]);
     const [Bairro, setBairro] = useState('');
     const [Categorias, setCategorias] = useState([]);
@@ -153,7 +154,7 @@ function HomeLogada() {
                 <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Buscar</button>
             </div>
             
-            <Cards Anuncios={Anuncios}/>
+            <Cards Anuncios={Anuncios} AnuncioCategoria={AnuncioCategoria}/>
             <Footer/>
         </div>
 
