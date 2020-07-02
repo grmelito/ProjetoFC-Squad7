@@ -21,13 +21,34 @@ import som from '../../assets/img/Som.png';
 import icone from '../../assets/img/IconeCards.png'
 import api from '../../services/api'
 
-function Cards({Anuncios}) {
+function Cards({Anuncios , AnuncioCategoria}) {
 
   function handlePageLoja (event) {
     const Loja = event.target.id
 
-
     console.log(Loja)
+  }
+
+  function handleFiltroCategoria (event) {
+    if(AnuncioCategoria !== undefined) {
+      return (
+        <div className="container-cards">
+        {AnuncioCategoria.map(AnuncioCategoria => (
+          <div className="item-cards" id={AnuncioCategoria.IdCategoria}>
+            <Card className="card-inicio">
+              <CardImg top width="100%" src={'http://localhost:3333/uploads/' + AnuncioCategoria.ImagemAnuncio[0]} alt="Card image cap" />
+              <CardBody className="body-card">
+                <CardTitle className="card-title">{AnuncioCategoria.Titulo}</CardTitle>
+                <hr className="hr-card"></hr>
+                <CardText className="card-text">O melhor hamburger vegano do litoral paulista.</CardText>
+                <Button outline color="primary" id={AnuncioCategoria.IdAnuncio} onClick={handlePageLoja}>Saiba mais</Button>
+              </CardBody>
+            </Card>
+          </div>
+          ))}
+          </div>
+      )
+    } 
   }
 
   return (
@@ -53,7 +74,7 @@ function Cards({Anuncios}) {
           </div>
           ))}
 
-
+         
           <div className="item-cards">
             <Card className="card-inicio">
               <CardImg top width="100%" src={coxinha} alt="Card image cap" />
@@ -99,6 +120,23 @@ function Cards({Anuncios}) {
         </div>
 
         <div className="container-cards">
+        {AnuncioCategoria.map(AnuncioCategoria => (
+          <div className="item-cards" id={AnuncioCategoria.IdCategoria}>
+            <Card className="card-inicio">
+              <CardImg top width="100%" src={'http://localhost:3333/uploads/' + AnuncioCategoria.ImagemAnuncio[0]} alt="Card image cap" />
+              <CardBody className="body-card">
+                <CardTitle className="card-title">{AnuncioCategoria.Titulo}</CardTitle>
+                <hr className="hr-card"></hr>
+                <CardText className="card-text">O melhor hamburger vegano do litoral paulista.</CardText>
+                <Button outline color="primary" id={AnuncioCategoria.IdAnuncio} onClick={handlePageLoja}>Saiba mais</Button>
+              </CardBody>
+            </Card>
+          </div>
+          ))}
+          </div>
+
+        <div className="container-cards">
+        {handleFiltroCategoria}
           <div className="item-cards">
             <Card className="card-inicio">
               <CardImg top width="100%" src={faz_tudo} alt="Card image cap" />
@@ -110,7 +148,7 @@ function Cards({Anuncios}) {
               </CardBody>
             </Card>
           </div>
-
+        
           <div className="item-cards">
             <Card className="card-inicio">
               <CardImg top width="100%" src={casa_forca} alt="Card image cap" />
