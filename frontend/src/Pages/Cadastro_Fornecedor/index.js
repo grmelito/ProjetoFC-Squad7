@@ -49,6 +49,7 @@ function CadastroFornecedor() {
         e.preventDefault();
 
         const IdCidade = selectedCidade
+        const dataUpgrade = {CPFouCNPJ}
         const data = {
             Cep,
             Rua,
@@ -63,9 +64,17 @@ function CadastroFornecedor() {
                     'auth-token': token
                 },
             })
-            alert('Endereço Cadastrado com sucesso!')
+
+            const upgrade = await api.post('upgrade/usuario', dataUpgrade, {
+                headers: {
+                    'auth-token': token
+                },
+            })
+            localStorage.setItem('token', upgrade.data)
+            alert('Upgrade Realizado com sucesso!')
+            history.push('/cadastroLoja')
         } catch (err) {
-            alert('Erro ao cadastrar o seu endereço!')
+            alert('Erro ao realizar o Upgrade!')
         }
     }
 
