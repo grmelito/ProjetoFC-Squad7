@@ -15,8 +15,8 @@ module.exports = {
             const {page = 1} = req.query
 
             const results = await knex('Anuncio')
-            .limit(12)
-            .offset((page - 1) * 12)
+            .limit(4)
+            .offset((page - 1) * 4)
             .select([
                 'Anuncio.IdAnuncio',
                 'Anuncio.Titulo',
