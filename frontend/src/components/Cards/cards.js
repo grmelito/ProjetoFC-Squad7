@@ -20,13 +20,17 @@ import tela from '../../assets/img/Tela.png';
 import som from '../../assets/img/Som.png';
 import icone from '../../assets/img/IconeCards.png'
 import api from '../../services/api'
+import {useHistory} from 'react-router-dom'
 
 function Cards({Anuncios , AnuncioCategoria}) {
+  
+  const history = useHistory()
 
   function handlePageLoja (event) {
-    const Loja = event.target.id
-
-    console.log(Loja)
+    const IdAnuncio = event.target.id
+    
+    const IdLoja = localStorage.setItem('IdAnuncio', IdAnuncio)
+    history.push('loja')
   }
 
   function handleFiltroCategoria (event) {

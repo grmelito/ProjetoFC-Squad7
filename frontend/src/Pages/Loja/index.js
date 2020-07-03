@@ -8,10 +8,11 @@ import SelecionarFoto from "../../assets/img/AdicionarFoto.png";
 
 function Loja() {
     const token = localStorage.getItem('token')
+    const idLoja = localStorage.getItem('IdAnuncio')
 
     const [Anuncio, setAnuncio] = useState([])
 
-    const id = 25
+    const id = idLoja
 
     useEffect(() => {
         const res = api.get(`anuncio/${id}` , {
