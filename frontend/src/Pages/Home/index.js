@@ -19,6 +19,7 @@ function Home() {
     const [Categorias, setCategorias] = useState([]);
     const [Anuncios, setAnuncios] = useState([]);
     const [AnuncioCategoria, setAnuncioCategoria] = useState([]);
+    const [AnuncioProx, setAnuncioProx] = useState([]);
 
     // Carregando Anuncios
     useEffect(() => {
@@ -119,7 +120,7 @@ function Home() {
                     </div>
                 </div>   
             </section> 
-            <Cards Anuncios={Anuncios} AnuncioCategoria={AnuncioCategoria}/> 
+            <Cards Anuncios={Anuncios} AnuncioCategoria={AnuncioCategoria} AnuncioProx={AnuncioProx}/> 
             <Footer />
         </div>
     );

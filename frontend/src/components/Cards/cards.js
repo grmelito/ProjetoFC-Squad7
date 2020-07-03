@@ -22,7 +22,7 @@ import icone from '../../assets/img/IconeCards.png'
 import api from '../../services/api'
 import {useHistory} from 'react-router-dom'
 
-function Cards({Anuncios , AnuncioCategoria}) {
+function Cards({Anuncios , AnuncioCategoria, AnuncioProx}) {
   
   const history = useHistory()
 
@@ -54,6 +54,28 @@ function Cards({Anuncios , AnuncioCategoria}) {
       )
     } 
   }
+
+    function handleFiltroProx (event) {
+      if(AnuncioProx != undefined) {
+        return (
+          <div className="container-cards">
+        {AnuncioProx.map(AnuncioProx => (
+          <div className="item-cards" id={AnuncioProx.IdCategoria}>
+            <Card className="card-inicio">
+              <CardImg top width="100%" src={'http://localhost:3333/uploads/' + AnuncioProx.ImagemAnuncio[0]} alt="Card image cap" />
+              <CardBody className="body-card">
+                <CardTitle className="card-title">{AnuncioProx.Titulo}</CardTitle>
+                <hr className="hr-card"></hr>
+                <CardText className="card-text">O melhor hamburger vegano do litoral paulista.</CardText>
+                <Button outline color="primary" id={AnuncioProx.IdAnuncio} onClick={handlePageLoja}>Saiba mais</Button>
+              </CardBody>
+            </Card>
+          </div>
+          ))}
+          </div>
+        )
+      }
+    }
 
   return (
     <div>
@@ -198,20 +220,24 @@ function Cards({Anuncios , AnuncioCategoria}) {
         </div>
 
         <div className="container-cards">
-          <div className="item-cards">
+        {AnuncioProx.map(AnuncioProx => (
+          <div className="item-cards" id={AnuncioProx.IdCategoria}>
             <Card className="card-inicio">
-              <CardImg top width="100%" src={cell} alt="Card image cap" />
+              <CardImg top width="100%" src={'http://localhost:3333/uploads/' + AnuncioProx.ImagemAnuncio[0]} alt="Card image cap" />
               <CardBody className="body-card">
-                <CardTitle className="card-title">Vida Cell</CardTitle>
+                <CardTitle className="card-title">{AnuncioProx.Titulo}</CardTitle>
                 <hr className="hr-card"></hr>
                 <CardText className="card-text">O melhor hamburger vegano do litoral paulista.</CardText>
-                <Button outline color="primary">Saiba mais</Button>
+                <Button outline color="primary" id={AnuncioProx.IdAnuncio} onClick={handlePageLoja}>Saiba mais</Button>
               </CardBody>
             </Card>
           </div>
+          ))}
+          </div>
 
-
+          <div className="container-cards">
           <div className="item-cards">
+          {handleFiltroProx}
             <Card className="card-inicio">
               <CardImg top width="100%" src={conserto} alt="Card image cap" />
               <CardBody className="body-card">
@@ -222,7 +248,8 @@ function Cards({Anuncios , AnuncioCategoria}) {
               </CardBody>
             </Card>
           </div>
-
+          </div>
+          
           <div className="item-cards">
             <Card className="card-inicio">
               <CardImg top width="100%" src={tela} alt="Card image cap" />
@@ -246,7 +273,6 @@ function Cards({Anuncios , AnuncioCategoria}) {
               </CardBody>
             </Card>
           </div>
-        </div>
       </section>
     </div>
 

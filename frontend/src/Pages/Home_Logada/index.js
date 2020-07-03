@@ -14,6 +14,7 @@ import { useEffect } from 'react';
 function HomeLogada() {
 
     const [Anuncios, setAnuncios] = useState([]);
+    const [AnuncioProx, setAnuncioProx] = useState([]);
     const [AnuncioCategoria, setAnuncioCategoria] = useState([]);
     const [Cidades, setCidades] = useState([]);
     const [Bairro, setBairro] = useState('');
@@ -92,7 +93,9 @@ function HomeLogada() {
                 Categoria: data.Categoria
             }
         }).then(res => {
-            console.log(res.data)
+            const AnuncioFiltrado = res.data
+
+            setAnuncioProx(AnuncioFiltrado)
         })   
     }
     
@@ -154,7 +157,7 @@ function HomeLogada() {
                 <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Buscar</button>
             </div>
             
-            <Cards Anuncios={Anuncios} AnuncioCategoria={AnuncioCategoria}/>
+            <Cards Anuncios={Anuncios} AnuncioCategoria={AnuncioCategoria} AnuncioProx={AnuncioProx}/>
             <Footer/>
         </div>
 
