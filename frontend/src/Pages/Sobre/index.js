@@ -26,7 +26,7 @@ function Sobre() {
 
 
                         <div className="pseudo-footer">
-                            <img src={Logo} />
+                            <a href="/"><img src={Logo} /></a>
                             <p className="subtitulo">Aproximando pessoas. Fazendo negócios</p>
                         </div>
 

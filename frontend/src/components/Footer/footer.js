@@ -14,9 +14,9 @@ function Footer(){
             <div className="row container-fluid">
                 <div className="col-md-4 col-6">
                     <ul className="list-unstyled text-white">
-                        <li><a href="#">Dúvidas Frequentes</a></li>
-                        <li><a href="#">Contato</a></li>
-                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="/duvidas">Dúvidas Frequentes</a></li>
+                        <li><a href="/contato">Contato</a></li>
+                        <li><a href="/sobre">Sobre Nós</a></li>
                     </ul>
                 </div>
                 <div className="col-md-4  text-footer text-left text-white">
