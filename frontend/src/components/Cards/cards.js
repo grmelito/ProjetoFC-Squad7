@@ -249,7 +249,6 @@ function Cards({Anuncios , AnuncioCategoria, AnuncioProx}) {
             </Card>
           </div>
           </div>
-          
           <div className="item-cards">
             <Card className="card-inicio">
               <CardImg top width="100%" src={tela} alt="Card image cap" />

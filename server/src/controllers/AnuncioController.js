@@ -24,6 +24,9 @@ module.exports = {
                 'Anuncio.IdCategoria',
                 'Anuncio.IdFornecedor']);
             
+            for (let i = 0; i < results.length; i++) {
+                results[i].ImagemAnuncio = results[i].ImagemAnuncio.split(";");
+            }
             return res.json(results);
         } catch(err) {
             return res.status(500).send({error: 'Erro ao filtrar anuncios!'})
@@ -47,8 +50,11 @@ module.exports = {
                     'Anuncio.IdFornecedor'
                 ]).where('Anuncio.IdCategoria', id);
 
-            results[0].ImagemAnuncio = results[0].ImagemAnuncio.split(";");
-            return results = res.json(results)
+            for (let i = 0; i < results.length; i++) {
+                results[i].ImagemAnuncio = results[i].ImagemAnuncio.split(";");
+            }
+            
+            return res.json(results)
         } catch(err){
             return res.status(500)
         }
@@ -74,7 +80,10 @@ module.exports = {
             .join('Endereco', 'Endereco.IdEndereco', '=', 'Usuario.IdEndereco')
             .join('Cidades', 'Cidades.IdCidade', '=', 'Endereco.IdCidade')
             .where('Cidades.CidadeNome', Cidade)
-            
+
+            for (let i = 0; i < results.length; i++) {
+                results[i].ImagemAnuncio = results[i].ImagemAnuncio.split(";");
+            }
             return res.json(results)
             
         } if(!Categoria) {
@@ -92,6 +101,9 @@ module.exports = {
             .join('Cidades', 'Cidades.IdCidade', '=', 'Endereco.IdCidade')
             .where('Cidades.CidadeNome', Cidade).andWhere('Endereco.Bairro', '=', Bairro)
 
+            for (let i = 0; i < results.length; i++) {
+                results[i].ImagemAnuncio = results[i].ImagemAnuncio.split(";");
+            }
             return res.json(results)
         } if(!Bairro) {
             const results = await knex('Anuncio')
@@ -108,6 +120,9 @@ module.exports = {
             .join('Cidades', 'Cidades.IdCidade', '=', 'Endereco.IdCidade')
             .where('Cidades.CidadeNome', Cidade).andWhere('Anuncio.IdCategoria', '=', Categoria)
 
+            for (let i = 0; i < results.length; i++) {
+                results[i].ImagemAnuncio = results[i].ImagemAnuncio.split(";");
+            }
             return res.json(results)
         } else {
             const results = await knex('Anuncio')
@@ -124,6 +139,9 @@ module.exports = {
             .join('Cidades', 'Cidades.IdCidade', '=', 'Endereco.IdCidade')
             .where('Cidades.CidadeNome', Cidade).andWhere('Endereco.Bairro', '=', Bairro).andWhere('Anuncio.IdCategoria', '=', Categoria)
 
+            for (let i = 0; i < results.length; i++) {
+                results[i].ImagemAnuncio = results[i].ImagemAnuncio.split(";");
+            }
             return res.json(results)
         }
     },
