@@ -8,6 +8,8 @@ function PerfilUsuario() {
     const token = localStorage.getItem('token')
    
     const [Perfil, setPerfil] = useState([])
+    const [selectedFile, setSelectedFile] = useState();
+    const [formData, setFormData] = useState({});
 
     useEffect(() => {
      const res = api.get('profile', {
@@ -18,6 +20,26 @@ function PerfilUsuario() {
         setPerfil(res.data);
     })}, []);
     
+    const handleUploadFile = event => setSelectedFile(event.target.files[0])
+
+    async function handleUpdateProfile(event) {
+        event.preventDefault()
+        
+        try {
+            const image = new FormData();
+            image.append('file', selectedFile)
+
+            await api.put('update/profile/image', image, {
+               headers: {
+                    'auth-token': token,   
+                },
+            }).then( res => {
+                alert('Upload deu certo!')
+            })
+        } catch(err) {
+            alert('Erro no upload!')
+        }                 
+    }
     
     return (
         <div>
@@ -26,14 +48,16 @@ function PerfilUsuario() {
                     <div className="fundo-loja col-9">
                         <div className="foto-usuario">
                         {Perfil.map(Perfil =>
-                            <img src={'http://localhost:3333/uploads/' + Perfil.ImagemUsuario} className="rounded-circle" 
-                            width='220' height='200'></img>
+                            <img src={'http://localhost:3333/uploads/' + Perfil.ImagemUsuario} 
+                            className="rounded-circle" width='220' height='200'></img>
                         )}
                         </div>
+                        <form encType="multipart/form-data" method='put'>
                         <div className="botao-cadastro">
-                                    <button type="submit" className="btn btn-primary">Alterar Dados</button>
-                                </div>
-                        <form >
+                            <input  type="file" id="profileImage" onChange={handleUploadFile}></input>
+                            <button type="submit" className="btn btn-primary" onClick={handleUpdateProfile}>Alterar Dados</button>
+                        </div>
+                        
                             {Perfil.map(Perfil => 
                             <div className="form-div">
                                 <div className="form-group col-md-12">
@@ -43,7 +67,8 @@ function PerfilUsuario() {
                                 </div>
                                 <div className="form-group col-md-12">
                                     <label htmlFor="inputEmail">Email</label>
-                                    <input type="text" className="form-control" id="inputEmail4" placeholder="E-mail" value={Perfil.Email} />
+                                    <input type="text" className="form-control" id="inputEmail4" placeholder="E-mail" 
+                                    value={Perfil.Email} disabled/>
                                 </div>
                                 <div className="form-group col-md-5">
                                     <label htmlFor="inputData">Data de Nascimento</label>
@@ -55,7 +80,8 @@ function PerfilUsuario() {
                                 </div>
                                 <div className="form-group col-md-6">
                                     <label htmlFor="inputCPF">CPF</label>
-                                    <input type="text" className="form-control" placeholder="123.456.789-01" id="inputCPF" value={Perfil.CPFouCNPF} />
+                                    <input type="text" className="form-control" placeholder="123.456.789-01" id="inputCPF" 
+                                    value={Perfil.CPFouCNPF} disabled/>
                                 </div>
                                 <div className="form-group col-md-6">
                                     <label htmlFor="inputCEP">CEP</label>
