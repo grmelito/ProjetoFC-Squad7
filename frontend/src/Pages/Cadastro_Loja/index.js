@@ -14,7 +14,7 @@ function Cadastro_Loja() {
 
     const [Categorias, setCategorias] = useState([]);
     const [selectedCategoria, setSelectedCategoria] = useState('0');
-    const [selectedFiles, setSelectedFiles] = useState([]);
+    const [selectedFiles, setSelectedFiles] = useState();
 
     const [formData, setFormData] = useState({
         Titulo: '',
@@ -26,8 +26,8 @@ function Cadastro_Loja() {
         IdCategoria: ''
       });
 
-      const handleUploadFiles = event => console.log(...event.target.files)
-      // const handleUploadFiles = event => setSelectedFiles(...event.target.files)
+        const handleUploadFiles = event => setSelectedFiles(event.target.files)
+        //const handleUploadFiles = event => setSelectedFiles(...event.target.files)
 
     useEffect(() => {
         api.get('categorias').then(res => {
@@ -63,7 +63,9 @@ function Cadastro_Loja() {
             const { Titulo, Facebook, Instagram, Site, Descricao, Telefone} = formData;
     
             const data = new FormData()
-    
+            for(var i = 0; i < selectedFiles.length; i++){
+                data.append('files', selectedFiles[i]);
+            }
             data.append('Titulo', Titulo);
             data.append('Facebook', Facebook);
             data.append('Instagram', Instagram);
@@ -71,11 +73,12 @@ function Cadastro_Loja() {
             data.append('Descricao', Descricao);
             data.append('Telefone', Telefone);
             data.append('IdCategoria', IdCategoria);
-            data.append('files', selectedFiles)
+            //data.append('files', selectedFiles)
     
             await api.post('anuncio', data ,{
                 headers: {
-                    'auth-token': token
+                    'auth-token': token,
+                    'Content-Type': undefined
                 },
             }).then(res => {
                 alert('Anuncio Cadastrado com succeso!')
@@ -163,7 +166,7 @@ function Cadastro_Loja() {
                                         <img src={SelecionarFoto}></img>
                                         <img src={SelecionarFoto}></img>
                                         <input  type="file" id="AnuncioImages"name="files" 
-                                        onChange={handleUploadFiles} multiple webkitdirectory></input>
+                                        onChange={handleUploadFiles} multiple></input>
                                     </div>
                                 </div>
                                 <div className="botao-cadastro">
