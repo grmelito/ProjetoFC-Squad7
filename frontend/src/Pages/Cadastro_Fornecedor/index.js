@@ -10,6 +10,7 @@ function CadastroFornecedor() {
     const token = localStorage.getItem('token')
     const history = useHistory()
 
+    const [Perfil, setPerfil] = useState([])
     const [CPFouCNPJ, setCPFouCNPJ] = useState('')
     const [Cep, setCep] = useState('')
     const [Rua, setRua] = useState('')
@@ -38,6 +39,15 @@ function CadastroFornecedor() {
             return;
         }
     })
+
+    useEffect(() => {
+        const res = api.get('profile', {
+           headers: {
+               'auth-token': token 
+           },
+       }) .then(res => {
+           setPerfil(res.data);
+       })}, []);
 
     function handleLogout(){
         localStorage.clear(); 
@@ -99,7 +109,10 @@ function CadastroFornecedor() {
                 <div className="">
                     <div className="fundo-loja col-9">
                         <div className="foto-usuario">
-                            <img src={SelecionarFoto} className="rounded-circle"></img>
+                        {Perfil.map(Perfil =>
+                            <img src={'http://localhost:3333/uploads/' + Perfil.ImagemUsuario} 
+                            className="rounded-circle" width='130' height='130'></img>
+                        )}
                         </div>
                         <form onSubmit={handleUpgrade}>
                             <div className="form-div">

@@ -12,6 +12,7 @@ function Cadastro_Loja() {
     const token = localStorage.getItem('token')
     const history = useHistory();
 
+    const [Perfil, setPerfil] = useState([])
     const [Categorias, setCategorias] = useState([]);
     const [selectedCategoria, setSelectedCategoria] = useState('0');
     const [selectedFiles, setSelectedFiles] = useState();
@@ -48,6 +49,15 @@ function Cadastro_Loja() {
             return;
         }
     })
+
+    useEffect(() => {
+        const res = api.get('profile', {
+           headers: {
+               'auth-token': token 
+           },
+       }) .then(res => {
+           setPerfil(res.data);
+       })}, []);
 
     function handleInputChange(event) {
         const { name, value } = event.target;
@@ -116,7 +126,10 @@ function Cadastro_Loja() {
                 <div className="">
                     <div className="fundo-loja col-9">
                         <div className="foto-usuario">
-                            <img src={FotoUsuario} className="rounded-circle usuario"></img>
+                        {Perfil.map(Perfil =>
+                            <img src={'http://localhost:3333/uploads/' + Perfil.ImagemUsuario} 
+                            className="rounded-circle usuario" width='130' height='130'></img>
+                        )}
                         </div>
                         <form onSubmit={handleSubmitForm} encType="multipart/form-data" >
                             <div className="form-div">
