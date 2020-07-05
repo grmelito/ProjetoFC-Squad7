@@ -22,12 +22,12 @@ function Header() {
                     </div>
 
                     <nav className="btn-header-home">
-                        <Link to="/cadastro">
+                        <a href="/cadastro">
                             <button className="btn-cadastro-header" >Cadastre-se</button>
-                        </Link>
-                        <Link to="/login">
+                            </a>
+                        <a href="/login">
                         <button className="btn-entrar-header">Entrar</button>
-                        </Link>
+                        </a>
                         
                     </nav>
 
