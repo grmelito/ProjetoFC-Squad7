@@ -9,9 +9,25 @@ import { useHistory } from 'react-router-dom';
 import { useEffect } from 'react';
 
 function Cadastro_Loja() {
+    const token = localStorage.getItem('token')
     const history = useHistory();
+
     const [Categorias, setCategorias] = useState([]);
     const [selectedCategoria, setSelectedCategoria] = useState('0');
+    const [selectedFiles, setSelectedFiles] = useState([]);
+
+    const [formData, setFormData] = useState({
+        Titulo: '',
+        Descricao: '',
+        Telefone: '',
+        Facebook: '',
+        Instagram: '',
+        Site: '',
+        IdCategoria: ''
+      });
+
+      const handleUploadFiles = event => console.log(...event.target.files)
+      // const handleUploadFiles = event => setSelectedFiles(...event.target.files)
 
     useEffect(() => {
         api.get('categorias').then(res => {
@@ -32,6 +48,43 @@ function Cadastro_Loja() {
             return;
         }
     })
+
+    function handleInputChange(event) {
+        const { name, value } = event.target;
+    
+        setFormData({ ...formData, [name]: value });
+      }
+
+    async function handleSubmitForm(event) {
+        event.preventDefault()
+
+        try {
+            const IdCategoria = selectedCategoria
+            const { Titulo, Facebook, Instagram, Site, Descricao, Telefone} = formData;
+    
+            const data = new FormData()
+    
+            data.append('Titulo', Titulo);
+            data.append('Facebook', Facebook);
+            data.append('Instagram', Instagram);
+            data.append('Site', Site);
+            data.append('Descricao', Descricao);
+            data.append('Telefone', Telefone);
+            data.append('IdCategoria', IdCategoria);
+            data.append('files', selectedFiles)
+    
+            await api.post('anuncio', data ,{
+                headers: {
+                    'auth-token': token
+                },
+            }).then(res => {
+                alert('Anuncio Cadastrado com succeso!')
+            })
+        } catch(err) {
+            alert('Erro ao cadastrar o anuncio!')
+        }
+       
+    }
 
     function handleLogout(){
         localStorage.clear(); 
@@ -62,37 +115,39 @@ function Cadastro_Loja() {
                         <div className="foto-usuario">
                             <img src={FotoUsuario} className="rounded-circle usuario"></img>
                         </div>
-                        <form >
+                        <form onSubmit={handleSubmitForm} encType="multipart/form-data" >
                             <div className="form-div">
                                 <div className="form-group col-md-12">
-
-                                    <input className="input-cadloja" id="inputEmail4" placeholder="Nome da Loja" />
-                                </div>
-                                <div className="form-group col-md-12">
-
-                                    <input className="input-cadloja" id="inpufacebook" placeholder="Facebook" />
+                                    <input className="input-cadloja" id="Titulo" name="Titulo" 
+                                    placeholder="Nome da Loja" onChange={handleInputChange} />
                                 </div>
 
                                 <div className="form-group col-md-12">
-
-                                    <input className="input-cadloja" id="inputintagram" placeholder="Instagram" />
+                                    <input className="input-cadloja" id="Facebook" name="Facebook"
+                                    onChange={handleInputChange} placeholder="Facebook" />
                                 </div>
 
                                 <div className="form-group col-md-12">
-
-                                    <input className="input-cadloja" id="inputSite" placeholder="Site" />
+                                    <input className="input-cadloja" id="Instagram" name="Instagram"
+                                    onChange={handleInputChange} placeholder="Instagram" />
                                 </div>
 
                                 <div className="form-group col-md-12">
-
-                                    <input type="text" className="form-grande" id="inputDescricaoLoja" placeholder="Descrição" />
+                                    <input className="input-cadloja" id="Site" name="Site"
+                                    onChange={handleInputChange} placeholder="Site" />
                                 </div>
+
+                                <div className="form-group col-md-12">
+                                    <input type="text" className="form-grande" id="Descricao" name="Descricao"
+                                    onChange={handleInputChange} placeholder="Descrição" />
+                                </div>
+
                                 <div className="form-group col-md-6">
-
-                                    <input type="text" className="input-cadloja" id="inputCelular" placeholder="Celular/WhatsApp" />
+                                    <input type="text" className="input-cadloja" id="Telefone" name="Telefone"
+                                    onChange={handleInputChange} placeholder="Celular/WhatsApp" />
                                 </div>
-                                <div className="form-group col-md-6">
 
+                                <div className="form-group col-md-6">
                                     <select className="form-control" name="categoria" id="categoria" value={selectedCategoria} onChange={handleSelectCategoria}>
                                         <option value="0">Selecione uma Categoria</option>
                                         {Categorias.map(Categoria => (
@@ -107,6 +162,8 @@ function Cadastro_Loja() {
                                         <img src={SelecionarFoto}></img>
                                         <img src={SelecionarFoto}></img>
                                         <img src={SelecionarFoto}></img>
+                                        <input  type="file" id="AnuncioImages"name="files" 
+                                        onChange={handleUploadFiles} multiple webkitdirectory></input>
                                     </div>
                                 </div>
                                 <div className="botao-cadastro">
