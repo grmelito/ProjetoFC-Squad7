@@ -88,9 +88,7 @@ Comentario text,
 IdAnuncio int,
 IdUsuario int,
 foreign key (IdAnuncio) references Anuncio(IdAnuncio),
-foreign key (IdUsuario) references Fornecedor(IdUsuario),
+foreign key (IdUsuario) references Fornecedor(IdUsuario)
 );
 
 -- drop database ProjetoFcamara
-
-
