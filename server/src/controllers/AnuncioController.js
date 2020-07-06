@@ -15,14 +15,14 @@ module.exports = {
             const {page = 1} = req.query
 
             const results = await knex('Anuncio')
-            .limit(4)
-            .offset((page - 1) * 4)
+            .limit(12)
+            .offset((page - 1) * 12)
             .select([
                 'Anuncio.IdAnuncio',
                 'Anuncio.Titulo',
                 'Anuncio.ImagemAnuncio',
                 'Anuncio.IdCategoria',
-                'Anuncio.IdFornecedor']);
+                'Anuncio.IdFornecedor']).orderBy('Anuncio.IdAnuncio', "desc");
             
             for (let i = 0; i < results.length; i++) {
                 results[i].ImagemAnuncio = results[i].ImagemAnuncio.split(";");
