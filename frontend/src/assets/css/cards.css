@@ -1,8 +1,10 @@
 .card-section{
+
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 50px;
+    
 }
 
 .card-name{
@@ -12,14 +14,27 @@
     text-align: start;
 }
 
+.card-img{
+    display:flex;
+
+}
+.card-img img{
+    align-self: center;
+    margin:auto;
+    width: 258px;
+    height: 178.16px;
+}
+
 
 .container-cards{
     display: flex;
    justify-content: space-around;
    width: 1200px; 
+   flex-wrap: wrap;
 }
 .item-cards{
     width: 260px;
+    margin-top: 30px;
 }
 
 .h3-card{

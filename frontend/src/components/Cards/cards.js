@@ -62,7 +62,9 @@ function Cards({Anuncios , AnuncioCategoria, AnuncioProx}) {
         {AnuncioProx.map(AnuncioProx => (
           <div className="item-cards" id={AnuncioProx.IdCategoria}>
             <Card className="card-inicio">
+              
               <CardImg top width="100%" src={'http://localhost:3333/uploads/' + AnuncioProx.ImagemAnuncio[0]} alt="Card image cap" />
+              
               <CardBody className="body-card">
                 <CardTitle className="card-title">{AnuncioProx.Titulo}</CardTitle>
                 <hr className="hr-card"></hr>
@@ -89,7 +91,9 @@ function Cards({Anuncios , AnuncioCategoria, AnuncioProx}) {
         {Anuncios.map(Anuncio => (
           <div className="item-cards" id={Anuncio.IdCategoria}>
             <Card className="card-inicio">
+            <div className="card-img">
               <CardImg top width="100%" src={'http://localhost:3333/uploads/' + Anuncio.ImagemAnuncio[0]} alt="Card image cap" />
+            </div>
               <CardBody className="body-card">
                 <CardTitle className="card-title">{Anuncio.Titulo}</CardTitle>
                 <hr className="hr-card"></hr>
