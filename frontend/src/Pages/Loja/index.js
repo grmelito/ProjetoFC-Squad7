@@ -11,6 +11,7 @@ function Loja() {
     const idLoja = localStorage.getItem('IdAnuncio')
 
     const [Anuncio, setAnuncio] = useState([])
+    const [Perfil, setPerfil] = useState([])
 
     const id = idLoja
 
@@ -24,6 +25,17 @@ function Loja() {
            setAnuncio(res.data);
        })}, []);
 
+    //    useEffect(() => {
+    //     const res = api.get('profile' , {
+    //        headers: {
+    //            'auth-token': token 
+    //        },
+
+    //    }).then(res => {
+    //        setPerfil(res.data);
+    //    })}, []);
+
+
     function handleError (e) {
         this.onerror=null;this.src={SelecionarFoto}
     }
@@ -31,41 +43,48 @@ function Loja() {
     return (
         <div>
             <Header />
+            {Anuncio.map(Anuncio =>
             <section className="conteiner-loja">
-                {Anuncio.map(Anuncio =>
+                
                 <h1 className="nome-loja col-10">{Anuncio.Titulo}</h1>
-                )}
-                {Anuncio.map(Anuncio =>
+                
                 <div className="top-loja col-11">
                 <h2 className="subnome-loja">{Anuncio.CategoriaNome}</h2>
                     <a href="/cadastroLoja">Editar Loja</a>
                 </div>
-                )}
+
                 
-                {Anuncio.map(Anuncio =>
+                
                 <div className="box-loja">
                     <div className="loja-descricao col-5">
+                    
                         <p className="p-descricao">{Anuncio.Descricao}</p>
+                    
                     </div>
 
                     <div className="dados-loja col-5">
+                    
                         <div className="loja-cont">
-                        <div className="img-perfil-loja"></div >
+                         
+                        <div className="img-perfil-loja">
+                            <img width="100px" height="100px" src={'http://localhost:3333/uploads/' + Anuncio.ImagemUsuario}></img>
+                        </div >
                            
-                            <p className="p-info" >Herbert Thomas Cardoso</p>
-                            <p className="p-info"> herbertthomasgja@gmail.com</p>
-                               
+                            <p className="p-info" >{Anuncio.Nome}</p>
+                            <p className="p-info"> {Anuncio.Email}</p>
+                                 
                         </div>
+
                         <div className="loja-cont" >
-                            <p className="p-info"><a className="sociais-loja" href="#">instagram_oficial.com</a></p>
-                            <p className="p-info"><a className="sociais-loja" href="#">facebook_oficial.com</a></p>
-                            <p className="p-info"><a className="sociais-loja" href="#">http://site_lojaoficial.com</a></p>
-                            <p className="p-info">(11) 966558871</p>
+                            <p className="p-info"><a className="sociais-loja" href="#">{Anuncio.Instagram}</a></p>
+                            <p className="p-info"><a className="sociais-loja" href="#">{Anuncio.Facebook}</a></p>
+                            <p className="p-info"><a className="sociais-loja" href="#">{Anuncio.Site}</a></p>
+                            <p className="p-info">{Anuncio.Telefone}</p>
                         </div>
                     </div>
                 </div>
-                )}
-                {Anuncio.map(Anuncio => (
+
+                
                 <div className="galeria-loja col-12">
                     <div className="img-1 ">
                         <img key={Anuncio} src={'http://localhost:3333/uploads/' + Anuncio.ImagemAnuncio[0]}
@@ -87,8 +106,9 @@ function Loja() {
                         width='220' height='200' onerror={handleError}/>
                     </div> 
                 </div>
-                ))}
+               
             </section>
+            )} 
             <Footer />
         </div>
 
