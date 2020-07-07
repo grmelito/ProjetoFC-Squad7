@@ -25,35 +25,45 @@ function Loja() {
            setAnuncio(res.data);
        })}, []);
 
-    //    useEffect(() => {
-    //     const res = api.get('profile' , {
-    //        headers: {
-    //            'auth-token': token 
-    //        },
+        useEffect(() => {
+         const res = api.get('profile' , {
+            headers: {
+                'auth-token': token 
+            },
 
-    //    }).then(res => {
-    //        setPerfil(res.data);
-    //    })}, []);
+        }).then(res => {
+            setPerfil(res.data);
+        })}, []);
 
+   
+    function handleEditarLoja(event) {
+        const Username = Perfil[0].Nome
+        const Anuncioname = Anuncio[0].Nome
+        if(Username !== Anuncioname) {
+            document.getElementById("Edit").style.display = "none";
+        } 
+        
+    }
 
     function handleError (e) {
-        this.onerror=null;this.src={SelecionarFoto}
+        this.onError=null;this.src={SelecionarFoto}
     }
 
     return (
         <div>
             <Header />
             {Anuncio.map(Anuncio =>
-            <section className="conteiner-loja">
+            <section className="conteiner-loja" onMouseMoveCapture={handleEditarLoja}>
                 
                 <h1 className="nome-loja col-10">{Anuncio.Titulo}</h1>
                 
                 <div className="top-loja col-11">
                 <h2 className="subnome-loja">{Anuncio.CategoriaNome}</h2>
-                    <a href="/cadastroLoja">Editar Loja</a>
+                <div>
+                <a href="/cadastroLoja" id="Edit">Editar Loja</a>
+                </div>
                 </div>
 
-                
                 
                 <div className="box-loja">
                     <div className="loja-descricao col-5">
