@@ -35,15 +35,15 @@ export default function Routes() {
                 <Route path="/" exact component={Home} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/cadastro" component={Cadastro} />
-                <Route path="/homeLogada" component={HomeLogada} />
+                <PrivateRoute path="/homeLogada" component={HomeLogada} />
                 <Route path="/sobre" component={Sobre} />
-                <Route path="/cadastroLoja" component={Cadastro_Loja} />
+                <PrivateRoute path="/cadastroLoja" component={Cadastro_Loja} />
                 <Route path="/duvidas" component={Duvidas} />
                 <Route path="/contato" component={Contato} />
-                <Route path="/cadastroFornecedor" component={CadastroFornecedor} />
+                <PrivateRoute path="/cadastroFornecedor" component={CadastroFornecedor} />
                 <Route path="/loja" component={Loja} />
-                <Route path="/perfilUsuario" component={PerfilUsuario}/>
-                <PrivateRoute path="/recuperarSenha" component={RecuperarSenha}/>
+                <PrivateRoute path="/perfilUsuario" component={PerfilUsuario}/>
+                <Route path="/recuperarSenha" component={RecuperarSenha}/>
             </Switch>
         </BrowserRouter>
     );
