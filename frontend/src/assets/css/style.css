@@ -370,10 +370,16 @@ hr{
     margin-left: 300px;
   }
 
+  .conteiner-loja h1, h2{
+    margin-left: 40px;
+  }
+
   .subnome-loja{
     color:#04329B;
     font-size: 20px;
   }
+
+
   
   .img-1{
     background: blue;
@@ -399,11 +405,21 @@ hr{
     height: 200px;
   }
   .galeria-loja{
+    margin-top: 60px;
     display: flex;
     justify-content: space-around;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
   }
   
+  .loja-cont{
+    display: flex;
+    width: 250px;
+    height: 225px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+  }
   .img-perfil-loja{
     width: 100px;
     height: 100px;
@@ -439,6 +455,11 @@ hr{
     color: #04329B;
     font-size: 16px;
   
+  }
+
+  .sociais-loja {
+    text-decoration: none;
+    color: inherit;
   }
   /* FIM LOJA  */
 

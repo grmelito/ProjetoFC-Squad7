@@ -41,6 +41,30 @@ function Loja() {
                     <a href="/cadastroLoja">Editar Loja</a>
                 </div>
                 )}
+                
+                {Anuncio.map(Anuncio =>
+                <div className="box-loja">
+                    <div className="loja-descricao col-5">
+                        <p className="p-descricao">{Anuncio.Descricao}</p>
+                    </div>
+
+                    <div className="dados-loja col-5">
+                        <div className="loja-cont">
+                        <div className="img-perfil-loja"></div >
+                           
+                            <p className="p-info" >Herbert Thomas Cardoso</p>
+                            <p className="p-info"> herbertthomasgja@gmail.com</p>
+                               
+                        </div>
+                        <div className="loja-cont" >
+                            <p className="p-info"><a className="sociais-loja" href="#">instagram_oficial.com</a></p>
+                            <p className="p-info"><a className="sociais-loja" href="#">facebook_oficial.com</a></p>
+                            <p className="p-info"><a className="sociais-loja" href="#">http://site_lojaoficial.com</a></p>
+                            <p className="p-info">(11) 966558871</p>
+                        </div>
+                    </div>
+                </div>
+                )}
                 {Anuncio.map(Anuncio => (
                 <div className="galeria-loja col-12">
                     <div className="img-1 ">
@@ -64,27 +88,6 @@ function Loja() {
                     </div> 
                 </div>
                 ))}
-                {Anuncio.map(Anuncio =>
-                <div className="box-loja">
-                    <div className="loja-descricao col-5">
-                        <p className="p-descricao">{Anuncio.Descricao}</p>
-                    </div>
-                    <div className="dados-loja col-5">
-                        <div className="img-perfil-loja">
-                        </div >
-                        <div className="loja-cont" >
-                            <p className="p-info" >Herbert Thomas Cardoso</p>
-                            <div className="loja-info">
-                                <p className="p-info">{Anuncio.Telefone}</p>
-                            </div>
-
-                            <div className="loja-info">
-                                <p className="p-info"> herbertthomasgja@gmail.com  </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                )}
             </section>
             <Footer />
         </div>
