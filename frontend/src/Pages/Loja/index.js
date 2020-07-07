@@ -45,6 +45,10 @@ function Loja() {
         
     }
 
+    function handleTokenUpdate(event) {
+        localStorage.setItem('UpdateToken', 'true')
+    }
+
     function handleError (e) {
         this.onError=null;this.src={SelecionarFoto}
     }
@@ -60,7 +64,7 @@ function Loja() {
                 <div className="top-loja col-11">
                 <h2 className="subnome-loja">{Anuncio.CategoriaNome}</h2>
                 <div>
-                <a href="/cadastroLoja" id="Edit">Editar Loja</a>
+                <a href="/cadastroLoja" id="Edit" onClick={handleTokenUpdate}>Editar Loja</a>
                 </div>
                 </div>
 

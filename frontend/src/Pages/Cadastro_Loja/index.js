@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 
 function Cadastro_Loja() {
     const token = localStorage.getItem('token')
+    const UpdateToken = localStorage.getItem('UpdateToken')
     const history = useHistory();
 
     const [Perfil, setPerfil] = useState([])
@@ -84,15 +85,25 @@ function Cadastro_Loja() {
             data.append('Telefone', Telefone);
             data.append('IdCategoria', IdCategoria);
             //data.append('files', selectedFiles)
-    
-            await api.post('anuncio', data ,{
-                headers: {
-                    'auth-token': token,
-                    'Content-Type': undefined
-                },
-            }).then(res => {
-                alert('Anuncio Cadastrado com succeso!')
-            })
+            if(!UpdateToken){
+                await api.post('anuncio', data ,{
+                    headers: {
+                        'auth-token': token,
+                        'Content-Type': undefined
+                    },
+                }).then(res => {
+                    alert('Anuncio Cadastrado com succeso!')
+                })
+            } else {
+                await api.put('update/anuncio', data, {
+                    headers: {
+                        'auth-token': token,
+                        'Content-Type': undefined
+                    },
+                }).then(res => {
+                    alert('Anuncio atualizado com sucesso!')
+                })
+            }
         } catch(err) {
             alert('Erro ao cadastrar o anuncio!')
         }
