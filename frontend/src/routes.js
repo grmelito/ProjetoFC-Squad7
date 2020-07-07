@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 // Impostando Paginas
 import Home from './Pages/Home'
@@ -15,7 +15,20 @@ import CadastroFornecedor from './Pages/Cadastro_Fornecedor';
 import Loja from './Pages/Loja';
 import PerfilUsuario from './Pages/Perfil_Usuario'
 
-export default function Routes() {
+const isAuth = () => localStorage.getItem('token');
+const PrivateRoute = ({component: Component, ...rest}) => {
+    return (
+    
+        <Route {...rest} render={props => (
+            isAuth() ?
+                <Component {...props} />
+            : <Redirect to="/login" />
+        )} />
+    );
+    };
+
+export default function Routes() {   
+
     return (
         <BrowserRouter>
             <Switch>
@@ -25,13 +38,12 @@ export default function Routes() {
                 <Route path="/homeLogada" component={HomeLogada} />
                 <Route path="/sobre" component={Sobre} />
                 <Route path="/cadastroLoja" component={Cadastro_Loja} />
-                <Route path="/recuperarSenha" component={RecuperarSenha} />
                 <Route path="/duvidas" component={Duvidas} />
                 <Route path="/contato" component={Contato} />
                 <Route path="/cadastroFornecedor" component={CadastroFornecedor} />
                 <Route path="/loja" component={Loja} />
                 <Route path="/perfilUsuario" component={PerfilUsuario}/>
-
+                <PrivateRoute path="/recuperarSenha" component={RecuperarSenha}/>
             </Switch>
         </BrowserRouter>
     );
