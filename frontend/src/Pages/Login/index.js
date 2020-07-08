@@ -45,12 +45,12 @@ function Login() {
                                 <div className="form-group col-md-12">
                                     <input type="email" className="form-control input-tm"
                                         id="inputEmail4" placeholder="Digite seu e-mail"
-                                        value={Email} onChange={e => setEmail(e.target.value)} />
+                                        value={Email} onChange={e => setEmail(e.target.value)} required/>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <input type="password" className="form-control"
                                         id="inputPassword4" placeholder="Digite sua senha"
-                                        value={Senha} onChange={e => setSenha(e.target.value)} />
+                                        value={Senha} onChange={e => setSenha(e.target.value)} required/>
                                 </div>
                             </div>
                             <button type="submit" className="btn btn-login">Entre</button>

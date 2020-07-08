@@ -120,17 +120,17 @@ function CadastroFornecedor() {
                                 <div className="form-group col-md-6">
                                     
                                     <input type="text" className="form-control" placeholder="CPF ou CNPJ" id="inputCPF"
-                                    value={CPFouCNPJ} onChange={e => setCPFouCNPJ(e.target.value)} />
+                                    value={CPFouCNPJ} onChange={e => setCPFouCNPJ(e.target.value)} required/>
                                 </div>
                                 <div className="form-group col-md-6">
                                     
                                     <input type="text" className="form-control" id="inputCep" placeholder="CEP"
-                                    value={Cep} onChange={e => setCep(e.target.value)} />
+                                    value={Cep} onChange={e => setCep(e.target.value)} required/>
                                 </div>
                                 
                                 <div className="form-group col-md-6">
                                     
-                                    <select className="form-control" name="cidade" id="cidade" value={selectedCidade} onChange={handleSelectCidade}>
+                                    <select className="form-control" name="cidade" id="cidade" value={selectedCidade} onChange={handleSelectCidade} required>
                                         <option value="0">Selecione uma Cidade</option>
                                         {Cidades.map(Cidade => (
                                             <option key={Cidade.IdCidade} value={Cidade.IdCidade}>{Cidade.CidadeNome}</option>
@@ -140,22 +140,22 @@ function CadastroFornecedor() {
                                 <div className="form-group col-md-6">
                                     
                                     <input type="text" className="form-control" id="inputEndereco" placeholder="Endereço"
-                                    value={Rua} onChange={e => setRua(e.target.value)} />
+                                    value={Rua} onChange={e => setRua(e.target.value)} required/>
                                 </div>
                                 <div className="form-group col-md-5">
                                     
                                     <input type="text" className="form-control" id="inputNumero" placeholder="Número"
-                                    value={Numero} onChange={e => setNumero(e.target.value)}/>
+                                    value={Numero} onChange={e => setNumero(e.target.value)} required/>
                                 </div>
                                 <div className="form-group col-md-7">
                                     
                                     <input type="text" className="form-control" id="inputComplemento" placeholder="Complemento"
-                                    value={Complemento} onChange={e => setComplemento(e.target.value)}/>
+                                    value={Complemento} onChange={e => setComplemento(e.target.value)} required/>
                                 </div>
                                 <div className="form-group col-md-10">
                                     
                                     <input type="text" className="form-control" id="inputBairro" placeholder="Bairro"
-                                    value={Bairro} onChange={e => setBairro(e.target.value)}/>
+                                    value={Bairro} onChange={e => setBairro(e.target.value)} required/>
                                 </div>
                                 
                                 <div className="botao-cadastro">

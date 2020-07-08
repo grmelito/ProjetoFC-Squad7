@@ -189,11 +189,10 @@ function Cadastro_Loja() {
                                         <img className="col-md-3" src={SelecionarFoto}></img>
                                         <img className="col-md-3" src={SelecionarFoto}></img>
                                         <img className="col-md-3" src={SelecionarFoto}></img> 
-                                    </div>
-                                    <input  type="file" id="AnuncioImages"name="files" 
-                                        onChange={handleUploadFiles} multiple></input>
-                                    
+                                    </div> 
                                 </div>
+                                <input type="file" id="AnuncioImages"name="files" 
+                                    onChange={handleUploadFiles} multiple></input>
                                 <div className="botao-cadastro">
                                     <button type="submit" className="btn btn-primary">Cadastrar</button>
                                 </div>
