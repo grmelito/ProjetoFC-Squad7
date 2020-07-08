@@ -54,7 +54,7 @@ function PerfilUsuario() {
                         </div>
                         <form encType="multipart/form-data" method='put'>
                         <div className="botao-cadastro">
-                            <input  type="file" id="profileImage" onChange={handleUploadFile}></input>
+                            <input className="files" type="file" id="profileImage" onChange={handleUploadFile}></input>
                             <button type="submit" className="btn btn-primary" onClick={handleUpdateProfile}>Alterar Dados</button>
                         </div>
                         
