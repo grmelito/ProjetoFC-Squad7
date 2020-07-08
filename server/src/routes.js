@@ -1,6 +1,8 @@
 const express = require('express');
 const multer = require('multer');
 const multerConfig = require('./config/multer');
+const swaggerJsDoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
 
 const CategoriaController = require('./controllers/CategoriaController')
 const AnuncioController = require('./controllers/AnuncioController')
@@ -11,6 +13,26 @@ const verifyToken = require('./config/verifyToken');
 
 const routes = express.Router();
 const upload = multer(multerConfig);
+
+
+const swaggerOptions = {
+    swaggerDefinition: {
+        info: {
+          version: "4.1.4",
+          title: "Projeto BFriend - S7",
+          description: "Documentação da API do projeto.",
+          contact: {
+            name: "https://github.com/grmelito/ProjetoFC-Squad7"
+          },
+          servers: ["http://localhost:3333"]
+        }
+      },
+      // ['.routes/*.js']
+      apis: ["routes.js"]
+}
+
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
+routes.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 //routes.get('/categorias/1', CategoriaController.showCategoria)
 routes.get('/categorias', CategoriaController.index)
