@@ -118,7 +118,7 @@ module.exports = {
 
         const data = {Genero, Nome, Senha, DataNascimento} = req.body
 
-        if(!data){
+        if(data){
 
             const dataUser = await knex('Usuario')
             .where('Usuario.IdUsuario ', id) 
@@ -197,6 +197,19 @@ module.exports = {
         } catch (err) {
             return res.status(400).send({error: 'Erro ao cadastrar endereço'})
         }  
+    },
+
+    async recuperarSenha (req, res) {  
+        const Nome = req.body.Nome
+        const Email = req.body.Email
+
+        const result = await knex('Usuario')
+            .select('Usuario.Senha')
+            .where('Usuario.Nome', Nome).andWhere('Usuario.Email', '=', Email)
+
+        if(result.length == 0) return res.status(400).send({error: 'Informações Inválidas!'});
+        return res.status(200).send(result)
+            
     }
 
 }

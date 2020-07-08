@@ -20,6 +20,7 @@ module.exports = {
             .select([
                 'Anuncio.IdAnuncio',
                 'Anuncio.Titulo',
+                'Anuncio.Descricao',
                 'Anuncio.ImagemAnuncio',
                 'Anuncio.IdCategoria',
                 'Anuncio.IdFornecedor']).orderBy('Anuncio.IdAnuncio', "desc");
@@ -45,6 +46,7 @@ module.exports = {
                 .select([
                     'Anuncio.IdAnuncio',
                     'Anuncio.Titulo',
+                    'Anuncio.Descricao',
                     'Anuncio.ImagemAnuncio',
                     'Anuncio.IdCategoria',
                     'Anuncio.IdFornecedor'
@@ -72,6 +74,7 @@ module.exports = {
             .select([
                 'Anuncio.IdAnuncio',
                 'Anuncio.Titulo',
+                'Anuncio.Descricao',
                 'Anuncio.ImagemAnuncio',
                 'Anuncio.IdCategoria',
                 'Anuncio.IdFornecedor'])
@@ -92,6 +95,7 @@ module.exports = {
             .select([
                 'Anuncio.IdAnuncio',
                 'Anuncio.Titulo',
+                'Anuncio.Descricao',
                 'Anuncio.ImagemAnuncio',
                 'Anuncio.IdCategoria',
                 'Anuncio.IdFornecedor'])
@@ -111,6 +115,7 @@ module.exports = {
             .select([
                 'Anuncio.IdAnuncio',
                 'Anuncio.Titulo',
+                'Anuncio.Descricao',
                 'Anuncio.ImagemAnuncio',
                 'Anuncio.IdCategoria',
                 'Anuncio.IdFornecedor'])
@@ -130,6 +135,7 @@ module.exports = {
             .select([
                 'Anuncio.IdAnuncio',
                 'Anuncio.Titulo',
+                'Anuncio.Descricao',
                 'Anuncio.ImagemAnuncio',
                 'Anuncio.IdCategoria',
                 'Anuncio.IdFornecedor'])

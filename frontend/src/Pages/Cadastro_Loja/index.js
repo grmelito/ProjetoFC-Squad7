@@ -10,6 +10,7 @@ import { useEffect } from 'react';
 
 function Cadastro_Loja() {
     const token = localStorage.getItem('token')
+    const UpdateToken = localStorage.getItem('UpdateToken')
     const history = useHistory();
 
     const [Perfil, setPerfil] = useState([])
@@ -84,15 +85,26 @@ function Cadastro_Loja() {
             data.append('Telefone', Telefone);
             data.append('IdCategoria', IdCategoria);
             //data.append('files', selectedFiles)
-    
-            await api.post('anuncio', data ,{
-                headers: {
-                    'auth-token': token,
-                    'Content-Type': undefined
-                },
-            }).then(res => {
-                alert('Anuncio Cadastrado com succeso!')
-            })
+            if(!UpdateToken){
+                await api.post('anuncio', data ,{
+                    headers: {
+                        'auth-token': token,
+                        'Content-Type': undefined
+                    },
+                }).then(res => {
+                    alert('Anuncio Cadastrado com succeso!')
+                })
+            } else {
+                await api.put('update/anuncio', data, {
+                    headers: {
+                        'auth-token': token,
+                        'Content-Type': undefined
+                    },
+                }).then(res => {
+                    alert('Anuncio atualizado com sucesso!')
+                    history.push('/homeLogada');
+                })
+            }
         } catch(err) {
             alert('Erro ao cadastrar o anuncio!')
         }
@@ -174,14 +186,14 @@ function Cadastro_Loja() {
                                 <div className="selecionar-fotos col-md-12">
                                     <label className="label-fotos">Inserir pelo menos 4 fotos</label>
                                     <div className="colunas col-md-12">
-                                        <img src={SelecionarFoto}></img>
-                                        <img src={SelecionarFoto}></img>
-                                        <img src={SelecionarFoto}></img>
-                                        <img src={SelecionarFoto}></img>
-                                        <input  type="file" id="AnuncioImages"name="files" 
-                                        onChange={handleUploadFiles} multiple></input>
-                                    </div>
+                                        <img className="col-md-3" src={SelecionarFoto}></img>
+                                        <img className="col-md-3" src={SelecionarFoto}></img>
+                                        <img className="col-md-3" src={SelecionarFoto}></img>
+                                        <img className="col-md-3" src={SelecionarFoto}></img> 
+                                    </div> 
                                 </div>
+                                <input type="file" id="AnuncioImages"name="files" 
+                                    onChange={handleUploadFiles} multiple></input>
                                 <div className="botao-cadastro">
                                     <button type="submit" className="btn btn-primary">Cadastrar</button>
                                 </div>

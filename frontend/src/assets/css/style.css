@@ -146,6 +146,24 @@ hr{
 
   }
 
+  .btn1 {
+    display: inline-block;
+    font-weight: 400;
+    color: #fff !important;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    user-select: none;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .75rem;
+    margin-top: 0.8rem;
+    border: none;
+    margin-left: 1.5rem;
+
+  }
+
   .hr-login{
     color: #DFDFDF;
     width: 90%;
@@ -191,6 +209,11 @@ hr{
     font-weight: 1.5rem;
   }
 
+  .files{
+    
+    margin-bottom: 1.5rem;
+  }
+
   .redirect{
     color: #04329B !important;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
@@ -202,6 +225,11 @@ hr{
 
   .iformacoes-gerais{
     margin-bottom: 2.5em;
+  }
+
+  .criar-loja{
+    background-color: #EC0058;
+    margin-left: 2.5rem;
   }
 
  
@@ -303,7 +331,7 @@ hr{
   .foto-usuario{
     display: flex;
     justify-content: center;
-    margin-bottom: 2.5rem; 
+    margin-bottom: 1.5rem; 
     margin-top: 2.5rem;
   }
 

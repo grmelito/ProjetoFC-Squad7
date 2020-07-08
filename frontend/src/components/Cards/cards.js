@@ -40,11 +40,13 @@ function Cards({Anuncios , AnuncioCategoria, AnuncioProx}) {
         {AnuncioCategoria.map(AnuncioCategoria => (
           <div className="item-cards" id={AnuncioCategoria.IdCategoria}>
             <Card className="card-inicio">
+            <div className="card-img">
               <CardImg top width="100%" src={'http://localhost:3333/uploads/' + AnuncioCategoria.ImagemAnuncio[0]} alt="Card image cap" />
+            </div>
               <CardBody className="body-card">
                 <CardTitle className="card-title">{AnuncioCategoria.Titulo}</CardTitle>
                 <hr className="hr-card"></hr>
-                <CardText className="card-text">O melhor hamburger vegano do litoral paulista.</CardText>
+                <CardText className="card-text">{AnuncioCategoria.Descricao}</CardText>
                 <Button outline color="primary" id={AnuncioCategoria.IdAnuncio} onClick={handlePageLoja}>Saiba mais</Button>
               </CardBody>
             </Card>
@@ -62,13 +64,13 @@ function Cards({Anuncios , AnuncioCategoria, AnuncioProx}) {
         {AnuncioProx.map(AnuncioProx => (
           <div className="item-cards" id={AnuncioProx.IdCategoria}>
             <Card className="card-inicio">
-              
+              <div className="card-img">
               <CardImg top width="100%" src={'http://localhost:3333/uploads/' + AnuncioProx.ImagemAnuncio[0]} alt="Card image cap" />
-              
+              </div>
               <CardBody className="body-card">
                 <CardTitle className="card-title">{AnuncioProx.Titulo}</CardTitle>
                 <hr className="hr-card"></hr>
-                <CardText className="card-text">O melhor hamburger vegano do litoral paulista.</CardText>
+                <CardText className="card-text">{AnuncioProx.Descricao}</CardText>
                 <Button outline color="primary" id={AnuncioProx.IdAnuncio} onClick={handlePageLoja}>Saiba mais</Button>
               </CardBody>
             </Card>
@@ -97,7 +99,7 @@ function Cards({Anuncios , AnuncioCategoria, AnuncioProx}) {
               <CardBody className="body-card">
                 <CardTitle className="card-title">{Anuncio.Titulo}</CardTitle>
                 <hr className="hr-card"></hr>
-                <CardText className="card-text">O melhor hamburger vegano do litoral paulista.</CardText>
+                <CardText className="card-text">{Anuncio.Descricao}</CardText>
                 <Button outline color="primary" id={Anuncio.IdAnuncio} onClick={handlePageLoja}>Saiba mais</Button>
               </CardBody>
             </Card>
@@ -153,11 +155,13 @@ function Cards({Anuncios , AnuncioCategoria, AnuncioProx}) {
         {AnuncioCategoria.map(AnuncioCategoria => (
           <div className="item-cards" id={AnuncioCategoria.IdCategoria}>
             <Card className="card-inicio">
+            <div className="card-img">
               <CardImg top width="100%" src={'http://localhost:3333/uploads/' + AnuncioCategoria.ImagemAnuncio[0]} alt="Card image cap" />
+            </div>
               <CardBody className="body-card">
                 <CardTitle className="card-title">{AnuncioCategoria.Titulo}</CardTitle>
                 <hr className="hr-card"></hr>
-                <CardText className="card-text">O melhor hamburger vegano do litoral paulista.</CardText>
+                <CardText className="card-text">{AnuncioCategoria.Descricao}</CardText>
                 <Button outline color="primary" id={AnuncioCategoria.IdAnuncio} onClick={handlePageLoja}>Saiba mais</Button>
               </CardBody>
             </Card>
@@ -227,11 +231,13 @@ function Cards({Anuncios , AnuncioCategoria, AnuncioProx}) {
         {AnuncioProx.map(AnuncioProx => (
           <div className="item-cards" id={AnuncioProx.IdCategoria}>
             <Card className="card-inicio">
+            <div className="card-img">
               <CardImg top width="100%" src={'http://localhost:3333/uploads/' + AnuncioProx.ImagemAnuncio[0]} alt="Card image cap" />
+            </div>
               <CardBody className="body-card">
                 <CardTitle className="card-title">{AnuncioProx.Titulo}</CardTitle>
                 <hr className="hr-card"></hr>
-                <CardText className="card-text">O melhor hamburger vegano do litoral paulista.</CardText>
+                <CardText className="card-text">{AnuncioProx.Descricao}</CardText>
                 <Button outline color="primary" id={AnuncioProx.IdAnuncio} onClick={handlePageLoja}>Saiba mais</Button>
               </CardBody>
             </Card>

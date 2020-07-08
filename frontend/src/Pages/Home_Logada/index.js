@@ -1,6 +1,5 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom'
-import Header from '../../components/Header/header';
 import Footer from '../../components/Footer/footer';
 import Cards from '../../components/Cards/cards';
 import banner5 from '../../assets/img/banner5.png';
@@ -85,18 +84,41 @@ function HomeLogada() {
             Categoria
            
         };
-
-        const res = await api.get('anuncios/filtro', {
-            params: {
-                Cidade: data.Cidade,
-                Bairro: data.Bairro,
-                Categoria: data.Categoria
-            }
-        }).then(res => {
-            const AnuncioFiltrado = res.data
-
-            setAnuncioProx(AnuncioFiltrado)
-        })   
+        if(data.Bairro == "") {
+            const res = await api.get('anuncios/filtro', {
+                params: {
+                    Cidade: data.Cidade,
+                    Categoria: data.Categoria
+                }
+            }).then(res => {
+                const AnuncioFiltrado = res.data
+    
+                setAnuncioProx(AnuncioFiltrado)
+            })   
+        } if(data.Categoria === '0') {
+            const res = await api.get('anuncios/filtro', {
+                params: {
+                    Cidade: data.Cidade,
+                    Bairro: data.Bairro,
+                }
+            }).then(res => {
+                const AnuncioFiltrado = res.data
+    
+                setAnuncioProx(AnuncioFiltrado)
+            })   
+        } else {
+            const res = await api.get('anuncios/filtro', {
+                params: {
+                    Cidade: data.Cidade,
+                    Bairro: data.Bairro,
+                    Categoria: data.Categoria
+                }
+            }).then(res => {
+                const AnuncioFiltrado = res.data
+    
+                setAnuncioProx(AnuncioFiltrado)
+            })   
+        } 
     }
     
     function handleLogout(){
@@ -154,7 +176,8 @@ function HomeLogada() {
                         </select>
                     </div>
                 </div>
-                <button type="submit" className="btn btn-primary" onClick={handleSubmit}>Buscar</button>
+                <button type="submit" className="btn1 btn-primary" onClick={handleSubmit}>Buscar</button>
+                <a href="/cadastroFornecedor" ><button type="submit" className="btn1 criar-loja" >Vire Fornecedor</button></a>
             </div>
             
             <Cards Anuncios={Anuncios} AnuncioCategoria={AnuncioCategoria} AnuncioProx={AnuncioProx}/>
