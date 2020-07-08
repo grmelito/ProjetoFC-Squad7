@@ -118,7 +118,7 @@ module.exports = {
 
         const data = {Genero, Nome, Senha, DataNascimento} = req.body
 
-        if(!data){
+        if(data){
 
             const dataUser = await knex('Usuario')
             .where('Usuario.IdUsuario ', id) 
