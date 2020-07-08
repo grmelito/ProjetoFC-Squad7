@@ -102,6 +102,7 @@ function Cadastro_Loja() {
                     },
                 }).then(res => {
                     alert('Anuncio atualizado com sucesso!')
+                    history.push('/homeLogada');
                 })
             }
         } catch(err) {

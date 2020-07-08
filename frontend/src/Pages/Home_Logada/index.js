@@ -84,18 +84,41 @@ function HomeLogada() {
             Categoria
            
         };
-
-        const res = await api.get('anuncios/filtro', {
-            params: {
-                Cidade: data.Cidade,
-                Bairro: data.Bairro,
-                Categoria: data.Categoria
-            }
-        }).then(res => {
-            const AnuncioFiltrado = res.data
-
-            setAnuncioProx(AnuncioFiltrado)
-        })   
+        if(data.Bairro == "") {
+            const res = await api.get('anuncios/filtro', {
+                params: {
+                    Cidade: data.Cidade,
+                    Categoria: data.Categoria
+                }
+            }).then(res => {
+                const AnuncioFiltrado = res.data
+    
+                setAnuncioProx(AnuncioFiltrado)
+            })   
+        } if(data.Categoria === '0') {
+            const res = await api.get('anuncios/filtro', {
+                params: {
+                    Cidade: data.Cidade,
+                    Bairro: data.Bairro,
+                }
+            }).then(res => {
+                const AnuncioFiltrado = res.data
+    
+                setAnuncioProx(AnuncioFiltrado)
+            })   
+        } else {
+            const res = await api.get('anuncios/filtro', {
+                params: {
+                    Cidade: data.Cidade,
+                    Bairro: data.Bairro,
+                    Categoria: data.Categoria
+                }
+            }).then(res => {
+                const AnuncioFiltrado = res.data
+    
+                setAnuncioProx(AnuncioFiltrado)
+            })   
+        } 
     }
     
     function handleLogout(){
