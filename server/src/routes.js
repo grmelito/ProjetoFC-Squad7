@@ -28,14 +28,26 @@ const swaggerOptions = {
         }
       },
       // ['.routes/*.js']
-      apis: ["routes.js"]
+      apis: ["src/routes.js"]
 }
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 routes.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 //routes.get('/categorias/1', CategoriaController.showCategoria)
+
+/**
+* @swagger 
+* /categorias:
+*  get:
+*    description: Use essa requisição para trazer todas as categorias
+*    summary: Buscar todas as categorias
+*    responses:
+*       '200':
+*           description: Requisição feita com sucesso
+*/
 routes.get('/categorias', CategoriaController.index)
+
 routes.get('/usuarios', UsuarioController.index)
 routes.get('/profile', verifyToken, UsuarioController.showProfile)
 routes.get('/anuncio/:id', AnuncioController.showAnuncio)
@@ -48,6 +60,36 @@ routes.get('/cidades', EnderecoController.indexCidades)
 routes.get('/comentario/:idAnuncio', AnuncioController.showComentario)
 
 routes.post('/login', UsuarioController.loginUser)
+
+/**
+* @swagger
+*   paths:
+*      /register:
+*        post:
+*          summary: Novo usuário.
+*          consumes:
+*            - application/json
+*          parameters:
+*            - in: body
+*              name: user
+*              description: Criar um novo usuário.
+*              schema:
+*                type: object
+*                required:
+*                  - Nome
+*                  - Email
+*                  - Senha
+*                properties:
+*                  Nome:
+*                    type: string
+*                  Email:
+*                    type: string
+*                  Senha:
+*                    type: string
+*          responses:
+*            201:
+*              description: Usuário criado
+*/
 routes.post('/register', UsuarioController.createUser)
 routes.post('/upgrade/usuario', verifyToken, FornecedorController.upgradeFornecedor)
 routes.post('/request/password', UsuarioController.recuperarSenha)
