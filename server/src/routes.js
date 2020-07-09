@@ -47,10 +47,69 @@ routes.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 *           description: Requisição feita com sucesso
 */
 routes.get('/categorias', CategoriaController.index)
-
+/**
+* @swagger 
+* /usuarios:
+*  get:
+*    description: Use essa requisição para listar todos os usuarios
+*    summary: Buscar todos os usuarios
+*    responses:
+*       '200':
+*           description: Requisição feita com sucesso
+*/
 routes.get('/usuarios', UsuarioController.index)
+/**
+* @swagger 
+* /profile:
+*  get:
+*     summary: Listar as informações de perfil do usuario.
+*     parameters:
+*       - in: header
+*         name: auth-token
+*         description: Use essa requisição para listar as informações do perfil usuario.
+*         schema:
+*           required: true
+*           type: string
+*     responses:
+*       '200':
+*         description: Requisição feita com sucesso
+*       '400':
+*         description: Token Inválido!
+*/
 routes.get('/profile', verifyToken, UsuarioController.showProfile)
+/**
+* @swagger 
+* /anuncio/{id}:
+*  get:
+*     summary: Listar um anuncio.
+*     parameters:
+*       - in: path
+*         name: id
+*         description: Use essa requisição para listar um anuncio especifico
+*         schema:
+*           required: true
+*           type: integer
+*     responses:
+*       '200':
+*         description: Requisição feita com sucesso
+*/
 routes.get('/anuncio/:id', AnuncioController.showAnuncio)
+/**
+* @swagger 
+* /anuncios:
+*  get:
+*     summary: Listar um anuncio com filtro page.
+*     parameters:
+*       - in: query
+*         name: page
+*         description: Use essa requisição para listar os anuncios(12 anuncios por página)
+*         schema:
+*           required: true
+*           type: integer
+*     responses:
+*       '200':
+*         description: Requisição feita com sucesso
+*/
 routes.get('/anuncios', AnuncioController.indexPage)
 routes.get('/anuncios/filtro', AnuncioController.proxAnuncio)
 routes.get('/anuncios/categoria/:id', AnuncioController.indexCategoria)
@@ -59,8 +118,33 @@ routes.get('/estados', EnderecoController.indexEstados)
 routes.get('/cidades', EnderecoController.indexCidades)
 routes.get('/comentario/:idAnuncio', AnuncioController.showComentario)
 
+/**
+* @swagger
+*   paths:
+*      /login:
+*        post:
+*          summary: Processo de login.
+*          consumes:
+*            - application/json
+*          parameters:
+*            - in: body
+*              name: user
+*              description: Fazer login com um usuario existente.
+*              schema:
+*                type: object
+*                required:
+*                  - Email
+*                  - Senha
+*                properties:
+*                  Email:
+*                    type: string
+*                  Senha:
+*                    type: string
+*          responses:
+*            200:
+*              description: Usuário logado
+*/
 routes.post('/login', UsuarioController.loginUser)
-
 /**
 * @swagger
 *   paths:
