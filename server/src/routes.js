@@ -175,10 +175,202 @@ routes.post('/login', UsuarioController.loginUser)
 *              description: Usuário criado
 */
 routes.post('/register', UsuarioController.createUser)
+/**
+* @swagger
+*   paths:
+*      /upgrade/usuario:
+*        post:
+*          summary: Upgrade para fornecedor.
+*          consumes:
+*            - application/json
+*          parameters:
+*            - in: body
+*              name: Fornecedor
+*              description: Tornar a conta fornecedor podendo cadastrar seu anuncio.
+*              schema:
+*                type: object
+*                required: true
+*                  - CPFouCNPJ
+*                properties:
+*                  CPFouCNPJ:
+*                    type: string
+*            - in: header
+*              name: auth-token
+*              description: JWT de autorização
+*              schema:
+*                type: string
+*                required: true
+*          responses:
+*            201:
+*              description: Upgrade Para fornecedor realizado com sucesso.
+*            400:
+*              description: CPF Inválido.
+*/
 routes.post('/upgrade/usuario', verifyToken, FornecedorController.upgradeFornecedor)
+/**
+* @swagger
+*   paths:
+*      /create/endereco:
+*        post:
+*          summary: Cadastrando Endereço do Usuario.
+*          consumes:
+*            - application/json
+*          parameters:
+*            - in: body
+*              name: user
+*              description: Cadastrar seu endereço para poder ter o seu anuncio filtrado por proximidade.
+*              schema:
+*                type: object
+*                required:
+*                  - Cep
+*                  - Rua
+*                  - IdCidade
+*                  - Numero
+*                  - Complemento
+*                  - Bairro
+*                properties:
+*                  Cep:
+*                    type: string
+*                  Rua:
+*                    type: string
+*                  IdCidade:
+*                    type: integer
+*                  Numero:
+*                    type: string
+*                  Complemento:
+*                    type: string
+*                  Bairro:
+*                    type: string
+*            - in: header
+*              name: auth-token
+*              description: JWT de autorização
+*              schema:
+*                type: string
+*                required: true
+*          responses:
+*            200:
+*              description: Email Cadastrado
+*            400:
+*              description: Informações Inválidas
+*/
 routes.post('/request/password', UsuarioController.recuperarSenha)
+/**
+* @swagger
+*   paths:
+*      /anuncio:
+*        post:
+*          summary: Cadastrando anuncio do usuario.
+*          consumes:
+*            - multipart/form-data
+*          parameters:
+*            - in: formData
+*              name: Titulo
+*              type: string
+*              description: Titulo do Anuncio.
+*            - in: formData
+*              name: Facebook
+*              type: string
+*              description: Facebook do Anuncio.
+*            - in: formData
+*              name: Instagram
+*              type: string
+*              description: Instagram do Anuncio.
+*            - in: formData
+*              name: Site
+*              type: string
+*              description: Site do Anuncio.
+*            - in: formData
+*              name: Descricao
+*              type: string
+*              description: Descricao do Anuncio.
+*            - in: formData
+*              name: Telefone
+*              type: string
+*              description: Telefone do Anuncio.
+*            - in: formData
+*              name: IdCategoria
+*              type: integer
+*              description: Categoria do Anuncio.
+*            - in: formData
+*              name: files
+*              type: file
+*              description: Imagens do Anuncio.
+*            - in: header
+*              name: auth-token
+*              description: JWT de autorização
+*              contentType: undefined
+*          responses:
+*            200:
+*              description: Anuncio cadastrado com sucesso.
+*            400:
+*              description: Erro ao cadastrar anuncio.
+*/
 routes.post('/anuncio', verifyToken, upload.array('files', 4), AnuncioController.createAnuncio)
+/**
+* @swagger
+*   paths:
+*      /request/password:
+*        post:
+*          summary: Recuperar a senha de login.
+*          consumes:
+*            - application/json
+*          parameters:
+*            - in: body
+*              name: user
+*              description: Enviar nome e email correspondentes para ter acesso a senha.
+*              schema:
+*                type: object
+*                required:
+*                  - Nome
+*                  - Email
+*                properties:
+*                  Nome:
+*                    type: string
+*                  Email:
+*                    type: string
+*          responses:
+*            200:
+*              description: Senha Recuperada
+*            400:
+*              description: Informações Inválidas
+*/
 routes.post('/create/endereco', verifyToken, UsuarioController.createEndereco)
+/**
+* @swagger
+*   paths:
+*      /anuncio/{idAnuncio}/comentario:
+*        post:
+*          summary: Postar um comentário.
+*          consumes:
+*            - application/json
+*          parameters:
+*            - in: path
+*              name: idAnuncio
+*              required: true
+*              type: integer
+*              description: Parametro utilizado para verificar o id do anuncio
+*            - in: body
+*              name: Comentario
+*              description: Escrever e postar um comentário relacioando ao anuncio.
+*              schema:
+*                type: object
+*                required:
+*                  - Comentario
+*                properties:
+*                  Comentario:
+*                    type: string
+*            - in: header
+*              name: auth-token
+*              description: JWT de autorização
+*              schema:
+*                type: string
+*                required: true
+*          responses:
+*            200:
+*              description: Comentario realizado com sucesso.
+*            400:
+*              description: Erro ao postar o comentario
+*/
 routes.post('/anuncio/:idAnuncio/comentario', verifyToken, AnuncioController.comentarioAnuncio)
 
 routes.put('/update/profile', verifyToken, UsuarioController.updateUser)
