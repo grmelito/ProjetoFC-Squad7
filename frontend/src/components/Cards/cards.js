@@ -85,10 +85,6 @@ function Cards({Anuncios , AnuncioCategoria, AnuncioProx}) {
     <div>
       <section id="card-alimentacao" className="card-section" >
 
-        <div className="card-name">
-          <h3 className="h3-card"><img className="icone-cards" src={icone}/>Alimentação</h3>
-        </div>
-
         <div className="container-cards">
         {Anuncios.map(Anuncio => (
           <div className="item-cards" id={Anuncio.IdCategoria}>
@@ -119,37 +115,12 @@ function Cards({Anuncios , AnuncioCategoria, AnuncioProx}) {
             </Card>
           </div>
 
-          <div className="item-cards">
-            <Card className="card-inicio">
-              <CardImg top width="100%" src={massas} alt="Card image cap" />
-              <CardBody className="body-card">
-                <CardTitle className="card-title">Massas da Mama</CardTitle>
-                <hr className="hr-card"></hr>
-                <CardText className="card-text">Nós fazemos a melhor massa caseira da.</CardText>
-                <Button outline color="primary">Saiba mais</Button>
-              </CardBody>
-            </Card>
-          </div>
-
-          <div className="item-cards">
-            <Card className="card-inicio" >
-              <CardImg top width="100%" src={marmita} alt="Card image cap" />
-              <CardBody className="body-card">
-                <CardTitle className="card-title">Kilo do Bairro</CardTitle>
-                <hr className="hr-card"></hr>
-                <CardText className="card-text">Quer comer aquela marmita em casa.</CardText>
-                <Button outline color="primary">Saiba mais</Button>
-              </CardBody>
-            </Card>
-          </div>
         </div>
       </section>
 
       <section id="card-serviços_lar" className="card-section" >
 
-        <div className="card-name">
-          <h3 className="h3-card"><img className="icone-cards" src={icone}/>Serviços para o lar</h3>
-        </div>
+
 
         <div className="container-cards">
         {AnuncioCategoria.map(AnuncioCategoria => (
@@ -223,10 +194,6 @@ function Cards({Anuncios , AnuncioCategoria, AnuncioProx}) {
 
       <section id="card-Reparos" className="card-section" >
 
-        <div className="card-name">
-          <h3 className="h3-card"><img className="icone-cards" src={icone}/>Reparos domésticos</h3>
-        </div>
-
         <div className="container-cards">
         {AnuncioProx.map(AnuncioProx => (
           <div className="item-cards" id={AnuncioProx.IdCategoria}>
@@ -245,43 +212,6 @@ function Cards({Anuncios , AnuncioCategoria, AnuncioProx}) {
           ))}
           </div>
 
-          <div className="container-cards">
-          <div className="item-cards">
-          {handleFiltroProx}
-            <Card className="card-inicio">
-              <CardImg top width="100%" src={conserto} alt="Card image cap" />
-              <CardBody className="body-card">
-                <CardTitle className="card-title">Conserto Tvs</CardTitle>
-                <hr className="hr-card"></hr>
-                <CardText className="card-text">Quer comer aquele salgado? vaifazer </CardText>
-                <Button outline color="primary">Saiba mais</Button>
-              </CardBody>
-            </Card>
-          </div>
-          </div>
-          <div className="item-cards">
-            <Card className="card-inicio">
-              <CardImg top width="100%" src={tela} alt="Card image cap" />
-              <CardBody className="body-card">
-                <CardTitle className="card-title">Conserto Tvs</CardTitle>
-                <hr className="hr-card"></hr>
-                <CardText className="card-text">Nós fazemos a melhor massa caseira da.</CardText>
-                <Button outline color="primary">Saiba mais</Button>
-              </CardBody>
-            </Card>
-          </div>
-
-          <div className="item-cards">
-            <Card className="card-inicio" >
-              <CardImg top width="100%" src={som} alt="Card image cap" />
-              <CardBody className="body-card">
-                <CardTitle className="card-title">Conserto Som</CardTitle>
-                <hr className="hr-card"></hr>
-                <CardText className="card-text">Quer comer aquela marmita em casa.</CardText>
-                <Button outline color="primary">Saiba mais</Button>
-              </CardBody>
-            </Card>
-          </div>
       </section>
     </div>
 

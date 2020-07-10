@@ -376,7 +376,7 @@ hr{
   }
 
   .botao-cadastro{
-    margin-left: 14rem;
+    margin-left: 18rem;
   }
 
   @media(max-width:630px){
@@ -387,6 +387,10 @@ hr{
 
   .btn-alterar{
     margin-left:18rem
+  }
+
+  .edit-loja{
+    margin-left: 18.5rem;
   }
 
   .btn-cadastro{

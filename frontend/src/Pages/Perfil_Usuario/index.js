@@ -84,6 +84,7 @@ function PerfilUsuario() {
                         <form encType="multipart/form-data" method='put'>
                         <div className="botao-cadastro">
                             <input className="files" type="file" id="profileImage" onChange={handleUploadFile}></input>
+                            <br></br>
                             <button type="submit" className="btn btn-primary" onClick={handleUpdateImage}>Alterar Dados</button>
                         </div>
                         </form>
@@ -154,7 +155,7 @@ function PerfilUsuario() {
                             </div>
                             )}
                         </form>
-                        <a href='/cadastroLoja'><button className="btn btn-primary">Editar Loja</button></a>
+                        <a href='/cadastroLoja'><button className="edit-loja btn btn-primary">Editar Loja</button></a>
                         <hr></hr>
                         <div className="mini-footer">
                             <p className="subtitulo">Revise seus dados Antes de Confirmar</p>
