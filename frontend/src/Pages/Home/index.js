@@ -66,57 +66,12 @@ function Home() {
                         <div className="">
                             <div className="d-flex justify-content-center icones">
                                 <a href="#card-serviços_lar">
-                                    <img className="rounded-circle min" src={botaoServicos} alt="serviços diversos"
+                                    <img className="rounded-circle min" src={Categoria.CategoriaImg} alt="serviços diversos"
                                     id={Categoria.IdCategoria} onClick={handleClick}/></a>
                             </div>
                                 <p>{Categoria.CategoriaNome}</p>
                         </div>
                     ))}
-                        <div className="">
-                            <div className="d-flex justify-content-center icones">
-                                <a href="#"><img className="rounded-circle min" src={botaoEletronicos} alt="eletronicos e acessórios" /></a>
-                            </div>
-                            <p>Eletrônicos e Acessorios </p>
-                        </div>
-
-                        <div className="">
-                            <div className="d-flex justify-content-center icones">
-                                <a href="#"><img className="rounded-circle min" src={botaoArtesanato} alt="artesanato" /></a>
-                            </div>
-                            <p>Artesanato </p>
-                        </div>
-                        <div className="">
-                            <div className="d-flex justify-content-center icones">
-                                <a href="#"><img className="rounded-circle min" src={botaoAulas} alt="aulas e consultorias" /></a>
-                            </div>
-                            <p>Aulas e Consultoria </p>
-                        </div>
-                        <div className="">
-                            <div className="d-flex justify-content-center icones">
-                                <a href="#card-Reparos"><img className="rounded-circle min" src={botaoCasa} alt="reparos domésticos" /></a>
-                            </div>
-                            <p>Reparos Domésticos </p>
-                        </div>
-                        <div className="">
-                            <div className="d-flex justify-content-center icones">
-                                <a href="#"><img className="rounded-circle min" src={botaoEsporte} alt="esporte e lazer" /></a>
-                            </div>
-                            <p>Esporte e Lazer </p>
-                        </div>
-
-                        <div className="">
-                            <div className="d-flex justify-content-center icones">
-                                <a href="#"><img className="rounded-circle min" src={botaoVestuario} alt="vestuario" /></a>
-                            </div>
-                            <p>Vestuario </p>
-                        </div>
-                        <div className="">
-                            <div className="d-flex justify-content-center icones">
-                                <a href="#card-alimentacao"><img className="rounded-circle min" src={botaoAlimentacao} alt="alimentacao" /></a>
-                            </div>
-                            <p>Alimentacao </p>
-                            
-                        </div>
                     </div>
                 </div>   
             </section> 
