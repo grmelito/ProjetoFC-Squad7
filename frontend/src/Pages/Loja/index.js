@@ -37,12 +37,17 @@ function Loja() {
 
    
     function handleEditarLoja(event) {
-        const Username = Perfil[0].Nome
-        const Anuncioname = Anuncio[0].Nome
-        if(Username !== Anuncioname) {
+        if(token){
+            const Username = Perfil[0].Nome
+            const Anuncioname = Anuncio[0].Nome
+            if(Username !== Anuncioname) {
+                document.getElementById("Edit").style.display = "none";
+            } else {
+                document.getElementById("Edit").style.color = "Black";
+            } 
+        } else {
             document.getElementById("Edit").style.display = "none";
-        } 
-        
+        }  
     }
 
     function handleTokenUpdate(event) {
