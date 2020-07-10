@@ -3,6 +3,8 @@ import '../../assets/css/reset.css';
 import '../../assets/css/style.css';
 import Header from '../../components/Header/header';
 import Footer from '../../components/Footer/footer';
+import facebook from '../../assets/img/facebook.png';
+import ig from '../../assets/img/instagram.png';
 import api from '../../services/api'
 import SelecionarFoto from "../../assets/img/AdicionarFoto.png";
 
@@ -95,8 +97,8 @@ function Loja() {
                         </div>
 
                         <div className="loja-cont" >
-                            <p className="p-info"><a className="sociais-loja" href="#">{Anuncio.Instagram}</a></p>
-                            <p className="p-info"><a className="sociais-loja" href="#">{Anuncio.Facebook}</a></p>
+                            <p className="p-info"><img src={ig} width='30px' height='30px'/><a className="sociais-loja" href="#">{Anuncio.Instagram}</a></p>
+                            <p className="p-info"><img src={facebook} width='30px' height='30px'/><a className="sociais-loja" href="#">{Anuncio.Facebook}</a></p>
                             <p className="p-info"><a className="sociais-loja" href="#">{Anuncio.Site}</a></p>
                             <p className="p-info">{Anuncio.Telefone}</p>
                         </div>
