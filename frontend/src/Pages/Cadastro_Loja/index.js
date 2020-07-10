@@ -123,7 +123,7 @@ function Cadastro_Loja() {
             <header>
                 <div className="menu-header-home container-fluid">
                     <div >
-                        <a href="#"><img className="logo-header" src={logo} alt="bfriend" /></a>
+                        <a href="/homeLogada"><img className="logo-header" src={logo} alt="bfriend" /></a>
                     </div>
 
                     <nav className="btn-header-home">
