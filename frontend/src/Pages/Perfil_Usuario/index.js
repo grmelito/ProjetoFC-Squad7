@@ -53,7 +53,7 @@ function PerfilUsuario() {
                         )}
                         </div>
                         <form encType="multipart/form-data" method='put'>
-                        <div className="btn-alterar">
+                        <div className="botao-cadastro">
                             <input className="files" type="file" id="profileImage" onChange={handleUploadFile}></input>
                             <button type="submit" className="btn btn-primary" onClick={handleUpdateProfile}>Alterar Dados</button>
                         </div>
@@ -111,10 +111,11 @@ function PerfilUsuario() {
                                     <label htmlFor="inputPassword">Cidade</label>
                                     <input type="text" className="form-control" id="inputComplemento" value={Perfil.CidadeNome} />
                                 </div>
-                                <div className="botao-cadastro">
-                                    <button type="submit" className="btn-cadastro btn btn-primary">Crie uma loja</button>
-                                    <button type="submit" className="btn btn-primary">Editar Loja</button>
-                                </div>
+                               
+                               
+                               
+                               
+                                
                             </div>
                             )}
                         </form>

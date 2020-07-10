@@ -45,27 +45,34 @@ function Cadastro() {
                         <form onSubmit={handleCadastro}>
                             <div className="form-row">
                                 <div className="form-group col-md-12">
-                                    <label htmlFor="inputNome">Nome</label>
+
                                     <input className="form-control input-tm" id="inputEmail4" placeholder="Nome"
-                                        value={Nome} onChange={e => setNome(e.target.value)} />
+                                        value={Nome} onChange={e => setNome(e.target.value)} required />
                                 </div>
                                 <div className="form-group col-md-12">
-                                    <label htmlFor="inputEmail">Email</label>
+
                                     <input type="email" className="form-control input-tm" id="inputEmail4" placeholder="E-mail"
-                                        value={Email} onChange={e => setEmail(e.target.value)} />
+                                        value={Email} onChange={e => setEmail(e.target.value)} required />
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label htmlFor="inputPassword">Senha</label>
+
                                     <input type="password" className="form-control input-tm" id="inputPassword4" placeholder="Senha"
-                                        value={Senha} onChange={e => setSenha(e.target.value)} />
+                                        value={Senha} onChange={e => setSenha(e.target.value)} required />
                                 </div>
-                                <button type="submit" className="btn btn-primary">Cadastre-se</button>
+                            </div>
+                            <div className="btn-posicao">
+                            <button type="submit" className="btn btn-cadastro">Cadastre-se</button>
                             </div>
                         </form>
-                        <hr></hr>
-                        <p>Já tem uma conta?<a href="/login" className="redirect">Faça Login</a></p>
+                        
+                        <hr className="hr-cadastro"></hr>
+                       
+                            <p className="login-lembrete">Já tem uma conta?<a href="/login" className="redirect"> Entre</a></p>
+                 
                     </div>
+
                     <p>Ao se cadastrar você concorda com os <a className="redirect">Termos de Uso  </a> e a <a className="redirect">Política de Privacidade</a> de BFriend.</p>
+
                 </div>
             </div>
         </div>

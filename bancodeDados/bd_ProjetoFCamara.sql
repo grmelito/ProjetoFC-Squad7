@@ -4,6 +4,7 @@ use ProjetoFcamara;
 
 create table Categorias(
 IdCategoria int primary key AUTO_INCREMENT,
+CategoriaImg varchar(150),
 CategoriaNome varchar(100)
 );
 

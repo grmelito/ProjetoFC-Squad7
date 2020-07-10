@@ -11,6 +11,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 function HomeLogada() {
+    const token = localStorage.getItem('token')
 
     const [Anuncios, setAnuncios] = useState([]);
     const [AnuncioProx, setAnuncioProx] = useState([]);
@@ -84,20 +85,48 @@ function HomeLogada() {
             Categoria
            
         };
-
-        const res = await api.get('anuncios/filtro', {
-            params: {
-                Cidade: data.Cidade,
-                Bairro: data.Bairro,
-                Categoria: data.Categoria
-            }
-        }).then(res => {
-            const AnuncioFiltrado = res.data
-
-            setAnuncioProx(AnuncioFiltrado)
-        })   
+        if(data.Bairro == "") {
+            const res = await api.get('anuncios/filtro', {
+                params: {
+                    Cidade: data.Cidade,
+                    Categoria: data.Categoria
+                }
+            }).then(res => {
+                const AnuncioFiltrado = res.data
+    
+                setAnuncioProx(AnuncioFiltrado)
+            })   
+        } if(data.Categoria === '0') {
+            const res = await api.get('anuncios/filtro', {
+                params: {
+                    Cidade: data.Cidade,
+                    Bairro: data.Bairro,
+                }
+            }).then(res => {
+                const AnuncioFiltrado = res.data
+    
+                setAnuncioProx(AnuncioFiltrado)
+            })   
+        } else {
+            const res = await api.get('anuncios/filtro', {
+                params: {
+                    Cidade: data.Cidade,
+                    Bairro: data.Bairro,
+                    Categoria: data.Categoria
+                }
+            }).then(res => {
+                const AnuncioFiltrado = res.data
+    
+                setAnuncioProx(AnuncioFiltrado)
+            })   
+        } 
     }
     
+    function handleFornecedor() {
+        if(token.length > 163){
+            document.getElementById("Fornecedor").style.display = "none";
+        }
+    }
     function handleLogout(){
         localStorage.clear(); 
 
@@ -105,7 +134,7 @@ function HomeLogada() {
     }
       
     return (
-        <div>
+        <div onMouseMoveCapture={handleFornecedor}>
             <header>
                 <div className="menu-header-home container-fluid">
                     <div >
@@ -154,7 +183,8 @@ function HomeLogada() {
                     </div>
                 </div>
                 <button type="submit" className="btn1 btn-primary" onClick={handleSubmit}>Buscar</button>
-                <a href="/cadastroFornecedor" ><button type="submit" className="btn1 criar-loja" >Vire Fornecedor</button></a>
+                <a href="/cadastroFornecedor" ><button id="Fornecedor" type="submit" 
+                className="btn1 criar-loja" >Vire Fornecedor</button></a>
             </div>
             
             <Cards Anuncios={Anuncios} AnuncioCategoria={AnuncioCategoria} AnuncioProx={AnuncioProx}/>

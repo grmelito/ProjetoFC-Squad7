@@ -33,7 +33,7 @@ module.exports = {
                 .join('Estados', 'Estados.IdEstado', '=', 'Cidades.IdEstado')
                 .where('Usuario.IdUsuario', id);
 
-                return results = res.json(results)
+                return res.json(results)
             } else {
                 const resultsLess = await knex('Usuario')
                 .select([
@@ -42,7 +42,7 @@ module.exports = {
                     'Usuario.ImagemUsuario'])
                 .where('Usuario.IdUsuario', id);
 
-                return resultsLess = res.json(resultsLess)
+                return res.json(resultsLess)
             }
         } catch (err) {
             return res.status(500).send({error: 'Erro ao mostrar perfil!'})
@@ -118,7 +118,7 @@ module.exports = {
 
         const data = {Genero, Nome, Senha, DataNascimento} = req.body
 
-        if(!data){
+        if(data){
 
             const dataUser = await knex('Usuario')
             .where('Usuario.IdUsuario ', id) 

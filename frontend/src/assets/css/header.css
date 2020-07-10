@@ -9,6 +9,7 @@ header{
 
 .logo-header{
     width: 10rem;
+    margin-left: 64px;
 }
 
 .menu-header-home{
@@ -32,7 +33,7 @@ header{
     padding-bottom: 0.5rem;
     text-align: center;
     vertical-align: middle;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     border: 1px solid transparent;
     margin-right: 30px;
     
@@ -58,7 +59,7 @@ header{
     padding-bottom: 0.5rem;
     text-align: center;
     vertical-align: middle;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     border: 1px solid ;
     margin-right: 30px;
     
