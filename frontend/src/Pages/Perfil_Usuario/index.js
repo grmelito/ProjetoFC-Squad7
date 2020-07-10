@@ -81,7 +81,7 @@ function PerfilUsuario() {
                         <form encType="multipart/form-data" method='put'>
                         <div className="botao-cadastro">
                             <input className="files" type="file" id="profileImage" onChange={handleUploadFile}></input>
-                            <button type="submit" className="btn btn-primary" onClick={handleUpdateImage}>Alterar Dados</button>
+                            <button type="submit" className="btn" onClick={handleUpdateImage}>Alterar Dados</button>
                         </div>
                         </form>
                         <form onSubmit={handleUpdateProfile}>
@@ -149,7 +149,7 @@ function PerfilUsuario() {
                                     defaultValue={Perfil.CidadeNome} />
                                 </div>
                                 <div className="botao-cadastro">
-                                    <button type="submit" className="btn btn-primary">Atualizar Informações</button>
+                                    <button type="submit" className="btn ">Atualizar Informações</button>
                                 </div>
                             </div>
                             )}
