@@ -111,11 +111,11 @@ function PerfilUsuario() {
                                     <label htmlFor="inputPassword">Cidade</label>
                                     <input type="text" className="form-control" id="inputComplemento" value={Perfil.CidadeNome} />
                                 </div>
-                               
-                               
-                               
-                               
-                                
+                                                          
+                                <div className="botao-cadastro">
+                                    <button type="submit" className="btn btn-primary">Crie uma loja</button>
+                                    <button type="submit" className="btn btn-primary">Editar Loja</button>
+                                </div>
                             </div>
                             )}
                         </form>
