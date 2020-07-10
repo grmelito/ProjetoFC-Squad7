@@ -1,5 +1,6 @@
 import React, { useEffect, useState }  from 'react';
 import SelecionarFoto from "../../assets/img/AdicionarFoto.png";
+import moment from 'moment'
 import api from '../../services/api';
 
 
@@ -10,6 +11,13 @@ function PerfilUsuario() {
     const [Perfil, setPerfil] = useState([])
     const [selectedFile, setSelectedFile] = useState();
     const [formData, setFormData] = useState({});
+    const [Nome, setNome] = useState('')
+    const [Genero, setGenero] = useState('')
+    const [Cep, setCep] = useState('')
+    const [Rua, setRua] = useState('')
+    const [Numero, setNumero] = useState('')
+    const [Complemento, setComplemento] = useState('')
+    const [Bairro, setBairro] = useState('')
 
     useEffect(() => {
      const res = api.get('profile', {
@@ -18,17 +26,18 @@ function PerfilUsuario() {
         },
     }) .then(res => {
         setPerfil(res.data);
+       
     })}, []);
     
     const handleUploadFile = event => setSelectedFile(event.target.files[0])
 
-    async function handleUpdateProfile(event) {
+    async function handleUpdateImage(event) {
         event.preventDefault()
         
-        try {
+        try {    
             const image = new FormData();
-            image.append('file', selectedFile)
 
+            image.append('file', selectedFile) 
             await api.put('update/profile/image', image, {
                headers: {
                     'auth-token': token,   
@@ -39,6 +48,26 @@ function PerfilUsuario() {
         } catch(err) {
             alert('Erro no upload!')
         }                 
+    }
+
+    async function handleUpdateProfile(event) {
+        event.preventDefault()
+
+        const data = { Nome, Genero, Cep, 
+            Rua, Numero, Complemento, Bairro } 
+
+        try {
+            await api.put('update/profile', data, {
+                headers: {
+                    'auth-token': token,
+                },
+            }).then(res => {
+                alert('Informações Atualizadas!')
+            })
+        } catch(err) {
+            alert('Erro ao atualizar informações!')
+        }
+
     }
     
     return (
@@ -55,15 +84,16 @@ function PerfilUsuario() {
                         <form encType="multipart/form-data" method='put'>
                         <div className="botao-cadastro">
                             <input className="files" type="file" id="profileImage" onChange={handleUploadFile}></input>
-                            <button type="submit" className="btn btn-primary" onClick={handleUpdateProfile}>Alterar Dados</button>
+                            <button type="submit" className="btn btn-primary" onClick={handleUpdateImage}>Alterar Dados</button>
                         </div>
-                        
+                        </form>
+                        <form onSubmit={handleUpdateProfile}>
                             {Perfil.map(Perfil => 
                             <div className="form-div">
                                 <div className="form-group col-md-12">
                                     <label htmlFor="inputNome">Nome Completo</label>
-                                    <input className="form-control" id="inputEmail4" placeholder="Nome" value={Perfil.Nome}>
-                                    </input>
+                                    <input className="form-control" id="inputEmail4" placeholder={Perfil.Nome} 
+                                    value={Nome} onChange={e => setNome(e.target.value)} required/>
                                 </div>
                                 <div className="form-group col-md-12">
                                     <label htmlFor="inputEmail">Email</label>
@@ -72,11 +102,12 @@ function PerfilUsuario() {
                                 </div>
                                 <div className="form-group col-md-5">
                                     <label htmlFor="inputData">Data de Nascimento</label>
-                                    <input type="date" className="form-control" id="inputData" value={Perfil.DataNascimento}/>
+                                    <input type="text" className="form-control" id="inputData" value={moment(Perfil.DataNascimento).format('L')}/>
                                 </div>
                                 <div className="form-group col-md-7">
                                     <label htmlFor="inputGenero">Gênero</label>
-                                    <input type="text" className="form-control" id="inputGenero" value={Perfil.Genero} />
+                                    <input type="text" className="form-control" id="inputGenero" placeholder={Perfil.Genero}
+                                    value={Genero} onChange={e => setGenero(e.target.value)} required/>
                                 </div>
                                 <div className="form-group col-md-6">
                                     <label htmlFor="inputCPF">CPF</label>
@@ -85,23 +116,28 @@ function PerfilUsuario() {
                                 </div>
                                 <div className="form-group col-md-6">
                                     <label htmlFor="inputCEP">CEP</label>
-                                    <input type="text" className="form-control" id="inputCep" placeholder="08888-000" value={Perfil.Cep} />
+                                    <input type="text" className="form-control" id="inputCep" placeholder={Perfil.Cep}
+                                    value={Cep} onChange={e => setCep(e.target.value)} required/>
                                 </div>
                                 <div className="form-group col-md-12">
                                     <label htmlFor="inputEnderco">Endereço</label>
-                                    <input type="text" className="form-control" id="inputEndereco" value={Perfil.Rua}/>
+                                    <input type="text" className="form-control" id="inputEndereco" placeholder={Perfil.Rua}
+                                    value={Rua} onChange={e => setRua(e.target.value)} required/>
                                 </div>
                                 <div className="form-group col-md-5">
                                     <label htmlFor="inputNumero">Número</label>
-                                    <input type="text" className="form-control" id="inputNumero" value={Perfil.Numero} />
+                                    <input type="text" className="form-control" id="inputNumero" placeholder={Perfil.Numero}
+                                    value={Numero} onChange={e => setNumero(e.target.value)} required/>
                                 </div>
                                 <div className="form-group col-md-7">
                                     <label htmlFor="inputComplemento">Complemento</label>
-                                    <input type="text" className="form-control" id="inputComplemento" value={Perfil.Complemento} />
+                                    <input type="text" className="form-control" id="inputComplemento" placeholder={Perfil.Complemento}
+                                    value={Complemento} onChange={e => setComplemento(e.target.value)} required/>
                                 </div>
                                 <div className="form-group col-md-10">
                                     <label htmlFor="inputPassword">Bairro</label>
-                                    <input type="text" className="form-control" id="inputBairro" value={Perfil.Bairro}/>
+                                    <input type="text" className="form-control" id="inputBairro" placeholder={Perfil.Bairro} 
+                                    value={Bairro} onChange={e => setBairro(e.target.value)} required/>
                                 </div>
                                 <div className="form-group col-md-3">
                                     <label htmlFor="inputData">Estado</label>
@@ -113,12 +149,12 @@ function PerfilUsuario() {
                                 </div>
                                                           
                                 <div className="botao-cadastro">
-                                    <button type="submit" className="btn btn-primary">Crie uma loja</button>
-                                    <button type="submit" className="btn btn-primary">Editar Loja</button>
+                                    <button type="submit" className="btn btn-primary">Atualizar Perfil</button>
                                 </div>
                             </div>
                             )}
                         </form>
+                        <a href='/cadastroLoja'><button className="btn btn-primary">Editar Loja</button></a>
                         <hr></hr>
                         <div className="mini-footer">
                             <p className="subtitulo">Revise seus dados Antes de Confirmar</p>
