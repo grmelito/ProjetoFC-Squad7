@@ -113,6 +113,16 @@ routes.get('/anuncio/:id', AnuncioController.showAnuncio)
 routes.get('/anuncios', AnuncioController.indexPage)
 routes.get('/anuncios/filtro', AnuncioController.proxAnuncio)
 routes.get('/anuncios/categoria/:id', AnuncioController.indexCategoria)
+/**
+* @swagger 
+* /fornecedores:
+*  get:
+*    description: Use essa requisição para listar todos os fornecedores
+*    summary: Buscar todos os fornecedores
+*    responses:
+*       '200':
+*           description: Requisição feita com sucesso
+*/
 routes.get('/fornecedores', FornecedorController.index)
 routes.get('/estados', EnderecoController.indexEstados)
 routes.get('/cidades', EnderecoController.indexCidades)
@@ -373,8 +383,127 @@ routes.post('/create/endereco', verifyToken, UsuarioController.createEndereco)
 */
 routes.post('/anuncio/:idAnuncio/comentario', verifyToken, AnuncioController.comentarioAnuncio)
 
+/**
+* @swagger
+*   paths:
+*      /update/profile:
+*        put:
+*          summary: Atualizando Informações do Usuario.
+*          consumes:
+*            - multipart/form-data
+*          parameters:
+*            - in: formData
+*              name: Nome
+*              type: string
+*              description: Nome do Usuario.
+*            - in: formData
+*              name: Genero
+*              type: string
+*              description: Gênero do Usuario.
+*            - in: formData
+*              name: Cep
+*              type: string
+*              description: Cep do Usuario.
+*            - in: formData
+*              name: Rua
+*              type: string
+*              description: Endereço do Usuario.
+*            - in: formData
+*              name: Numero
+*              type: string
+*              description: Numero do Usuario.
+*            - in: formData
+*              name: Complemento
+*              type: string
+*              description: Complemento do Usuario.
+*            - in: header
+*              name: auth-token
+*              description: JWT de autorização
+*              contentType: undefined
+*          responses:
+*            200:
+*              description: Perfil atualizado com sucesso.
+*            400:
+*              description: Erro ao atualizar seu perfil.
+*/
 routes.put('/update/profile', verifyToken, UsuarioController.updateUser)
+/**
+* @swagger
+*   paths:
+*      /update/profile/image:
+*        put:
+*          summary: Atualizar foto de perfil.
+*          consumes:
+*            - multipart/form-data
+*          parameters:
+*            - in: formData
+*              name: file
+*              type: file
+*              description: Imagem de Perfil.
+*            - in: header
+*              name: auth-token
+*              description: JWT de autorização
+*              schema:
+*                type: string
+*                required: true
+*          responses:
+*            200:
+*              description: Imagem alterada com sucesso.
+*            400:
+*              description: Erro ao fazer upload 
+*/
 routes.put('/update/profile/image', verifyToken, upload.single('file'), UsuarioController.updateImage)
+/**
+* @swagger
+*   paths:
+*      /update/anuncio:
+*        put:
+*          summary: Atualizando as informações do anuncio.
+*          consumes:
+*            - multipart/form-data
+*          parameters:
+*            - in: formData
+*              name: Titulo
+*              type: string
+*              description: Titulo do Anuncio.
+*            - in: formData
+*              name: Facebook
+*              type: string
+*              description: Facebook do Anuncio.
+*            - in: formData
+*              name: Instagram
+*              type: string
+*              description: Instagram do Anuncio.
+*            - in: formData
+*              name: Site
+*              type: string
+*              description: Site do Anuncio.
+*            - in: formData
+*              name: Descricao
+*              type: string
+*              description: Descricao do Anuncio.
+*            - in: formData
+*              name: Telefone
+*              type: string
+*              description: Telefone do Anuncio.
+*            - in: formData
+*              name: IdCategoria
+*              type: integer
+*              description: Categoria do Anuncio.
+*            - in: formData
+*              name: files
+*              type: file
+*              description: Imagens do Anuncio.
+*            - in: header
+*              name: auth-token
+*              description: JWT de autorização
+*              contentType: undefined
+*          responses:
+*            200:
+*              description: Anuncio atualizado com sucesso.
+*            400:
+*              description: Erro ao atualizar o anuncio.
+*/
 routes.put('/update/anuncio', verifyToken, upload.array('files', 4), AnuncioController.updateAnuncio)
 
 routes.post('/testeupload', upload.single('file'), (req, res) => {
