@@ -22,6 +22,8 @@ hr{
     
 }
 
+
+
 .container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
     width: 100%;
     padding-right: 15px;
@@ -214,6 +216,16 @@ hr{
     margin-bottom: 1.5rem;
   }
 
+  @media(max-width:640px){
+    .files{
+      width: 60%;
+      position: absolute;
+      margin-left: -12rem;
+    }
+  }
+
+  
+
   .redirect{
     color: #04329B !important;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
@@ -280,6 +292,12 @@ hr{
     box-shadow: 0.1rem 0.2rem #B0B3B8;
   }
 
+  @media(max-width:635px){
+    .fundo-loja{
+      max-width: 100%;
+    }
+  }
+
   .form-grande {
     display: block;
     width: 100%;
@@ -325,9 +343,23 @@ hr{
   }
 
   .botao-cadastro{
-    margin-left: 18rem;
+    margin-left: 14rem;
   }
 
+  @media(max-width:630px){
+  .botao-cadastro{
+    margin-left: 10rem;
+  }
+  }
+
+  .btn-alterar{
+    margin-left:18rem
+  }
+
+  .btn-cadastro{
+
+    margin-right: 2.5rem;
+  }
   .foto-usuario{
     display: flex;
     justify-content: center;

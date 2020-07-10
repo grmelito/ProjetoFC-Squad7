@@ -32,6 +32,12 @@
    width: 1200px; 
    flex-wrap: wrap;
 }
+
+@media(max-width: 1264px){
+    .container-cards{
+        max-width: 100%;
+    }
+}
 .item-cards{
     width: 260px;
     margin-top: 30px;

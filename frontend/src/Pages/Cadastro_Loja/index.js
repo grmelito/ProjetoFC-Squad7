@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../assets/css/style.css';
 import FotoUsuario from "../../assets/img/Id_Rosto.png"
+
 import SelecionarFoto from "../../assets/img/AdicionarFoto.png"
 import api from '../../services/api'
 import logo from '../../assets/img/LogoAtualizada.PNG';

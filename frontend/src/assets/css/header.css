@@ -38,6 +38,15 @@ header{
     
 }
 
+@media(max-width: 600px){
+    .btn-cadastro-header{
+        
+        font-size: 15px;
+    }
+}
+
+
+
 .btn-entrar-header{
     background:#fff;
     border-color:#BDCEFC;
@@ -53,6 +62,12 @@ header{
     border: 1px solid ;
     margin-right: 30px;
     
+}
+@media(max-width: 600px){
+    .btn-entrar-header{    
+        
+        font-size: 15px;
+    }
 }
 
 
