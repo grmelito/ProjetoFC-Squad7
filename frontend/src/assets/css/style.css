@@ -120,7 +120,12 @@ hr{
     justify-content: center   ;
     
   }
-
+.btn-cadastro{
+  color: #ffffff !important;
+    background-color: #04329B;
+    width: 210px; 
+  
+  }
   .fundo-pesquisa{
     margin-bottom: 4rem;
   }
@@ -141,8 +146,9 @@ hr{
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
-    border-radius: .75rem;
+    border-radius: 1rem;
     margin-top: 1.5rem;
+    font-size: 16px !important;
 
   }
 
@@ -171,6 +177,15 @@ hr{
     opacity: 0.5;
     margin-bottom: 2.5rem; 
     margin-top: 2.5rem;
+  }
+
+  .hr-cadastro{
+    color: #DFDFDF;
+    width: 90%;
+    border: 1px solid;
+    opacity: 0.5;
+    margin-bottom: 1.5rem; 
+    margin-top: 1.5rem;
   }
 
   .logo-conteudo{
