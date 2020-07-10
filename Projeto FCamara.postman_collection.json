@@ -14,7 +14,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/anuncio/24",
+							"raw": "http://localhost:3333/anuncio/29",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -22,7 +22,7 @@
 							"port": "3333",
 							"path": [
 								"anuncio",
-								"24"
+								"29"
 							]
 						}
 					},
@@ -34,7 +34,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/anuncios/categoria/4",
+							"raw": "http://localhost:3333/anuncios/categoria/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -43,7 +43,7 @@
 							"path": [
 								"anuncios",
 								"categoria",
-								"4"
+								"2"
 							]
 						}
 					},
@@ -80,7 +80,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3333/anuncios/filtro?Cidade=Santos&Bairro=Centro&Categoria=2",
+							"raw": "http://localhost:3333/anuncios/filtro?Cidade=Santos&Categoria=2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -97,7 +97,8 @@
 								},
 								{
 									"key": "Bairro",
-									"value": "Centro"
+									"value": "Campo Grande",
+									"disabled": true
 								},
 								{
 									"key": "Categoria",
@@ -135,7 +136,7 @@
 						"header": [
 							{
 								"key": "auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MjYsIklkVGlwb1VzdWFyaW8iOjIsIklkRm9ybmVjZWRvciI6MzB9XSwiaWF0IjoxNTkzMDI4MTIzfQ.PSfRR7OW16DECZfrXEoEpdWvQgttjluwlSQA34JypNU",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MzIsIklkVGlwb1VzdWFyaW8iOjIsIklkRm9ybmVjZWRvciI6MzZ9XSwiaWF0IjoxNTkzODAyOTA2fQ.2d12KwQI1T__JtThmqb07yNPEe-4syqvcUYjZwB3TOQ",
 								"type": "text"
 							}
 						],
@@ -144,12 +145,12 @@
 							"formdata": [
 								{
 									"key": "Titulo",
-									"value": "Roupas Gap 5",
+									"value": "Super Açai ",
 									"type": "text"
 								},
 								{
 									"key": "Descricao",
-									"value": "Vendo roupas para pessoas ricas 5",
+									"value": "Açai de alta qualidade com desconto de 20% na primeira compra.",
 									"type": "text"
 								},
 								{
@@ -162,27 +163,27 @@
 								},
 								{
 									"key": "Telefone",
-									"value": "13999391021 5",
+									"value": "1195523641",
 									"type": "text"
 								},
 								{
 									"key": "Instagram",
-									"value": "roupas.gap 5",
+									"value": "Açai.Super",
 									"type": "text"
 								},
 								{
 									"key": "Facebook",
-									"value": "GapOficial 5",
+									"value": "AçaiSuperOffical",
 									"type": "text"
 								},
 								{
 									"key": "Site",
-									"value": "https://gap.com.br",
+									"value": "https://Açaisuper.com.br",
 									"type": "text"
 								},
 								{
 									"key": "IdCategoria",
-									"value": "3",
+									"value": "2",
 									"type": "text"
 								},
 								{
@@ -217,7 +218,7 @@
 						"header": [
 							{
 								"key": "auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6NCwiSWRUaXBvVXN1YXJpbyI6MiwiSWRGb3JuZWNlZG9yIjozfV0sImlhdCI6MTU5MzA1ODE0N30.HoXZYBT0BihnIyOXU1XwzsTAk60F_pn_3acZynbSmZg",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MTAsIklkVGlwb1VzdWFyaW8iOjIsIklkRm9ybmVjZWRvciI6MTB9XSwiaWF0IjoxNTk0MzI4NzE2fQ.3_n3zegcGFWVz6ARekDa03okeuolq-z1Z96rOTUWV7s",
 								"type": "text"
 							}
 						],
@@ -231,7 +232,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3333/anuncio/4/comentario",
+							"raw": "http://localhost:3333/anuncio/3/comentario",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -239,7 +240,7 @@
 							"port": "3333",
 							"path": [
 								"anuncio",
-								"4",
+								"3",
 								"comentario"
 							]
 						}
@@ -262,12 +263,12 @@
 							"formdata": [
 								{
 									"key": "Titulo",
-									"value": "Agora vai 2",
+									"value": "Agora vai 3",
 									"type": "text"
 								},
 								{
 									"key": "Descricao",
-									"value": "Opa 2",
+									"value": "Opa 3",
 									"type": "text"
 								},
 								{
@@ -416,13 +417,13 @@
 						"header": [
 							{
 								"key": "auth-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MjYsIklkVGlwb1VzdWFyaW8iOjF9XSwiaWF0IjoxNTkzMDI4MTExfQ.SDLTbINf55WRNqSO4fr2hgonmmeIqGnqPLH6k5pn_1w",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MzIsIklkVGlwb1VzdWFyaW8iOjF9XSwiaWF0IjoxNTkzODAyODU1fQ.wQC0Gh0fYKYQL1A7b3nxZ7VaOgVU2sooJiSwAtYBM8g",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"CPFouCNPJ\": \"80078992225\"\r\n}",
+							"raw": "{\r\n    \"CPFouCNPJ\": \"90999342271\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -483,7 +484,7 @@
 							{
 								"key": "auth-token",
 								"type": "text",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6OCwiSWRUaXBvVXN1YXJpbyI6MiwiSWRGb3JuZWNlZG9yIjo3fSx7IklkVXN1YXJpbyI6OCwiSWRUaXBvVXN1YXJpbyI6MiwiSWRGb3JuZWNlZG9yIjo4fSx7IklkVXN1YXJpbyI6OCwiSWRUaXBvVXN1YXJpbyI6MiwiSWRGb3JuZWNlZG9yIjo5fV0sImlhdCI6MTU5Mjk1MTc1MH0.If8UOSuJjTn8TJgnjqU34nPbpoQqa7extZuCRSGYpEw"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MTAsIklkVGlwb1VzdWFyaW8iOjIsIklkRm9ybmVjZWRvciI6MTB9XSwiaWF0IjoxNTk0MzI4NzE2fQ.3_n3zegcGFWVz6ARekDa03okeuolq-z1Z96rOTUWV7s"
 							}
 						],
 						"url": {
@@ -507,7 +508,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Email\": \"marta12@gmail.com\",\r\n    \"Senha\": \"1234\"\r\n}",
+							"raw": "{\r\n    \"Email\": \"Renan@gmail.com\",\r\n    \"Senha\": \"1234\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -535,7 +536,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Nome\": \"Marta 11\",\r\n    \"Email\": \"marta12@gmail.com\",\r\n    \"Senha\": \"1234\"\r\n}",
+							"raw": "{\r\n    \"Nome\": \"Marta 14\",\r\n    \"Email\": \"marta14@gmail.com\",\r\n    \"Senha\": \"1234\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -557,6 +558,35 @@
 					"response": []
 				},
 				{
+					"name": "Recuperar Senha",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Nome\": \"Gabriel Ruiz\",\r\n    \"Email\": \"GabrielRuiz@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/request/password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"request",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Cadastrando Endereço",
 					"request": {
 						"method": "POST",
@@ -564,12 +594,12 @@
 							{
 								"key": "auth-token",
 								"type": "text",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6OCwiSWRUaXBvVXN1YXJpbyI6MiwiSWRGb3JuZWNlZG9yIjo3fSx7IklkVXN1YXJpbyI6OCwiSWRUaXBvVXN1YXJpbyI6MiwiSWRGb3JuZWNlZG9yIjo4fSx7IklkVXN1YXJpbyI6OCwiSWRUaXBvVXN1YXJpbyI6MiwiSWRGb3JuZWNlZG9yIjo5fV0sImlhdCI6MTU5Mjk1MTc1MH0.If8UOSuJjTn8TJgnjqU34nPbpoQqa7extZuCRSGYpEw"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MzEsIklkVGlwb1VzdWFyaW8iOjF9XSwiaWF0IjoxNTkzNjM5MDE0fQ.pgNDisWL6MU8oxgmexwkygwQc8sos6plGQ8jbo5S-Do"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Cep\": \"125448623\",\r\n    \"Bairro\": \"Centro\",\r\n    \"Rua\": \"Avenida Gaspar Junior\",\r\n    \"Numero\": \"152\",\r\n    \"Complemento\": \"Casa 5\",\r\n    \"IdCidade\": 1\r\n}",
+							"raw": "{\r\n    \"Cep\": \"11075912\",\r\n    \"Bairro\": \"Aparecida\",\r\n    \"Rua\": \"Rua Alexandre Bacarrat\",\r\n    \"Numero\": \"22\",\r\n    \"Complemento\": \"68\",\r\n    \"IdCidade\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -599,12 +629,12 @@
 							{
 								"key": "auth-token",
 								"type": "text",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MTMsIklkVGlwb1VzdWFyaW8iOjF9XSwiaWF0IjoxNTkyOTM1NTA0fQ.z4Y1fNv0jVc3uRUe5rf9k2ZP5BhWvsPUIcPLDKmT05w"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MTAsIklkVGlwb1VzdWFyaW8iOjIsIklkRm9ybmVjZWRvciI6MTB9XSwiaWF0IjoxNTk0MzI4NzE2fQ.3_n3zegcGFWVz6ARekDa03okeuolq-z1Z96rOTUWV7s"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"Nome\": \"Yuri Silva Crefon\",\r\n    \"Genero\": \"M\",\r\n    \"DataNascimento\": \"1992-02-19\"\r\n}",
+							"raw": "{\r\n    \"Nome\": \"Carlinhos\",\r\n    \"DataNascimento\": \"1998-05-08\",\r\n    \"Cep\": \"110785421\",\r\n    \"Rua\": \"Rua Teste do Teste\",\r\n    \"Complemento\": \"36\",\r\n    \"Numero\": \"145\",\r\n    \"IdCidade\": \"2\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -634,7 +664,7 @@
 							{
 								"key": "auth-token",
 								"type": "text",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MTMsIklkVGlwb1VzdWFyaW8iOjIsIklkRm9ybmVjZWRvciI6MTV9XSwiaWF0IjoxNTkyOTM1NzgxfQ.USkUYFzM3URQRv9VN5T2CGnNI2qcfidXGDmcrBeGHrk"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOlt7IklkVXN1YXJpbyI6MTksIklkVGlwb1VzdWFyaW8iOjIsIklkRm9ybmVjZWRvciI6MjF9XSwiaWF0IjoxNTkzODk3MzQ5fQ.RxC54udWCRsQZOk1F_G0DjQxhx-RCqXeLJqIyeEiiL4"
 							}
 						],
 						"body": {
