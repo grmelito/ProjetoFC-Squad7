@@ -60,7 +60,9 @@ function Cadastro() {
                                         value={Senha} onChange={e => setSenha(e.target.value)} required />
                                 </div>
                             </div>
+                            <div className="btn-posicao">
                             <button type="submit" className="btn btn-cadastro">Cadastre-se</button>
+                            </div>
                         </form>
                         
                         <hr className="hr-cadastro"></hr>

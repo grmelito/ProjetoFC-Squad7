@@ -187,7 +187,10 @@ hr{
     margin-bottom: 1.5rem; 
     margin-top: 1.5rem;
   }
-
+.btn-posicao{
+  display: flex;
+  justify-content: center;
+}
   .logo-conteudo{
     display: flex;
     flex-direction: column;
