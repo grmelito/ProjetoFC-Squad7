@@ -1,9 +1,10 @@
 -- Inserts da tabela Categorias
-INSERT INTO Categorias (CategoriaNome) values ('Alimentação');
-INSERT INTO Categorias (CategoriaNome) values ('Artesanato');
-INSERT INTO Categorias (CategoriaNome) values ('Serviços Domésticos');
-INSERT INTO Categorias (CategoriaNome) values ('Moda e Beleza');
-INSERT INTO Categorias (CategoriaNome) values ('Aulas e Consultoria');
+INSERT INTO Categorias (CategoriaImg, CategoriaNome) values ('/static/media/alimentacao.052b2c80.svg', 'Alimentação');
+INSERT INTO Categorias (CategoriaImg, CategoriaNome) values ('/static/media/artesanato.8e5a59e2.svg', 'Artesanato');
+INSERT INTO Categorias (CategoriaImg, CategoriaNome) values ('/static/media/casa.1e4b5706.svg', 'Serviços Domésticos');
+INSERT INTO Categorias (CategoriaImg, CategoriaNome) values ('/static/media/vestuaria.2176f64e.svg', 'Moda e Beleza');
+INSERT INTO Categorias (CategoriaImg, CategoriaNome) values ('/static/media/cursos.19c0d3da.svg', 'Aulas e Consultoria');
+INSERT INTO Categorias (CategoriaImg, CategoriaNome) values ('/static/media/eletronicos.a4cc5ca0.svg', 'Serviços Eletrônicos');
 -- SELECT * FROM Categorias;
 
 -- Inserts da tabela Estados
@@ -49,7 +50,7 @@ INSERT INTO Usuario (Nome, Senha, Email, DataNascimento, Genero, ImagemUsuario, 
 INSERT INTO Usuario (Nome, Senha, Email, DataNascimento, Genero, ImagemUsuario, IdTipoUsuario, IdEndereco) values ('Marcos Caridade', 'Marcos123', 'MarcosCaridade@gmail.com', '1994-02-18', 'M', 'PFP5.jpg', 2, 5);
 INSERT INTO Usuario (Nome, Senha, Email, DataNascimento, Genero, ImagemUsuario, IdTipoUsuario, IdEndereco) values ('Ryze', 'Ryze123', 'Ryze@gmail.com', '1991-11-28', 'M', 'Ryze.png', 2, 6);
 INSERT INTO Usuario (Nome, Senha, Email, DataNascimento, Genero, ImagemUsuario, IdTipoUsuario, IdEndereco) values ('Stan', 'Stan123', 'stanSP@gmail.com', '1995-06-12', 'M', 'Stan.jpg', 2, 7);
---SELECT * FROM Usuario;
+-- SELECT * FROM Usuario;
 
 -- Inserts da tabela Administrador
 INSERT INTO Administrador (Nome, Email, Senha, CPF, IdTipoUsuario) values ('Administrator', 'admin@bfriend.com', 'admin123', '32953076687', 3);
@@ -63,7 +64,7 @@ INSERT INTO Fornecedor (CPFouCNPJ, IdUsuario) values ('17463552991', 4);
 INSERT INTO Fornecedor (CPFouCNPJ, IdUsuario) values ('49855519713', 5);
 INSERT INTO Fornecedor (CPFouCNPJ, IdUsuario) values ('63218875417', 6);
 INSERT INTO Fornecedor (CPFouCNPJ, IdUsuario) values ('65748223919', 7);
---SELECT * FROM Fornecedor;
+-- SELECT * FROM Fornecedor;
 
 -- Inserts da tabela Anuncio
 INSERT INTO Anuncio (Titulo, Descricao, ImagemAnuncio, Telefone, Instagram, Facebook, Site, IdCategoria, IdFornecedor) values ('Brigadeiro Bom', 'Faço brigadeiros de chocolate artesanal.', 'Brigadeiro1.jpg;Brigadeiro2.jpg;Brigadeiro3.jpg;Brigadeiro4.jpg', '11997875543', 'brigad3ir0', 'brigad3ir0Oficial', 'http://brigadeiroBOM.com.br', 1, 1);
