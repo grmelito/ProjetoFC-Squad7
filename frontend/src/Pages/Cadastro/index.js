@@ -61,7 +61,7 @@ function Cadastro() {
                                 </div>
                             </div>
                             <div className="btn-posicao">
-                            <button type="submit" className="btn btn-cadastro">Cadastre-se</button>
+                            <button type="submit" className="btn1 btn-cadastro">Cadastre-se</button>
                             </div>
                         </form>
                         
