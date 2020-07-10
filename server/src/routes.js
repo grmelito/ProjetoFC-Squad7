@@ -111,7 +111,54 @@ routes.get('/anuncio/:id', AnuncioController.showAnuncio)
 *         description: Requisição feita com sucesso
 */
 routes.get('/anuncios', AnuncioController.indexPage)
+
+/**
+* @swagger 
+* /anuncios/filtro:
+*  get:
+*    description: Use essa requisição para filtar os anuncios por cidade, bairro ou categoria
+*    summary: Filtrar anúncios 
+*    parameters:
+*       - in: query
+*         name: Cidade
+*         description: Cidade a ser buscada
+*         schema:
+*           required: true
+*           type: string
+*       - in: query
+*         name: Bairro
+*         description: Bairro a ser buscado
+*         schema:
+*           required: false
+*           type: string
+*       - in: query
+*         name: Categoria
+*         description: Digite o ID da categoria
+*         schema:
+*           required: false
+*           type: integer
+*    responses:
+*       '200':
+*           description: Requisição feita com sucesso
+*/
 routes.get('/anuncios/filtro', AnuncioController.proxAnuncio)
+/**
+* @swagger 
+* /anuncios/categoria/{id}:
+*  get:
+*    description: Use essa requisição para listar todos os anúncios de uma categoria específica
+*    summary: Buscar todos os anúncios de uma única categoria
+*    parameters:
+*       - in: path
+*         name: id
+*         description: Use essa requisição para listar um anuncio especifico
+*         schema:
+*           required: true
+*           type: integer
+*    responses:
+*       '200':
+*           description: Requisição feita com sucesso
+*/
 routes.get('/anuncios/categoria/:id', AnuncioController.indexCategoria)
 /**
 * @swagger 
@@ -124,8 +171,45 @@ routes.get('/anuncios/categoria/:id', AnuncioController.indexCategoria)
 *           description: Requisição feita com sucesso
 */
 routes.get('/fornecedores', FornecedorController.index)
+/**
+* @swagger 
+* /estados:
+*  get:
+*    description: Use essa requisição para listar todos os estados
+*    summary: Buscar todos os estados
+*    responses:
+*       '200':
+*           description: Requisição feita com sucesso
+*/
 routes.get('/estados', EnderecoController.indexEstados)
+/**
+* @swagger 
+* /cidades:
+*  get:
+*    description: Use essa requisição para listar todas as cidades
+*    summary: Buscar todas as cidades
+*    responses:
+*       '200':
+*           description: Requisição feita com sucesso
+*/
 routes.get('/cidades', EnderecoController.indexCidades)
+/**
+* @swagger 
+* /comentario/{idAnuncio}:
+*  get:
+*    description: Use essa requisição para mostrar os comentários de um anuúncio
+*    summary: Buscar comentários sobre o anúncio
+*    parameters:
+*       - in: path
+*         name: idAnuncio
+*         description: Digite o Id do anúncio
+*         schema:
+*           required: true
+*           type: integer
+*    responses:
+*       '200':
+*           description: Requisição feita com sucesso
+*/
 routes.get('/comentario/:idAnuncio', AnuncioController.showComentario)
 
 /**

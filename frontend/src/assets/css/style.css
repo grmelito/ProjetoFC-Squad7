@@ -8,50 +8,65 @@ hr{
 
 /*fim das configurações gerais*/
 
+
 .botoes{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-color: #0F1570 ;
-    color: #fff;
-    justify-content: space-evenly;
-    height: 12rem;
-    max-width: 100%;
-    margin-bottom: 5rem;
-    
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #0F1570 ;
+  color: #fff;
+  justify-content: space-evenly;
+  height: 12rem;
+  max-width: 100%;
+  margin-bottom: 5rem;
+  
 }
 
 
 
 .container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
- 
-
-  .banner{
-      max-width: 100%;
-      width: 100%;
-  }
-
-  @media(max-width:610px){
-      .min{
-          max-width: 60%;
-      }
-  }
-
-  .logo-header{
-    width: 9rem;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .icones{
-  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
 }
+
+.banner{
+    max-width: 100%;
+    width: 100%;
+}
+
+.btn-casa{
+  margin-left: 20px;
+}
+
+.btn-vestuaria p{
+  margin-left: 18px;
+}
+
+.btn-cursos{
+  margin-left: 20px;
+}
+
+.icones p{
+  font-weight: bold;
+  font-size: 25px;
+}
+
+@media(max-width:610px){
+    .min{
+        max-width: 60%;
+    }
+}
+
+/*fim da estilização home*/
 
  /*fim da estilização home*/
 
